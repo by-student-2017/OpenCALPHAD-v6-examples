@@ -1,0 +1,73 @@
+@$ Calculate Fe-Cr phase diagram
+set echo
+@$=================================================================
+@$ Read TDB file (steel1.TDB)
+read tdb steel1
+Cr Fe
+@$=================================================================
+@$ Not implemented yet
+@$ delete phase sigma
+@$=================================================================
+@$ First the low T miscibility gap and sigma phase
+
+@$ t=Temperature, p=Pressure, n=mol, x(Cr)=mol fraction of Cr
+set condition t=600 p=1e5 n=1 x(Cr)=0.2
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cr) 0 1 ,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 6000 25
+
+@$ Phase diagram calculation
+map
+@$=================================================================
+@$ Then calculate the gamma loop
+
+@$ t=Temperature, p=Pressure, n=mol, x(Cr)=mol fraction of Cr
+set condition t=1200 p=1e5 n=1 x(Cr)=0.10
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cr) 0 1 ,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 6000 25
+
+@$ Phase diagram calculation
+map
+n
+@$=================================================================
+@$ Finally the liquidus and solidus
+
+@$ t=Temperature, p=Pressure, n=mol, x(Cr)=mol fraction of Cr
+set condition t=2050 p=1e5 n=1 x(Cr)=0.20
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cr) 0 1 ,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 6000 25
+
+@$ Phase diagram calculation
+map
+n
+@$=================================================================
+@$ Plot the results
+plot
+x(*,Cr)
+T
+title fig 1c
+render
+@$=================================================================
+@$ If you do not write this, you will get an error
+set interactive
+@$=================================================================
