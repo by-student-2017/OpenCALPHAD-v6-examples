@@ -1,0 +1,38 @@
+@$ Calculate Fe-C phase diagram
+set echo
+
+@$ Read TDB file (steel1.TDB)
+read tdb steel1
+Fe C
+
+@$ t=Temperature, p=Pressure, n=mol, x(C)=mol fraction of C
+set condition t=1000 p=1e5 n=1 x(C)=0.2
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Output of results (List)
+l ,,,,
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(C) 0 1 ,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 2000 25
+
+@$ Phase diagram calculation
+map
+
+@$ Plot the results
+plot
+x(*,C)
+T
+scale_ranges
+x
+n
+0
+0.2
+render
+
+@$ If you do not write this, you will get an error
+set interactive

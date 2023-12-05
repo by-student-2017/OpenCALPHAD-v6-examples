@@ -1,0 +1,36 @@
+@$ Calculate Ag-Cu phase diagram
+set echo
+
+@$ Read TDB file (agcu.TDB)
+read tdb agcu
+Ag Cu
+
+@$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Cu)=mole fraction of Cu
+set condition t=1000 p=1e5 n=1 x(cu)=0.2
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Output of results (List)
+l ,,,,
+
+@$ The solubility gap of the FCC phase in the Ag-Cu binary system 
+@$  phase diagram is automatically calculated.
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cu) 0 1 ,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 1500 10
+
+@$ Phase diagram calculation
+map
+
+@$ Plot the results.
+plot
+x(*,Cu)
+T
+render
+
+@$ If you do not write this, you will get an error.
+set interactive
