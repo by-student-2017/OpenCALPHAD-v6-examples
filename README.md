@@ -29,18 +29,18 @@
 2. ./oc6P
 3. ?
 
-## Fe-C
+## Example: Fe-C
 1. cd ~/opencalphad-master
 2. mkdir work
 3. cd work
 4. cp ./../examples/macros/steel1.TDB ./
-5. vim Fe-C_map.OCM
-6. ./../oc6P Fe-C_map.OCM
+5. vim Fe-C_phase_diagram.OCM
+6. ./../oc6P Fe-C_phase_diagram.OCM
 
-## Ag-Cu
+## Example: Ag-Cu
 1. cd ~/opencalphad-master
 2. mkdir work
 3. cd work
 4. cp ./../examples/macros/agcu.TDB ./
-5. vim Ag-Cu_map.OCM
-6. ./../oc6P Fe-C_map.OCM
+5. vim Ag-Cu_phase_diagram.OCM
+6. ./../oc6P AAg-Cu_phase_diagram.OCM
