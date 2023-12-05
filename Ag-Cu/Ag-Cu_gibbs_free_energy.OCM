@@ -1,0 +1,36 @@
+@$ Calculate Ag-Cu phase diagram
+set echo
+
+@$ Read TDB file (agcu.TDB)
+read tdb agcu
+Ag Cu
+
+@$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Cu)=mole fraction of Cu
+set condition t=1000 p=1e5 n=1 x(Cu)=0.2
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Give the criterion for Gibbs free energy at output. 
+@$ Here, we will set it based on FCC.
+set reference Ag FCC ,,,,,
+set reference Cu FCC ,,,,,
+
+@$ x-axis definition
+@$ Here, the molar fraction of Cu is set from 0 to 1.
+set axis 1 x(Cu) 0 1
+
+@$ step calculation
+step separate
+
+@$ separate: Calculate the thermodynamic quantities of each phase
+@$ (not an equilibrium calculation)
+
+@$ Plot the results (x is mole fraction, y is Gibbs free energy)
+plot
+x(Cu)
+G(*) ,,,,,
+render
+
+@$ If you do not write this, you will get an error
+set interactive

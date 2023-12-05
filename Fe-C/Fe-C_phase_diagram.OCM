@@ -12,7 +12,7 @@ set condition t=1000 p=1e5 n=1 x(C)=0.2
 calculate equilibrium
 
 @$ Output of results (List)
-l ,,,,
+list ,,,,
 
 @$ Axis definition (x-axis: mole fraction)
 set axis 1 x(C) 0 1 ,,,

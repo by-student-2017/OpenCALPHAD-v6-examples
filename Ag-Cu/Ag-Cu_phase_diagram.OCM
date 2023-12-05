@@ -12,7 +12,7 @@ set condition t=1000 p=1e5 n=1 x(cu)=0.2
 calculate equilibrium
 
 @$ Output of results (List)
-l ,,,,
+list ,,,,
 
 @$ The solubility gap of the FCC phase in the Ag-Cu binary system 
 @$  phase diagram is automatically calculated.
@@ -29,7 +29,7 @@ map
 @$ Plot the results.
 plot
 x(*,Cu)
-T
+t
 render
 
 @$ If you do not write this, you will get an error.
