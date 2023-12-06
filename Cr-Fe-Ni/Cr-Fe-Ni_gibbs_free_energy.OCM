@@ -1,0 +1,48 @@
+@$ ====================================================================
+@$ Calculating the isothermal section for Cr-Fe-Mo
+@$ ====================================================================
+set echo
+
+@$ ====================================================================
+read tdb ./saf2507
+Cr Fe Ni
+
+@$ ====================================================================
+@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+set condition t=1200 p=1e5 n=1 x(Cr)=0.45 x(Ni)=0.5
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Give the criterion for Gibbs free energy at output. 
+set reference Cr BCC ,,,,,
+set reference Fe BCC ,,,,,
+set reference Ni FCC ,,,,,
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cr) 0 1
+
+@$ step calculation
+step separate
+
+@$ =================================================================
+@$ separate: Calculate the thermodynamic quantities of each phase
+@$ (not an equilibrium calculation)
+
+@$ Plot the results (x is mole fraction, y is Gibbs free energy)
+plot
+x(Cr)
+G(*) ,,,,,
+render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+plot ,,
+graph 3 gibbs-free-energy Y
+
+@$ =================================================================
+@$ If you do not write this, you will get an error
+set interactive
+
+@$ =================================================================
