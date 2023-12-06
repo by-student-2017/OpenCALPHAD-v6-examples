@@ -71,8 +71,8 @@
 
 ## Example: Cr-Fe-Ni
 1. cd ~/OpenCALPHAD-v6-examples
-2. cd Cr-Fe-Mo
-3. oc6P Cr-Fe-Mo_phase_diagram.OCM
+2. cd Cr-Fe-Ni
+3. oc6P Cr-Fe-Ni_phase_diagram.OCM
 
 
 ## Learn more
