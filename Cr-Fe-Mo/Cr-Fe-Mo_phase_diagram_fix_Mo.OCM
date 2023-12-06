@@ -1,0 +1,43 @@
+@$ ====================================================================
+@$ Calculating the isothermal section for Cr-Fe-Mo
+@$ ====================================================================
+set echo
+
+@$ ====================================================================
+read tdb ./steel1
+Cr Fe Mo
+
+@$ ====================================================================
+@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+set condition t=1400 p=1e5 n=1 x(Cr)=0.5 x(Mo)=0.1
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Cr) 0 1 ,,,,
+
+@$ Axis definition (y-axis: Temperature [K])
+set axis 2 t 300 2500 10
+
+@$ Phase diagram calculation
+map
+
+@$ ====================================================================
+@$ Plot the results.
+plot
+x(Cr)
+t
+render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+plot ,,
+graph 3 phase-diagram-fix Y
+
+@$ =================================================================
+@$ If you do not write this, you will get an error
+set interactive
+
+@$ =================================================================
