@@ -49,6 +49,7 @@ extra lower Mo
 
 @$ ====================================================================
 @$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 plot ,,
 @$ Also set the color of green = a0ffa0
 @$ extra color a0ffa0

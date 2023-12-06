@@ -38,6 +38,7 @@ map n
 @$ Mapping is still to be improved with experience
 @$ ====================================================================
 @$ plot as Gibbs triangle with tie-lines
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 plot ,,
 extra gibbs Y
 extra tie_line 3
