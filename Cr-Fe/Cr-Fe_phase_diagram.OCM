@@ -28,6 +28,7 @@ set axis 2 t 300 6000 25
 
 @$ Phase diagram calculation
 map
+
 @$ ====================================================================
 @$ Then calculate the gamma loop
 
@@ -44,8 +45,8 @@ set axis 1 x(Cr) 0 1 ,,,
 set axis 2 t 300 6000 25
 
 @$ Phase diagram calculation
-map
-n
+map n
+
 @$ ====================================================================
 @$ Finally the liquidus and solidus
 
@@ -62,16 +63,16 @@ set axis 1 x(Cr) 0 1 ,,,
 set axis 2 t 300 6000 25
 
 @$ Phase diagram calculation
-map
-n
+map n
+
 @$ ====================================================================
 @$ Plot the results
-plot
-x(*,Cr)
-T
+plot x(*,Cr) T
 title fig 1c
 render
+
 @$ ====================================================================
 @$ If you do not write this, you will get an error
 set interactive
+
 @$ ====================================================================
