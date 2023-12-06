@@ -75,6 +75,12 @@
 3. oc6P Cr-Fe-Mo_phase_diagram.OCM
 
 
+## Learn more
+- see OC6-macros.pdf in doc
+1. cd ~/opencalphad-master/examples/macros
+2. ls
+
+
 Acknowledgment
 =======
 - This project (modified version) is/was partially supported by the following :
