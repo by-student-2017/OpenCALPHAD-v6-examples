@@ -28,6 +28,7 @@ map
 @$ ====================================================================
 @$ plot as Gibbs triangle with tie-lines
 plot ,,
+@$ Legend settings
 text 0.47 0.07 0.8 0 n {/Symbol s}
 text n 0.60 0.02 0.8 0 y ,
 text n 0.20 0.50 0.8 0 y ,
@@ -41,9 +42,10 @@ title map10 fig 1
 extra lower Fe
 
 @$ ====================================================================
+@$ PDF output settings
 plot ,,
 @$ Also set the color of green = a0ffa0
-extra color a0ffa0
+@$ extra color a0ffa0
 title map10 fig 2
 graph 3 ternary-phase-diagram Y
 

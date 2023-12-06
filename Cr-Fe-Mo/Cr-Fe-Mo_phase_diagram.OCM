@@ -48,9 +48,10 @@ title map14 fig 1
 extra lower Fe
 
 @$ ====================================================================
+@$ PDF output settings
 plot ,,
 @$ Also set the color of green = a0ffa0
-extra color a0ffa0
+@$ extra color a0ffa0
 title map14 fig 2
 graph 3 CrFeMo-1400K-Left-Corner Y
 
