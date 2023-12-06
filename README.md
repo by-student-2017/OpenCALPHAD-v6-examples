@@ -82,7 +82,7 @@
 3. oc6P step2.OCM
 4. exit
 5. y
-6. oc6P map11.OCM
+6. oc6P map10.OCM
 - Important files: step2.OCM and step6.OCM
 - Important files: map10.OCM and map14.OCM
 - TDB files: PDDP: https://cpddb.nims.go.jp/
