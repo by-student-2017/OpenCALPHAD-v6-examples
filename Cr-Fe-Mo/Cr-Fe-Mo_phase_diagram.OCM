@@ -25,6 +25,7 @@ map
 
 @$ ====================================================================
 @$ this diagram has no potential axis, that requires some special care
+
 @$ There is a small fcc/bcc region is missing
 set condition x(Mo)=0.001 x(Cr)=0.12
 
@@ -43,17 +44,18 @@ extra gibbs Y
 extra tie_line 3
 @$ Also set the color of the monovariants to red = FF0000
 extra color FF0000
-title map 14 fig 2
+title map14 fig 1
 extra lower Fe
 
 @$ ====================================================================
 plot ,,
 @$ Also set the color of green = a0ffa0
 extra color a0ffa0
-title map14 fig 3
-gra 3 CrFeMo-1400K-Left-Corner Y
+title map14 fig 2
+graph 3 CrFeMo-1400K-Left-Corner Y
 
 @$ =================================================================
 @$ If you do not write this, you will get an error
 set interactive
+
 @$ =================================================================
