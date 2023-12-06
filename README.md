@@ -65,18 +65,25 @@
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe-Mo
 3. oc6P Cr-Fe-Mo_phase_diagram.OCM
+- steel1.TDB: C, Cr, Fe, Mo, Si, V, Vaccum
 
 
 ## Example: Cr-Fe-Ni
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe-Ni
 3. oc6P Cr-Fe-Ni_phase_diagram.OCM
+- saf2507.TDB: Cr, Fe, Mn, Mo, N, Ni, Vacuum
 
 
 ## Example: Mo-Ni-Re
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Mo-Ni-Re
 3. oc6P Mo-Ni-Re_phase_diagram-1500K.OCM
+- BEF.TDB: Mo, Ni, Re, Vacuum
+
+
+## Example: Al-Mg-Zn
+- cost507R.TDB: Al, B, C, Ce, Cr, Cu, Fe, Li, Mg, Mn, N, Nd, Ni, Si, Sn, Ti, V, Y, Zn, Zr, Vacuum
 
 
 ## Learn more
