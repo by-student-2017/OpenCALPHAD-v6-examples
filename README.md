@@ -79,6 +79,10 @@
 - see OC6-macros.pdf in doc
 1. cd ~/opencalphad-master/examples/macros
 2. ls
+3. oc6P step2.OCM
+4. exit
+5. y
+6. oc6P map12.OCM
 
 
 Acknowledgment
