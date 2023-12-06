@@ -66,6 +66,7 @@
 2. cd Cr-Fe-Mo
 3. oc6P Cr-Fe-Mo_phase_diagram.OCM
 - steel1.TDB: C, Cr, Fe, Mo, Si, V, Vaccum
+- "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
 
 
 ## Example: Cr-Fe-Ni
@@ -73,6 +74,7 @@
 2. cd Cr-Fe-Ni
 3. oc6P Cr-Fe-Ni_phase_diagram.OCM
 - saf2507.TDB: Cr, Fe, Mn, Mo, N, Ni, Vacuum
+- "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
 
 
 ## Example: Mo-Ni-Re
@@ -80,6 +82,7 @@
 2. cd Mo-Ni-Re
 3. oc6P Mo-Ni-Re_phase_diagram-1500K.OCM
 - BEF.TDB: Mo, Ni, Re, Vacuum
+- "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
 
 
 ## Example: Al-Mg-Zn
