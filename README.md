@@ -43,18 +43,16 @@
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Ag-Cu
 3. oc6P Ag-Cu_phase_diagram.OCM
-4. exit
-5. y
-6. oc6P Ag-Cu_gibbs_free_energy.OCM
+4. quit y
+5. oc6P Ag-Cu_gibbs_free_energy.OCM
 
 
 ## Example: C-Fe
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd C-Fe
 3. oc6P C-Fe_phase_diagram.OCM
-4. exit
-5. y
-6. oc6P C-Fe_gibbs_free_energy.OCM
+4. exit y
+5. oc6P C-Fe_gibbs_free_energy.OCM
 
 
 ## Example: Cr-Fe
@@ -75,14 +73,19 @@
 3. oc6P Cr-Fe-Ni_phase_diagram.OCM
 
 
+## Example: Mo-Ni-Re
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Mo-Ni-Re
+3. oc6P Mo-Ni-Re_phase_diagram-1500K.OCM
+
+
 ## Learn more
 - see "macros-OC7.pdf" and "OC6-macros.pdf" in doc
 1. cd ~/opencalphad-master/examples/macros
 2. ls
 3. oc6P step2.OCM
-4. exit
-5. y
-6. oc6P map10.OCM
+4. quit y
+5. oc6P map10.OCM
 - Important files: step2.OCM and step6.OCM
 - Important files: map10.OCM and map14.OCM
 - TDB files: PDDP: https://cpddb.nims.go.jp/
