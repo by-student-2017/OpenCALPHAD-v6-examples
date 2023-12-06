@@ -1,5 +1,6 @@
 # OpenCALPHAD-v6-examples
 
+
 ## Installation (OpenCALPHAD)
 1. sudo apt update
 2. sudo apt -y install gfortran liblapack-dev
@@ -23,24 +24,55 @@
 -----
 ```
 8. make all
+9. echo 'export PATH=$PATH:$HOME/opencalphad-master' >> ~/.bashrc
+10. bash
+
 
 ## Help
-1. cd ~/opencalphad-master
-2. ./oc6P
-3. ?
+1. oc6P
+2. ?
+3. map?
 
-## Example: Fe-C
-1. cd ~/opencalphad-master
-2. mkdir work
-3. cd work
-4. cp ./../examples/macros/steel1.TDB ./
-5. vim Fe-C_phase_diagram.OCM
-6. ./../oc6P Fe-C_phase_diagram.OCM
+
+## Installation (this examples)
+1. cd ~
+2. git clone https://github.com/by-student-2017/OpenCALPHAD-v6-examples.git
+
 
 ## Example: Ag-Cu
-1. cd ~/opencalphad-master
-2. mkdir work
-3. cd work
-4. cp ./../examples/macros/agcu.TDB ./
-5. vim Ag-Cu_phase_diagram.OCM
-6. ./../oc6P AAg-Cu_phase_diagram.OCM
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Ag-Cu
+6. oc6P Ag-Cu_phase_diagram.OCM
+
+
+## Example: C-Fe
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd C-Fe
+3. oc6P C-Fe_phase_diagram.OCM
+
+
+## Example: Cr-Fe
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cr-Fe
+3. oc6P Cr-Fe_phase_diagram.OCM
+
+
+## Example: Cr-Fe-Mo
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cr-Fe-Mo
+3. oc6P Cr-Fe-Mo_phase_diagram.OCM
+
+
+## Example: Cr-Fe-Ni
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cr-Fe-Mo
+3. oc6P Cr-Fe-Mo_phase_diagram.OCM
+
+
+Acknowledgment
+=======
+- This project (modified version) is/was partially supported by the following :
+- meguREnergy Co., Ltd.
+- ATSUMITEC Co., Ltd.
+- RIKEN
+- Without the support of "meguREnergy Co., Ltd." and "ATSUMITEC Co., Ltd.", I would not have been able to develop the examples to the level shown on this github. I would like to express my sincere gratitude. 
