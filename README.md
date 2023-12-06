@@ -84,7 +84,7 @@
 5. y
 6. oc6P map11.OCM
 - Important files: step2.OCM and step6.OCM
-- Important files: map1.OCM, map3.OCM, map10.OCM and map14.OCM
+- Important files: map10.OCM and map14.OCM
 
 
 Acknowledgment
