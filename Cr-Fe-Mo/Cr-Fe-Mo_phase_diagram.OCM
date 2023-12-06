@@ -21,7 +21,8 @@ set axis 1 x(Cr) 0 1 ,,,,
 set axis 2 x(Mo) 0 1 ,,,,
 
 @$ Phase diagram calculation
-map ,
+map
+
 @$ ====================================================================
 @$ this diagram has no potential axis, that requires some special care
 @$ There is a small fcc/bcc region is missing
@@ -32,26 +33,27 @@ calculate equilibrium
 
 @$ Phase diagram calculation (n=new)
 map n
+
 @$ ====================================================================
 @$ The graphics for this kind of diagram is not fully developed 
 @$ ====================================================================
 @$ plot as Gibbs triangle with tie-lines
 plot ,,
 extra gibbs Y
-extra tie 3
-@$ Also set the color of the monovariants to red
-extra color FF0000 ,
-title map 14 fig 2
-extra lower Fe ,,
+extra tie_line 3
+@$ Also set the color of the monovariants to red = FF0000
+extra color FF0000
+@$ title map 14 fig 2
+extra lower Fe
+
 @$ ====================================================================
 plot ,,
-extra color
-a0ffa0 ,
+@$ Also set the color of green = a0ffa0
+extra color a0ffa0
 title map14 fig 3
-gra 3
-crfemo-1400-leftcorner
-Y ,,,
-@$=================================================================
+gra 3 crfemo-1400-leftcorner Y
+
+@$ =================================================================
 @$ If you do not write this, you will get an error
 set interactive
-@$=================================================================
+@$ =================================================================
