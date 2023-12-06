@@ -43,7 +43,7 @@ extra gibbs Y
 extra tie_line 3
 @$ Also set the color of the monovariants to red = FF0000
 extra color FF0000
-@$ title map 14 fig 2
+title map 14 fig 2
 extra lower Fe
 
 @$ ====================================================================
@@ -51,7 +51,7 @@ plot ,,
 @$ Also set the color of green = a0ffa0
 extra color a0ffa0
 title map14 fig 3
-gra 3 crfemo-1400-leftcorner Y
+gra 3 CrFeMo-1400K-Left-Corner Y
 
 @$ =================================================================
 @$ If you do not write this, you will get an error
