@@ -42,13 +42,19 @@
 ## Example: Ag-Cu
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Ag-Cu
-6. oc6P Ag-Cu_phase_diagram.OCM
+3. oc6P Ag-Cu_phase_diagram.OCM
+4. exit
+5. y
+6. oc6P Ag-Cu_gibbs_free_energy.OCM
 
 
 ## Example: C-Fe
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd C-Fe
 3. oc6P C-Fe_phase_diagram.OCM
+4. exit
+5. y
+6. oc6P C-Fe_gibbs_free_energy.OCM
 
 
 ## Example: Cr-Fe
