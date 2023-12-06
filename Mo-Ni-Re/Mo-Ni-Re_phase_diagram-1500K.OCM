@@ -33,7 +33,9 @@ calculate equilibrium
 map n
 
 @$ ====================================================================
-@$ The graphics for this kind of diagram is not fully developed 
+@$ The graphics for this kind of diagram is not fully developed
+@$ Usually some parts are missing or have spurious tei-line
+@$ Mapping is still to be improved with experience
 @$ ====================================================================
 @$ plot as Gibbs triangle with tie-lines
 plot ,,
@@ -41,7 +43,7 @@ extra gibbs Y
 extra tie_line 3
 @$ Also set the color of the monovariants to red = FF0000
 extra color FF0000
-title map15 fig 1: BEF model Mo-Ni-Re isotherm 500, 1500 or 2500 K
+title map15 fig 1: BEF model Mo-Ni-Re isotherm 1500 K
 @$ Set a text in the lower left corner
 extra lower Mo
 
@@ -51,7 +53,7 @@ plot ,,
 @$ Also set the color of green = a0ffa0
 @$ extra color a0ffa0
 title map15 fig 2
-graph 3 ternary-phase-diagram Y
+graph 3 ternary-phase-diagram-1500K Y
 
 @$ =================================================================
 @$ If you do not write this, you will get an error
