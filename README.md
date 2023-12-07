@@ -105,6 +105,7 @@
 - TDB files:  https://github.com/pycalphad/pycalphad/tree/develop/examples
 - TDB files: CPDDB: https://cpddb.nims.go.jp/ (OpenCALPHAD's TDB format is quite strict. The last word must be "N!". If you add unnecessary information, it will not work.)
 
+
 Acknowledgment
 =======
 - This project (modified version) is/was partially supported by the following :
@@ -112,3 +113,19 @@ Acknowledgment
 - ATSUMITEC Co., Ltd.
 - RIKEN
 - Without the support of "meguREnergy Co., Ltd." and "ATSUMITEC Co., Ltd.", I would not have been able to develop the examples to the level shown on this github. I would like to express my sincere gratitude. 
+
+
+PC specs used for test
+=======
++ OS: Microsoft Windows 11 Home 64 bit
++ BIOS: 1.14.0
++ CPU： 12th Gen Intel(R) Core(TM) i7-12700
++ Base Board：0R6PCT (A01)
++ Memory：32 GB
++ GPU: NVIDIA GeForce RTX3070
++ WSL2: VERSION="22.04.1 LTS (Jammy Jellyfish)"
++ [Quantum Espresso ver.7.2](https://www.quantum-espresso.org/release-notes/release-notes-QE7-2.html)
++ [PSLibrary 1.0.0](https://dalcorso.github.io/pslibrary/)
++ [DFTB+ ver.23.1](https://dftbplus.org/download/dftb-stable)
++ Python 3.10.12
++ Please, see "Installation_note_WSL2.txt"
