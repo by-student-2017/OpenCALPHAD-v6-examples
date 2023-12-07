@@ -65,7 +65,7 @@
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe-Mo
 3. oc6P Cr-Fe-Mo_phase_diagram.OCM
-- steel1.TDB: C, Cr, Fe, Mo, Si, V, Vaccum
+- steel1.TDB: C, Cr, Fe, Mo, Si, V, Vacuum
 - "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
 
 
