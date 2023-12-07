@@ -1,6 +1,6 @@
 # OpenCALPHAD-v6-examples
 - Note 1: The "map" can not be created well in many systems. I tried various TDBs of "CPDDB", but OpenCALPHAD should be considered to be of limited use. 
-- Note 2: I plan to investigate whether the same trend exists in pycalphad at a later date.
+- Note 2: If you want to draw trigonometric phase diagrams, pycalphad is recommended. Examples files are also available here (https://github.com/by-student-2017/pycalphad-v.0.10.3-examples.git).
 
 
 ## Installation (OpenCALPHAD)
