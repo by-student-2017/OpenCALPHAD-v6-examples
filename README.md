@@ -102,6 +102,7 @@
 - Important files: step2.OCM and step6.OCM
 - Important files: map10.OCM and map14.OCM
 - TDB files: Available open databases: https://www.opencalphad.com/databases.html
+- TDB files:  https://github.com/pycalphad/pycalphad/tree/develop/examples
 - TDB files: CPDDB: https://cpddb.nims.go.jp/ (OpenCALPHAD's TDB format is quite strict. The last word must be "N!". If you add unnecessary information, it will not work.)
 
 Acknowledgment
