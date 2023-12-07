@@ -1,4 +1,6 @@
 # OpenCALPHAD-v6-examples
+- Note 1: The "map" can not be created well in many systems. I tried various TDBs of "CPDDB", but OpenCALPHAD should be considered to be of limited use. 
+- Note 2: I plan to investigate whether the same trend exists in pycalphad at a later date.
 
 
 ## Installation (OpenCALPHAD)
@@ -87,6 +89,7 @@
 
 ## Example: Al-Mg-Zn
 - cost507R.TDB: Al, B, C, Ce, Cr, Cu, Fe, Li, Mg, Mn, N, Nd, Ni, Si, Sn, Ti, V, Y, Zn, Zr, Vacuum
+- 
 
 
 ## Learn more
@@ -98,8 +101,7 @@
 5. oc6P map10.OCM
 - Important files: step2.OCM and step6.OCM
 - Important files: map10.OCM and map14.OCM
-- TDB files: PDDP: https://cpddb.nims.go.jp/
-
+- TDB files: CPDDB: https://cpddb.nims.go.jp/ (OpenCALPHAD's TDB format is quite strict. The last word must be "N!". If you add unnecessary information, it will not work.)
 
 Acknowledgment
 =======
