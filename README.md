@@ -104,7 +104,7 @@
 
 
 ## TDB files
-- NIMS: CPDDB: https://cpddb.nims.go.jp/ (There are some files that cannot be read properly.)
+- NIMS: CPDDB: https://cpddb.nims.go.jp/ (There are some files that cannot be read properly. It takes some time to register, but it is free to use.)
 - TDBDB: https://avdwgroup.engin.brown.edu/
 - Available open databases: https://www.opencalphad.com/databases.html
 -   https://github.com/pycalphad/pycalphad/tree/develop/examples
