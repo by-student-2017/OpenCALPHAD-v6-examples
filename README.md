@@ -89,7 +89,8 @@
 
 ## Example: Al-Mg-Zn
 - cost507R.TDB: Al, B, C, Ce, Cr, Cu, Fe, Li, Mg, Mn, N, Nd, Ni, Si, Sn, Ti, V, Y, Zn, Zr, Vacuum
-- 
+- "modified_almgzn_hay_oc6.tdb" from CPDDB
+- With my technical ability, I could not completely reproduce the ternary phase diagram of Al-Mg-Zn.
 
 
 ## Learn more
