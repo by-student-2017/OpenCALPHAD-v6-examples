@@ -126,7 +126,7 @@ Acknowledgment
 - ATSUMITEC Co., Ltd.
 - RIKEN
 - Without the support of "meguREnergy Co., Ltd." and "ATSUMITEC Co., Ltd.", I would not have been able to develop the examples to the level shown on this github. I would like to express my sincere gratitude. 
-- I received permission from Dr. Abe of NIMS to post the revised version of TDB. I would like to express my gratitude to you. (Note: It is working fine with PyCALPHAD, but due to my lack of skill, some parts are not drawn correctly with OpenCALPHAD.)
+- I received permission from Dr. Abe of NIMS to post the revised version of TDB (11/Dec/2023 12:04). I would like to express my gratitude to you. (Note: It is working fine with PyCALPHAD, but due to my lack of skill, some parts are not drawn correctly with OpenCALPHAD.)
 
 
 PC specs used for test
