@@ -88,6 +88,14 @@
 
 
 ## Example: Al-Mg-Zn
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Al-Mg-Zn
+3. (mmc1.TDB (Qiu et al. (2015)) from TDBDB (https://avdwgroup.engin.brown.edu/))
+4. mv mmc1.TDB Qiu_2015.TDB
+5. sudo apt -y install nkf
+6. nkf -w Qiu_2015.TDB > Qiu_2015_en.TDB
+7. oc6P Al-Mg-Zn_phase_diagram.OCM
+- need "nkf" for "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 193546: invalid start byte"
 - cost507R.TDB: Al, B, C, Ce, Cr, Cu, Fe, Li, Mg, Mn, N, Nd, Ni, Si, Sn, Ti, V, Y, Zn, Zr, Vacuum
 - "modified_almgzn_hay_oc6.tdb" from CPDDB
 - With my technical ability, I could not completely reproduce the ternary phase diagram of Al-Mg-Zn.
