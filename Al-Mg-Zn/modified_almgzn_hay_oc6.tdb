@@ -1,0 +1,357 @@
+$ ALMGZN
+$
+$ TDB-file for the thermodynamic assessment of the Al-MG-ZN system
+$
+$-------------------------------------------------------------------------------
+$ 2021.8.18
+$ 
+$ TDB file created by G.Deffrennes, T.Abe, K.Hashimoto and Y.Sawada
+$
+$ National Institute for Materials Science. 
+$ 1-2-1 Sengen, Tsukuba, Ibaraki 305-0047, Japan
+$ e-mail: abe.taichi @nims.go.jp
+$ Copyright (C) NIMS 2021
+$
+$ ------------------------------------------------------------------------------
+$ PARAMETERS ARE TAKEN FROM 
+$ Thermodynamic Analysis of the Al-Mg-Zn Ternary System,
+$ N.Hayashi, K.Nakashima, M.Enoki, H.Ohtani,
+$ J.Japan Inst. Met. Mater., 84 (2020) 141-150.
+$
+$ 2019Hay:
+$ N.Hayashi, K.Nakashima, M.Enoki, H.Ohtani,
+$ J.Japan Inst. Met. Mater., 83 (2019) 378-387.
+
+$ 1990Sau:
+$ N.Saunders, CALPHAD,  14 (1990) 61-70.
+
+$ 1998Lia:
+$ P.Liang, T.Tarfa, J.A.Robinson, S.Wagner, P.Ochin, M.G.Harmelin, H.J.Seifert,
+$ H.L.Lukas and F.Aldinger, Thermochim.Acta, 314 (1998) 87-110.
+
+$ 1998Lia2:
+$ P.Liang et al., Z.Metallkd., 89 (1998) 536-540
+
+$ 1998Buh:
+$ T.Buhler, S.G.Fries, P.J.Spencer and  H.L.Lukas,
+$ J.Phase Equilib., 19 (1998) 317-333.
+
+$ 1993Mey:
+$ Reevaluation of the Al-Zn System,
+$ Sabine an Mey, Z.Metallkd., 84 (1993) 451-455.
+
+$ COST507:
+$ P.Liang and H.L.Lukas
+$------------------------------------------------------------------------------
+$ Comments
+$ Parameters for pure elements are taken from SGTE Unary 5.0.
+$ There are slight deviations that we could not reproduce in the transverse 
+$ sections at 20mass%Zn and 20mol%Zn (Fig5-(a),(b) in the reference). 
+$                                                                       T.A.
+$ Modified Line (Line numbers after correction are in parentheses) for PyCALPHAD
+$ Line 170 (173): "3000 Unary5.0 N !" => "N !"
+$ LIne 205 (208): => "CONSTITUENT ALMG_G  :MG : AL,MG,ZN : AL,MG,ZN : !"
+$  remove "6000 N 2019Hay"                                       By STUDENT
+$ ------------------------------------------------------------------------------
+
+ ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT AL   FCC_A1                    2.6982E+01  4.5773E+03  2.8322E+01!
+ ELEMENT MG   HCP_A3                    2.4305E+01  4.9980E+03  3.2671E+01!
+ ELEMENT ZN   HCP_ZN                    6.5390E+01  5.6568E+03  4.1631E+01!
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR PURE AND OTHERS
+$-------------------------------------------------------------------------------
+$ Al from unary5.0
+$ -------------------------------------
+ FUNCTION GHSERAL 298.15
+ -7976.15+137.093038*T-24.3671976*T*LN(T)-1.884662E-3*T**2-0.877664E-6*T**3
+ +74092*T**(-1); 700 Y
+ -11276.24+223.048446*T-38.5844296*T*LN(T)+18.531982E-3*T**2-5.764227E-6*T**3
+ +74092*T**(-1); 933.473 Y
+ -11278.361+188.684136*T-31.748192*T*LN(T)-1230.622E25*T**(-9); 2900 N !
+ 
+ FUNCTION GHCPAL 298.15 5481-1.8*T+GHSERAL; 2900 N !
+ 
+ FUNCTION GBCCAL 298.15 10083-4.813*T+GHSERAL; 2900 N !
+ 
+ FUNCTION GLIQAL 298.15 11005.045-11.84185*T+79.337E-21*T**7+GHSERAL; 933.473 Y
+  -795.991+177.430209*T-31.748192*T*LN(T); 2900 N !
+
+$ -------------------------------------
+$ Mg from unary5.0
+$ -------------------------------------
+ FUNCTION GHSERMG  298.15
+ -8367.34+143.675547*T-26.1849782*T*LN(T)+0.4858E-3*T**2-1.393669E-6*T**3
+ +78950*T**(-1);   923.00 Y
+ -14130.185+204.716215*T-34.3088*T*LN(T)+1038.192E25*T**(-9);  3000.00 N !
+ 
+ FUNCTION GLIQMG 298.15 8202.243-8.83693*T-80.176E-21*T**7+GHSERMG; 923 Y
+ -5439.869+195.324057*T-34.3088*T*LN(T);  3000.00 N !
+ 
+ FUNCTION GFCCMG 298.15 2600-0.9*T+GHSERMG; 3000 N !
+ 
+ FUNCTION GBCCMG 298.15 3100-2.1*T+GHSERMG; 3000 N !
+ 
+$ -------------------------------------
+$ Zn from unary5.0
+$ -------------------------------------
+ FUNCTION GHSERZN  298.15
+ -7285.787+118.470069*T-23.701314*T*LN(T)-1.712034E-3*T**2-1.264963E-6*T**3;
+  692.677 Y
+ -11070.546+172.345644*T-31.38*T*LN(T)+470.47E24*T**(-9);  1700.00 N !
+
+ FUNCTION GHCPZN 298.15 2969.82-1.56968*T+GHSERZN; 1700 N !
+ 
+ FUNCTION GLIQZN 298.15 7157.222-10.29305*T-358.949E-21*T**7+GHSERZN; 692.677 Y
+ -3620.385+161.60854*T-31.38*T*LN(T); 1700 N !
+ 
+ FUNCTION GFCCZN 298.15 2969.82-1.56968*T+GHSERZN; 1700 N !
+ 
+ FUNCTION GBCCZN 298.15 2886.96-2.5104*T+GHSERZN; 1700 N !
+$-------------------------------------------------------------------------------
+ TYPE_DEFINITION % SEQ *!
+ DEFINE_SYSTEM_DEFAULT ELEMENT 2 !
+ DEFAULT_COMMAND DEF_SYS_ELEMENT VA /- !
+
+$-------------------------------------------------------------------------------
+$ PARAMETERS FOR LIQUID PHASE
+$-------------------------------------------------------------------------------
+ PHASE LIQUID %  1  1.0  !
+   CONSTITUENT LIQUID:L :AL,MG,ZN :  !
+  PARAMETER G(LIQUID,AL;0) 298.15 +GLIQAL;                             2900 N !
+  PARAMETER G(LIQUID,MG;0) 298.15 +GLIQMG;                             3000 N !
+  PARAMETER G(LIQUID,ZN;0) 298.15 +GLIQZN;                             1700 N !
+  PARAMETER G(LIQUID,AL,ZN;0) 298.15 +10465.55-3.39259*T;      6000 N !
+  PARAMETER G(LIQUID,AL,MG;0) 298.15 -14637+2.23*T;            6000 N !
+  PARAMETER G(LIQUID,AL,MG;1) 298.15 +1382-1.93*T;             6000 N !
+  PARAMETER G(LIQUID,AL,MG;2) 298.15 +8986-6.27*T;             6000 N !
+  PARAMETER G(LIQUID,MG,ZN;0) 298.15 -26064+10.55*T;                   6000 N !
+  PARAMETER G(LIQUID,MG,ZN;1) 298.15 +4295;                            6000 N !
+  PARAMETER G(LIQUID,MG,ZN;2) 298.15 -8596+10.84*T;                    6000 N !
+  PARAMETER G(LIQUID,AL,MG,ZN;0) 298.15 -9260+22.4*T;                  6000 N !
+  PARAMETER G(LIQUID,AL,MG,ZN;1) 298.15 +76935-85.41*T;                6000 N !
+  PARAMETER G(LIQUID,AL,MG,ZN;2) 298.15 -32487+35.53*T;                6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR FCC_A1
+$-------------------------------------------------------------------------------
+ PHASE FCC_A1  %  1  1.0  !
+   CONSTITUENT FCC_A1  :AL,MG,ZN :  !
+  PARAMETER G(FCC_A1,AL;0) 298.15 +GHSERAL;                            2900 N !
+  PARAMETER G(FCC_A1,MG;0) 298.15 +GFCCMG;                             3000 N !
+  PARAMETER G(FCC_A1,ZN;0) 298.15 +GFCCZN;                             1700 N !
+  PARAMETER G(FCC_A1,AL,MG;0) 298.15 -4195+0.81*T;             6000 N !
+  PARAMETER G(FCC_A1,AL,ZN;0) 298.15 +7297.48+0.47512*T;       6000 N !
+  PARAMETER G(FCC_A1,AL,ZN;1) 298.15 +6612.88-4.5911*T;        6000 N !
+  PARAMETER G(FCC_A1,AL,ZN;2) 298.15 -3097.19+3.30635*T;       6000 N !
+  PARAMETER G(FCC_A1,MG,ZN;0) 298.15 -3056.82+5.63801*T;       6000 N !
+  PARAMETER G(FCC_A1,MG,ZN;1) 298.15 -3127.26+5.65563*T;       6000 N !
+  PARAMETER G(FCC_A1,AL,MG,ZN;0) 298.15 40.51*T;                       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR HCP_A3
+$-------------------------------------------------------------------------------
+ PHASE HCP_A3  %  1  1.0  !
+   CONSTITUENT HCP_A3  :AL,MG,ZN :  !
+  PARAMETER G(HCP_A3,AL;0) 298.15 +GHCPAL;                             2900 N !
+  PARAMETER G(HCP_A3,MG;0) 298.15 +GHSERMG;                            3000 N !
+  PARAMETER G(HCP_A3,ZN;0) 298.15 +GHCPZN;                             1700 N !
+  PARAMETER G(HCP_A3,AL,MG;0) 298.15 +2490-9.17*T;             6000 N !
+  PARAMETER G(HCP_A3,AL,ZN;0) 298.15 +18820.95-8.95255*T;      6000 N !
+  PARAMETER G(HCP_A3,AL,ZN;3) 298.15 -702.79;                  6000 N !
+  PARAMETER G(HCP_A3,MG,ZN;0) 298.15 -3056.82+5.63801*T;       6000 N !
+  PARAMETER G(HCP_A3,MG,ZN;1) 298.15 -3127.26+5.65563*T;       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR HCP_ZN
+$-------------------------------------------------------------------------------
+ PHASE HCP_ZN  %  1  1.0  !
+   CONSTITUENT HCP_ZN  :AL,MG,ZN :  !
+  PARAMETER G(HCP_ZN,AL;0) 298.15 +GHCPAL;                             2900 N !
+  PARAMETER G(HCP_ZN,MG;0) 298.15 +100+GHSERMG;                6000 N !
+  PARAMETER G(HCP_ZN,ZN;0) 298.15 +GHSERZN;                            1700 N !
+  PARAMETER G(HCP_ZN,AL,MG;0) 298.15 +1950-2*T;                6000 N !
+  PARAMETER G(HCP_ZN,AL,MG;1) 298.15 +1480-2.08*T;             6000 N !
+  PARAMETER G(HCP_ZN,AL,MG;2) 298.15 +3500;                    6000 N !
+  PARAMETER G(HCP_ZN,AL,ZN;0) 298.15 +18820.95-8.95255*T;      6000 N !
+  PARAMETER G(HCP_ZN,AL,ZN;3) 298.15 -702.79;                  6000 N !
+  PARAMETER G(HCP_ZN,MG,ZN;0) 298.15 -3056.82+5.63801*T;       6000 N !
+  PARAMETER G(HCP_ZN,MG,ZN;1) 298.15 -3127.26+5.65563*T;       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR ALMG_BETA
+$-------------------------------------------------------------------------------
+ PHASE ALMG_B  %  2  140  89 !
+   CONSTITUENT ALMG_B  :AL,ZN : MG : !
+  PARAMETER G(ALMG_B,AL:MG;0) 298.15
+   -1560000+600*T+140*GHSERAL+89*GHSERMG;                      6000 N !
+  PARAMETER G(ALMG_B,ZN:MG;0) 298.15
+   +206100+140*GHSERZN+89*GHSERMG;                             6000 N !
+  PARAMETER G(ALMG_B,AL,ZN:MG;0) 298.15 -1717500+343.5*T;      6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR ALMG_EPSILON
+$-------------------------------------------------------------------------------
+ PHASE ALMG_E  %  2  30  23 !
+   CONSTITUENT ALMG_E  :AL,ZN : MG : !
+  PARAMETER G(ALMG_E,AL:MG;0) 298.15
+   -95915-2050*T+273.47*T*LN(T)+30*GHSERAL+23*GHSERMG;         6000 N !
+  PARAMETER G(ALMG_E,ZN:MG;0) 298.15
+   -638531+636*T+30*GHSERZN+23*GHSERMG;                        6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR ALMG_GAMMA
+$-------------------------------------------------------------------------------
+ PHASE ALMG_G  %  3  10  24  24 !
+   CONSTITUENT ALMG_G  :MG : AL,MG,ZN : AL,MG,ZN : !
+  PARAMETER G(ALMG_G,MG:AL:AL;0) 298.15
+   +89647+48*GHSERAL+10*GHSERMG;                               6000 N !
+  PARAMETER G(ALMG_G,MG:MG:AL;0) 298.15
+   -257422+35.81*T+24*GHSERAL+34*GHSERMG;                      6000 N !
+  PARAMETER G(ALMG_G,MG:AL:MG;0) 298.15
+   +408764+24*GHSERAL+34*GHSERMG;                              6000 N !
+  PARAMETER G(ALMG_G,MG:ZN:AL;0) 298.15
+   -174000+116*T+24*GHSERAL+10*GHSERMG+24*GHSERZN;             6000 N !
+  PARAMETER G(ALMG_G,MG:AL:ZN;0) 298.15
+   +11310+14.5*T+24*GHSERAL+10*GHSERMG+24*GHSERZN;             6000 N !
+
+  PARAMETER G(ALMG_G,MG:ZN:MG;0) 298.15
+   +198599.2+42.862*T+24*GHSERZN+34*GHSERMG;                   6000 N !
+  PARAMETER G(ALMG_G,MG:MG:ZN;0) 298.15
+   -290000+116*T+24*GHSERZN+34*GHSERMG;                        6000 N !
+  PARAMETER G(ALMG_G,MG:ZN:ZN;0) 298.15
+   +580000+48*GHSERZN+10*GHSERMG;                              6000 N !
+
+  PARAMETER G(ALMG_G,MG:MG:MG;0) 298.15 +247671+58*GHSERMG;    6000 N !
+  PARAMETER G(ALMG_G,MG:AL,MG:AL;0) 298.15 -332705-108.19*T;   6000 N !
+  PARAMETER G(ALMG_G,MG:MG:AL,MG;0) 298.15 +91007-448.33*T;    6000 N !
+  PARAMETER G(ALMG_G,MG:AL:AL,MG;0) 298.15 +226200-29*T;      6000 N !
+
+  PARAMETER G(ALMG_G,MG:MG,ZN:MG;0) 298.15 -2054009+2699*T;            6000 N !
+  PARAMETER G(ALMG_G,MG:MG,ZN:ZN;0) 298.15 -2054009+2699*T;            6000 N !
+
+  PARAMETER G(ALMG_G,MG:MG,ZN:AL;0) 298.15 -3531601+5212*T;            6000 N !
+  PARAMETER G(ALMG_G,MG:MG:AL,ZN;0) 298.15 -3171300+5510*T;            6000 N !
+  PARAMETER G(ALMG_G,MG:ZN:AL,MG;0) 298.15 +226200-29*T;       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR MG51ZN20
+$-------------------------------------------------------------------------------
+ PHASE MG51ZN20  %  2  51  20 !
+   CONSTITUENT MG51ZN20  :MG :ZN : !
+  PARAMETER G(MG51ZN20,MG:ZN;0) 298.15
+   -335742+24.51*T+51*GHSERMG+20*GHSERZN;                              6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR MG12ZN13
+$-------------------------------------------------------------------------------
+ PHASE MG12ZN13  %  2  12  13 !
+   CONSTITUENT MG12ZN13  :MG :AL,ZN : !
+  PARAMETER G(MG12ZN13,MG:AL;0) 298.15
+   -10000+2.5*T+13*GHSERAL+12*GHSERMG;                          6000 N !
+  PARAMETER G(MG12ZN13,MG:ZN;0) 298.15
+   -236981+51.8*T+13*GHSERZN+12*GHSERMG;                               6000 N !
+  PARAMETER G(MG12ZN13,MG:AL,ZN;0) 298.15 -11762-150*T;                6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR MG2ZN3
+$-------------------------------------------------------------------------------
+ PHASE MG2ZN3  %  2  2  3 !
+   CONSTITUENT MG2ZN3  :MG :AL,ZN : !
+  PARAMETER G(MG2ZN3,MG:AL;0) 298.15
+   +1000-0.2*T+3*GHSERAL+2*GHSERMG;                            6000 N !
+  PARAMETER G(MG2ZN3,MG:ZN;0) 298.15
+   -54406+11.77*T+3*GHSERZN+2*GHSERMG;                                 6000 N !
+  PARAMETER G(MG2ZN3,MG:AL,ZN;0) 298.15 -37.5*T;                       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR MG2ZN11
+$-------------------------------------------------------------------------------
+ PHASE MG2ZN11  %  3  5  6  2 !
+   CONSTITUENT MG2ZN11  :AL,ZN :AL,ZN :MG : !
+  PARAMETER G(MG2ZN11,AL:AL:MG;0) 298.15
+   +130000-26*T+11*GHSERAL+2*GHSERMG;                                  6000 N !
+  PARAMETER G(MG2ZN11,ZN:ZN:MG;0) 298.15 +11*GHSERZN+2*GHSERMG
+   -76587-274*T+52.47*T*LN(T)-0.07138*T**2;                            6000 N !
+  PARAMETER G(MG2ZN11,ZN:AL:MG;0) 298.15 
+   +20000+5*GHSERZN+6*GHSERAL+2*GHSERMG;                               6000 N !
+  PARAMETER G(MG2ZN11,AL:ZN:MG;0) 298.15 
+   +75000+5*GHSERAL+6*GHSERZN+2*GHSERMG;                               6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR PHI
+$-------------------------------------------------------------------------------
+ PHASE PHI  %  2  21  17 !
+   CONSTITUENT PHI  :MG :AL,ZN : !
+  PARAMETER G(PHI,MG:AL;0) 298.15
+   -84311+632*T-107*T*LN(T)+0.149*T**2+17*GHSERAL+21*GHSERMG;          6000 N !
+  PARAMETER G(PHI,MG:ZN;0) 298.15 +17*GHSERZN+21*GHSERMG
+   -193278-268*T+51.97*T*LN(T)-0.08828*T**2;                           6000 N !
+  PARAMETER G(PHI,MG:AL,ZN;0) 298.15 -720036+566*T;                    6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR TAU
+$-------------------------------------------------------------------------------
+ PHASE TAU  %  4  26  6  48  1 !
+   CONSTITUENT TAU  :MG :AL,MG : AL,MG,ZN : AL : !
+  PARAMETER G(TAU,MG:AL:AL:AL;0) 298.15
+   -105.3*T+55*GHSERAL+26*GHSERMG;                             6000 N !
+  PARAMETER G(TAU,MG:MG:AL:AL;0) 298.15
+   -391019+10*T+49*GHSERAL+32*GHSERMG;                         6000 N !
+  PARAMETER G(TAU,MG:AL:MG:AL;0) 298.15
+   +1053000+405*T+7*GHSERAL+74*GHSERMG;                        6000 N !
+  PARAMETER G(TAU,MG:MG:MG:AL;0) 298.15
+   +405000+243*T+GHSERAL+80*GHSERMG;                           6000 N !
+  PARAMETER G(TAU,MG:AL:ZN:AL;0) 298.15
+   -832680+162*T+7*GHSERAL+26*GHSERMG+48*GHSERZN;              6000 N !
+  PARAMETER G(TAU,MG:MG:ZN:AL;0) 298.15
+   -811620+162*T+GHSERAL+32*GHSERMG+48*GHSERZN;                6000 N !
+
+  PARAMETER G(TAU,MG:AL:AL,MG:AL;0) 298.15 -202500-40.5*T;     6000 N !
+  PARAMETER G(TAU,MG:MG:AL,MG:AL;0) 298.15 -202500-40.5*T;     6000 N !
+  PARAMETER G(TAU,MG:AL:AL,ZN:AL;0) 298.15 -1513075+1938*T;    6000 N !
+  PARAMETER G(TAU,MG:MG:AL,ZN:AL;0) 298.15 -1685400+2430*T;    6000 N !
+  PARAMETER G(TAU,MG:AL:MG,ZN:AL;0) 298.15 +243000+81*T;       6000 N !
+  PARAMETER G(TAU,MG:MG:MG,ZN:AL;0) 298.15 +243000+81*T;       6000 N !
+
+$-------------------------------------------------------------------------------
+$ FUNCTIONS FOR LAVES_C14
+$-------------------------------------------------------------------------------
+ PHASE LAVES_C14  %  2  2  1 !
+   CONSTITUENT LAVES_C14  :AL,MG,ZN : AL,MG,ZN : !
+  PARAMETER G(LAVES_C14,AL:AL;0) 298.15 +15000+3*GHSERAL;       6000 N !
+  PARAMETER G(LAVES_C14,MG:AL;0) 298.15
+   +74971-16.46*T+GHSERAL+2*GHSERMG;                            6000 N !
+  PARAMETER G(LAVES_C14,AL:MG;0) 298.15
+   -15994+73.68*T-12.26*T*LN(T)+0.016*T**2+2*GHSERAL+GHSERMG;   6000 N !
+  PARAMETER G(LAVES_C14,MG:MG;0) 298.15 +15000+3*GHSERMG;       6000 N !
+  PARAMETER G(LAVES_C14,AL:ZN;0) 298.15
+   +15000+2*GHSERAL+GHSERZN;                                    6000 N !
+  PARAMETER G(LAVES_C14,ZN:AL;0) 298.15
+   +15000+GHSERAL+2*GHSERZN;                                    6000 N !
+  PARAMETER G(LAVES_C14,ZN:MG;0) 298.15
+   -39703+58.1*T-6.742*T*LN(T)+GHSERMG+2*GHSERZN;                       6000 N !
+  PARAMETER G(LAVES_C14,MG:ZN;0) 298.15
+   +65355.45-8.83886*T+2*GHSERMG+GHSERZN;                       6000 N !
+  PARAMETER G(LAVES_C14,ZN:ZN;0) 298.15 +15000+3*GHSERZN;       6000 N !
+
+  PARAMETER G(LAVES_C14,AL,MG:AL;0) 298.15 +15000;              6000 N !
+  PARAMETER G(LAVES_C14,AL:AL,MG;0) 298.15 +8000;               6000 N !
+  PARAMETER G(LAVES_C14,AL,MG:MG;0) 298.15 +15000;              6000 N !
+  PARAMETER G(LAVES_C14,MG:AL,MG;0) 298.15 +8000;               6000 N !
+  PARAMETER G(LAVES_C14,AL,ZN:AL;0) 298.15 -7500-18*T;          6000 N !
+  PARAMETER G(LAVES_C14,AL:AL,ZN;0) 298.15 -7500-18*T;          6000 N !
+  PARAMETER G(LAVES_C14,AL,ZN:ZN;0) 298.15 +25000-18*T;                 6000 N !
+  PARAMETER G(LAVES_C14,MG,ZN:MG;0) 298.15 +35000;              6000 N !
+  PARAMETER G(LAVES_C14,MG:MG,ZN;0) 298.15 +8000;               6000 N !
+  PARAMETER G(LAVES_C14,MG,ZN:ZN;0) 298.15 +35000;              6000 N !
+  PARAMETER G(LAVES_C14,ZN:MG,ZN;0) 298.15 +8000;               6000 N !
+  PARAMETER G(LAVES_C14,AL,MG:ZN;0) 298.15 +15000;              6000 N !
+  PARAMETER G(LAVES_C14,ZN:AL,MG;0) 298.15 +8000;               6000 N !
+  PARAMETER G(LAVES_C14,AL,ZN:MG;0) 298.15 +21000;                      6000 N !
+  PARAMETER G(LAVES_C14,MG,ZN:AL;0) 298.15 +35000;              6000 N !
+  PARAMETER G(LAVES_C14,AL:MG,ZN;0) 298.15 +8000;               6000 N !
+
+$------------------------------------------------------------------- END OF LINE

@@ -4,8 +4,8 @@
 set echo
 
 @$ ====================================================================
-@$ read tdb ./modified_almgzn_hay_oc6.tdb
-read tdb ./Qiu_2015_en.TDB
+read tdb ./modified_almgzn_hay_oc6.tdb
+@$ read tdb ./Qiu_2015_en.TDB
 Al Mg Zn
 
 @$ ====================================================================
@@ -28,20 +28,20 @@ map
 @$ Sometimes a part on the Mg rich side missing, add a new start point
 @$ modified_almgzn_hay_oc6.tdb case
 set condition t=608 p=1e5 n=1 x(Mg)=0.7 x(Zn)=0.2
-@$ calculate equilibrium
-@$ map n
-
-set condition t=608 p=1e5 n=1 x(Mg)=0.2 x(Zn)=0.2
 calculate equilibrium
 map n
+
+@$ set condition t=608 p=1e5 n=1 x(Mg)=0.2 x(Zn)=0.2
+@$ calculate equilibrium
+@$ map n
 
 @$ set condition t=608 p=1e5 n=1 x(Mg)=0.4 x(Zn)=0.1
 @$ calculate equilibrium
 @$ map n
 
-set condition t=608 p=1e5 n=1 x(Mg)=0.45 x(Zn)=0.15
-calculate equilibrium
-map n
+@$ set condition t=608 p=1e5 n=1 x(Mg)=0.45 x(Zn)=0.15
+@$ calculate equilibrium
+@$ map n
 
 @$ ====================================================================
 @$ The graphics for this kind of diagram is not fully developed
