@@ -1,0 +1,60 @@
+@$ ====================================================================
+@$ Calculating the isothermal section at 1200 K for Cr-Fe-Ni
+@$ ====================================================================
+set echo
+
+@$ ====================================================================
+read tdb ./modified_almgzn_hay_oc6.tdb
+Al Mg Zn
+
+@$ ====================================================================
+@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+set condition t=608 p=1e5 n=1 x(Mg)=0.4 x(Zn)=0.3
+
+@$ one point calculation (Fix t, p, n and x)
+calculate equilibrium
+
+@$ Axis definition (x-axis: mole fraction)
+set axis 1 x(Mg) 0 1 ,,,,
+
+@$ Axis definition (y-axis: mole fraction)
+set axis 2 x(Zn) 0 1 ,,,,
+
+@$ Phase diagram calculation
+map
+
+@$ ====================================================================
+@$ Sometimes a part on the Mg rich side missing, add a new start point
+set condition t=608 p=1e5 n=1 x(Mg)=0.7 x(Zn)=0.2
+calculate equilibrium
+map n
+
+@$ ====================================================================
+@$ The graphics for this kind of diagram is not fully developed
+@$ Usually some parts are missing or have spurious tei-line
+@$ Mapping is still to be improved with experience
+@$ ====================================================================
+@$ plot as Gibbs triangle with tie-lines
+plot ,,
+extra gibbs Y
+extra tie_line 3
+@$ Also set the color of the monovariants to red = FF0000
+extra color FF0000
+title map18 fig 1
+@$ Set a text in the lower left corner
+extra lower Al
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+plot ,,
+@$ Also set the color of green = a0ffa0
+@$ extra color a0ffa0
+title map18 fig 2
+graph 3 ternary-phase-diagram Y
+
+@$ =================================================================
+@$ If you do not write this, you will get an error
+set interactive
+
+@$ =================================================================
