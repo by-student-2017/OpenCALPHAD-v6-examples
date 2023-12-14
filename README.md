@@ -49,14 +49,6 @@
 5. oc6P Ag-Cu_gibbs_free_energy.OCM
 
 
-## Example: C-Fe
-1. cd ~/OpenCALPHAD-v6-examples
-2. cd C-Fe
-3. oc6P C-Fe_phase_diagram.OCM
-4. exit y
-5. oc6P C-Fe_gibbs_free_energy.OCM
-
-
 ## Example: Cr-Fe
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe
@@ -114,18 +106,10 @@
 3. oc6P HSS_phase_diagram.OCM
 
 
-## Example: HSS-melting
-1. cd ~/OpenCALPHAD-v6-examples
-2. cd HSS-melting
-3. oc6P melting.OCM
-- High-Speed Steel: Fe-C-Cr-Mo-Si-V system
-
-
-## Example: 18-8_stainless_steel
+## Example: 18-8_stainless_steel (Fe-Cr-8wt%Ni)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd 18-8_stainless_steel
 3. oc6P steel_phase_diagram.OCM
-- 18-8 stainless steel: Fe-Cr-8wt%Ni
 
 
 ## Example: Fe-Mo (Gibbs energy curves)
@@ -134,6 +118,21 @@
 3. oc6P Fe-Mo_gibbs_free_energy.OCM
 4. quit y
 5. oo6P Fe-Mo_phase_diagram.OCM
+
+
+## Example: C-Fe
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd C-Fe
+3. oc6P C-Fe_phase_diagram.OCM
+4. exit y
+5. oc6P C-Fe_gibbs_free_energy.OCM
+
+
+## Example: HSS-melting
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd HSS-melting
+3. oc6P melting.OCM
+- High-Speed Steel: Fe-C-Cr-Mo-Si-V system
 
 
 ## Learn more
