@@ -1,0 +1,71 @@
+@$ ==================================================================
+@$ Calculate HSS (C-Cr-Fe-Mo-V system) phase diagram
+@$ ==================================================================
+set echo
+
+@$ ==================================================================
+@$ Read TDB file (saf2507.TDB)
+@$ ==================================================================
+read tdb saf2507
+Cr Fe Ni
+
+@$ ==================================================================
+@$ calculate a first equilibrium at 1300 where we have both fcc phases 
+@$ Startpoint change needed for new gridminimizer, same diagram
+@$ t=Temperature [K], p=Pressure [Pa], n=mol, w
+@$ ==================================================================
+set condition t=1200 p=1e5 n=1 w(Cr)=0.2 w(Ni)=0.08
+
+@$ ==================================================================
+@$ It is important that the grid minimizer provide gridpoints with small
+@$ amounts of alloying elements !!!
+@$ one point calculation (Fix t, p, n and x)
+@$ ==================================================================
+calculate equilibrium
+
+@$ ==================================================================
+@$ Output of results (List)
+@$ ==================================================================
+l,,,,
+
+@$ ==================================================================
+@$ Axis definition (x-axis: weight %)
+@$ ==================================================================
+set axis 1 w(Cr) 0 1 0.01
+
+@$ ==================================================================
+@$ Axis definition (y-axis: Temperature [K])
+@$ ==================================================================
+set axis 2 t 800 2200 25
+
+@$ ==================================================================
+@$ Phase diagram calculation
+@$ ==================================================================
+map
+
+@$ ==================================================================
+@$ Plot the results.
+@$ You may get a buffer overflow error here
+@$ but there is not yet any way saving of results on file implemented
+@$ Until then you have to restrict yourself to smaller diagrams
+@$ ==================================================================
+plot
+w%(C)
+0.001*Gm(*)
+axis x mole fraction, x(Mo)
+axis y Gibbs energy, G_m [kJ/mol]
+scale_ranges y N -5000 1000
+title map 7 fig 1
+render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 phase-diagram Y
+
+@$ ==================================================================
+@$ If you do not write this, you will get an error
+set interactive
+@$ ==================================================================

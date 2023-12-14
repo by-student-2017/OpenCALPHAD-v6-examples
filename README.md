@@ -111,7 +111,7 @@
 ## Example: HSS (High-Speed Steel)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd HSS
-3. oc6P map7.OCM
+3. oc6P HSS_phase_diagram.OCM
 
 
 ## Example: HSS-melting
