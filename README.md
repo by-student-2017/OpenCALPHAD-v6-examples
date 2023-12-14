@@ -108,6 +108,26 @@
 - With my technical ability, I could not completely reproduce the ternary phase diagram of Al-Mg-Zn.
 
 
+## Example: HSS (High-Speed Steel)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd HSS
+3. oc6P map7.OCM
+
+
+## Example: HSS-melting
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd HSS-melting
+3. oc6P melting.OCM
+- High-Speed Steel: Fe-C-Cr-Mo-Si-V system
+
+
+## Example: 18-8_stainless_steel
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cross-sectional-diagram
+3. oc6P map6.OCM
+- 18-8 stainless steel: Fe-Cr-8wt%Ni
+
+
 ## Learn more
 - see "macros-OC7.pdf" and "OC6-macros.pdf" in doc
 1. cd ~/opencalphad-master/examples/macros
