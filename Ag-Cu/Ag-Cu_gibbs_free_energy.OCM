@@ -46,8 +46,17 @@ step separate
 @$ ==================================================================
 plot
 x(Cu)
-G(*) ,,,,,
+G(*)
+axis y Gibbs energy, G [J/mol]
+title step 2 fig 1
 render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 gibbs-free-energy Y
 
 @$ ==================================================================
 @$ If you do not write this, you will get an error

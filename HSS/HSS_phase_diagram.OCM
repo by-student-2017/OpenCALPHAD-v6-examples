@@ -59,6 +59,12 @@ w%(C)
 t
 axis y Temperature/K
 title map 7 fig 1
+@$ Label some areas (x, y, fontscale, angle, recalc, legend)
+text 0.4 1000 0.8 0 y ,
+text n 0.55 1300 0.8 0 y ,
+text n 0.50 1470 0.8 0 y ,
+text n 0.10 1450 0.8 0 y ,
+text n 0.80 1580 0.8 0 y ,
 render
 
 @$ ====================================================================
@@ -66,7 +72,7 @@ render
 @$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 @$ ====================================================================
 plot ,,
-graph 3 gibbs-free-energy Y
+graph 3 phase-diagram Y
 
 @$ ==================================================================
 @$ If you do not write this, you will get an error

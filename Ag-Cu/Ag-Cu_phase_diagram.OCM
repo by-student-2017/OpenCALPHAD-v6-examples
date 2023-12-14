@@ -50,7 +50,20 @@ map
 plot
 x(*,Cu)
 t
+axis y Temperature/K
+title step 2 fig 1
+@$ Label some areas (x, y, fontscale, angle, recalc, legend)
+text 0.20 1200 0.8 0 y ,
+text n 0.12 1100 0.8 0 y ,
+text n 0.70 1100 0.8 0 y ,
 render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 phase-diagram Y
 
 @$ ==================================================================
 @$ If you do not write this, you will get an error.

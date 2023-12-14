@@ -10,8 +10,6 @@ read tdb saf2507
 Cr Fe Ni
 
 @$ ==================================================================
-@$ calculate a first equilibrium at 1300 where we have both fcc phases 
-@$ Startpoint change needed for new gridminimizer, same diagram
 @$ t=Temperature [K], p=Pressure [Pa], n=mol, w
 @$ ==================================================================
 set condition t=1200 p=1e5 n=1 w(Cr)=0.2 w(Ni)=0.08
@@ -45,17 +43,18 @@ map
 
 @$ ==================================================================
 @$ Plot the results.
-@$ You may get a buffer overflow error here
-@$ but there is not yet any way saving of results on file implemented
-@$ Until then you have to restrict yourself to smaller diagrams
 @$ ==================================================================
 plot
-w%(C)
-0.001*Gm(*)
-axis x mole fraction, x(Mo)
-axis y Gibbs energy, G_m [kJ/mol]
-scale_ranges y N -5000 1000
-title map 7 fig 1
+w(Cr)
+t
+axis y Temperature/K
+title map 6 fig 1
+@$ add some labels (x, y, fontscale, angle, recalc, legend)
+text 0.10 2000 0.9 0 yes ,
+text new 0.50 1500 0.9 0 yes ,
+text new 0.05 1200 0.9 0 yes ,
+text new 0.46 1160 0.9 0 yes {/Symbol s}
+text new 0.75 1200 0.9 0 yes ,
 render
 
 @$ ====================================================================
