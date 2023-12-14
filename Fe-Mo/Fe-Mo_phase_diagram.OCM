@@ -1,18 +1,18 @@
 @$ ==================================================================
-@$ Calculate Gibbs (free) energy of Ag-Cu
+@$ Calculate Fe-Mo phase diagram
 @$ ==================================================================
 set echo
 
 @$ ==================================================================
-@$ Read TDB file (agcu.TDB)
+@$ Read TDB file (steel1.TDB)
 @$ ==================================================================
-read tdb agcu
-Ag Cu
+read tdb steel1
+Fe Mo
 
 @$ ==================================================================
-@$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Cu)=mole fraction of Cu
+@$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Mo)=mole fraction of Mo
 @$ ==================================================================
-set condition t=1000 p=1e5 n=1 x(Cu)=0.2
+set condition t=1400 p=1e5 n=1 x(Mo)=0.2
 
 @$ ==================================================================
 @$ one point calculation (Fix t, p, n and x)
@@ -20,36 +20,44 @@ set condition t=1000 p=1e5 n=1 x(Cu)=0.2
 calculate equilibrium
 
 @$ ==================================================================
-@$ Give the criterion for Gibbs free energy at output. 
-@$ Here, we will set it based on FCC.
+@$ Output of results (List)
 @$ ==================================================================
-set reference Ag FCC ,,,,,
-set reference Cu FCC ,,,,,
+l r 1
 
 @$ ==================================================================
-@$ x-axis definition
-@$ Here, the molar fraction of Cu is set from 0 to 1.
+@$ Axis definition (x-axis: mole fraction)
 @$ ==================================================================
-set axis 1 x(Cu) 0 1
+set axis 1 x(Mo) 0 1 ,,,
 
 @$ ==================================================================
-@$ step calculation
+@$ Axis definition (y-axis: Temperature [K])
 @$ ==================================================================
-step separate
-@$ ==================================================================
-@$ separate: Calculate the thermodynamic quantities of each phase
-@$ (not an equilibrium calculation)
-@$ ==================================================================
+set axis 2 t 300 3000 10
 
 @$ ==================================================================
-@$ Plot the results (x is mole fraction, y is Gibbs free energy)
+@$ Phase diagram calculation
+@$ ==================================================================
+map
+
+@$ ==================================================================
+@$ Plot the results.
 @$ ==================================================================
 plot
-x(Cu)
-G(*) ,,,,,
+x(*,Mo)
+t
+axis x mole fraction, x(Mo)
+axis y Temperature/K
+title step 6 fig 1
 render
 
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 phase-diagram Y
+
 @$ ==================================================================
-@$ If you do not write this, you will get an error
+@$ If you do not write this, you will get an error.
 set interactive
 @$ ==================================================================

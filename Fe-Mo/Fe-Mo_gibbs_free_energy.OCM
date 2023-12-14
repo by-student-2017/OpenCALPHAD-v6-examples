@@ -1,18 +1,18 @@
 @$ ==================================================================
-@$ Calculate Gibbs (free) energy of Ag-Cu
+@$ Calculate Gibbs (free) energy curves for Fe-Mo at 1400K
 @$ ==================================================================
 set echo
 
 @$ ==================================================================
-@$ Read TDB file (agcu.TDB)
+@$ Read TDB file (steel1.TDB)
 @$ ==================================================================
-read tdb agcu
-Ag Cu
+read tdb steel1
+Fe Mo
 
 @$ ==================================================================
 @$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Cu)=mole fraction of Cu
 @$ ==================================================================
-set condition t=1000 p=1e5 n=1 x(Cu)=0.2
+set condition t=1400 p=1e5 n=1 x(Mo)=0.2
 
 @$ ==================================================================
 @$ one point calculation (Fix t, p, n and x)
@@ -20,34 +20,48 @@ set condition t=1000 p=1e5 n=1 x(Cu)=0.2
 calculate equilibrium
 
 @$ ==================================================================
-@$ Give the criterion for Gibbs free energy at output. 
-@$ Here, we will set it based on FCC.
+@$ Output of results (List)
 @$ ==================================================================
-set reference Ag FCC ,,,,,
-set reference Cu FCC ,,,,,
+l r 1
 
 @$ ==================================================================
 @$ x-axis definition
-@$ Here, the molar fraction of Cu is set from 0 to 1.
+@$ Here, the molar fraction of Cu is set from 0 to 1. (0.02 step)
 @$ ==================================================================
-set axis 1 x(Cu) 0 1
+set axis 1 x(Mo) 0 1 0.02
+
+@$ ==================================================================
+@$ Give the criterion for Gibbs free energy at output. 
+@$ Here, we will set it based on BCC.
+@$ ==================================================================
+set reference Fe BCC ,,,,,,,
+set reference Mo BCC ,,,,,,,
 
 @$ ==================================================================
 @$ step calculation
-@$ ==================================================================
-step separate
-@$ ==================================================================
 @$ separate: Calculate the thermodynamic quantities of each phase
 @$ (not an equilibrium calculation)
 @$ ==================================================================
+step separate
 
 @$ ==================================================================
 @$ Plot the results (x is mole fraction, y is Gibbs free energy)
 @$ ==================================================================
 plot
-x(Cu)
-G(*) ,,,,,
+x(Mo)
+0.001*Gm(*)
+axis x mole fraction, x(Mo)
+axis y Gibbs energy, G_m [kJ/mol]
+scale_ranges y N -5000 1000
+title step 6 fig 1
 render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 gibbs-free-energy Y
 
 @$ ==================================================================
 @$ If you do not write this, you will get an error

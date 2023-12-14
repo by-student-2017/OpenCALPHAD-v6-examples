@@ -131,7 +131,9 @@
 ## Example: Fe-Mo (Gibbs energy curves)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Fe-Mo
-3. oc6P step6.OCM
+3. oc6P Fe-Mo_gibbs_free_energy.OCM
+4. quit y
+5. oo6P Fe-Mo_phase_diagram.OCM
 
 
 ## Learn more
