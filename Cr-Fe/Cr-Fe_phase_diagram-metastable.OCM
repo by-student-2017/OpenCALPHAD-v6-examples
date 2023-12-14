@@ -10,7 +10,7 @@ Cr Fe
 
 @$ ====================================================================
 @$ uncomment for metastable equilibrium
-@$ set status phase SIGMA = dormant
+set status phase SIGMA = dormant
 @$ set status phase SIGMA = suspended
 @$ ====================================================================
 @$ First the low T miscibility gap and sigma phase
