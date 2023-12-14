@@ -63,6 +63,13 @@
 3. oc6P Cr-Fe_phase_diagram.OCM
 
 
+## Example: Cr-Fe (metastable: remove SIGMA phase)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cr-Fe
+3. oc6P Cr-Fe_phase_diagram-metastable.OCM
+- Note: For some reason, the lines don't connect and there is a gaping hole. I have no choice but to think that this is by design. This is the same situation with Pandat.
+
+
 ## Example: Cr-Fe-Mo
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe-Mo
