@@ -114,6 +114,7 @@
 
 ## TDB files
 - NIMS: CPDDB: https://cpddb.nims.go.jp/ (There are some files that cannot be read properly. It takes some time to register, but it is free to use.)
+-   OpenCALPHAD Japanese manual: https://cpddb.nims.go.jp/cpddb/OpenCalphad/opencalphad.htm
 - TDBDB: https://avdwgroup.engin.brown.edu/ , https://www.sciencedirect.com/science/article/pii/S0364591618300099 (Open Access)
 - MatCalc, Open free databases: https://www.matcalc-engineering.com/index.php/databases , https://doi.org/10.1016/j.calphad.2023.102531 (Open Access)
 - Available open databases: https://www.opencalphad.com/databases.html
