@@ -123,9 +123,15 @@
 
 ## Example: 18-8_stainless_steel
 1. cd ~/OpenCALPHAD-v6-examples
-2. cd Cross-sectional-diagram
+2. cd 18-8_stainless_steel
 3. oc6P map6.OCM
 - 18-8 stainless steel: Fe-Cr-8wt%Ni
+
+
+## Example: Fe-Mo (Gibbs energy curves)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Fe-Mo
+3. oc6P step6.OCM
 
 
 ## Learn more
