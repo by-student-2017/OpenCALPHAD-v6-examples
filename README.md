@@ -106,9 +106,9 @@
 3. oc6P HSS_phase_diagram.OCM
 
 
-## Example: 18-8_stainless_steel (Fe-Cr-8wt%Ni)
+## Example: stainless_steel_18-8 (Fe-Cr-8wt%Ni)
 1. cd ~/OpenCALPHAD-v6-examples
-2. cd 18-8_stainless_steel
+2. cd stainless_steel_18-8
 3. oc6P steel_phase_diagram.OCM
 
 
