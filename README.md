@@ -115,7 +115,7 @@
 ## Example: C-Cr-Fe (Fe-13%Cr-C)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd C-Cr-Fe
-3. oc6P map16.OCM
+3. oc6P C-Cr-Fe_phase_diagram-fix.OCM
 
 
 ## Example: Al-Ni (A 4 sublattice ordering model)
@@ -127,8 +127,7 @@
 ## Example: Al-Fe (A 4 sublattice ordering model)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Al-Fe
-3. oc6P map17.OCM
-
+3. oc6P Al-Fe_phase_diagram.OCM
 
 
 ## Example: Fe-Mo (Gibbs energy curves)
