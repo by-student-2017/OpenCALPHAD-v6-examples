@@ -128,6 +128,12 @@
 5. oc6P C-Fe_gibbs_free_energy.OCM
 
 
+## Example: Al-Ni (4 sublattice model)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Al-Ni
+3. oc6P Al-Ni_phase_diagram.OCM
+
+
 ## Example: HSS-melting
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd HSS-melting
