@@ -12,7 +12,7 @@ Ag Cu
 @$ ==================================================================
 @$ t=Temperature [K], p=Pressure [Pa], n=mol, x(Cu)=mole fraction of Cu
 @$ ==================================================================
-set condition t=1000 p=1e5 n=1 x(cu)=0.2
+set condition t=1000 p=1e5 n=1 x(Cu)=0.2
 
 @$ ==================================================================
 @$ one point calculation (Fix t, p, n and x)

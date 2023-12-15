@@ -135,6 +135,10 @@
 - High-Speed Steel: Fe-C-Cr-Mo-Si-V system
 
 
+## OFP-Cu (Oxygen-free phosphorus copper: Cu-H-O-P-S system)
+- The copper-rich part of the Cu-H-O-S-P system at low temperatures.
+
+
 ## Learn more
 - see "macros-OC7.pdf" and "OC6-macros.pdf" in doc
 1. cd ~/opencalphad-master/examples/macros

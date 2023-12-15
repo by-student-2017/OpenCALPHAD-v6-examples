@@ -1,20 +1,20 @@
 @$ ==================================================================
-@$ Calculate HSS (C-Cr-Fe-Mo-V system) phase diagram
+@$ Calculate HSS (Cu-H-O-P-S system) phase diagram
 @$ ==================================================================
 set echo
 
 @$ ==================================================================
-@$ Read TDB file (steel1.TDB)
+@$ Read TDB file (CuHOSP_rev2014.TDB)
 @$ ==================================================================
-read tdb steel1
-C Cr Fe Mo V
+read tdb CuHOSP_rev2014.TDB
+H Cu O P S
 
 @$ ==================================================================
 @$ calculate a first equilibrium at 1300 where we have both fcc phases 
 @$ Startpoint change needed for new gridminimizer, same diagram
 @$ t=Temperature [K], p=Pressure [Pa], n=mol, w%(Mo)=weight %
 @$ ==================================================================
-set condition t=1300 p=1e5 n=1 w%(C)=1.2 w%(Cr)=5, w%(Mo)=8 w%(V)=1
+set condition t=1000 p=1e5 n=1 w%(H)=1.2 , w%(O)=5 w%(P)=1 w%(S)=1
 
 @$ ==================================================================
 @$ It is important that the grid minimizer provide gridpoints with small
@@ -26,22 +26,17 @@ calculate equilibrium
 @$ ==================================================================
 @$ Output of results (List)
 @$ ==================================================================
-l r 4
+list ,,,,
 
 @$ ==================================================================
 @$ Axis definition (x-axis: weight %)
 @$ ==================================================================
-set axis 1 w%(C) 0 2 ,,,
+set axis 1 w%(H) 0 2 ,,,
 
 @$ ==================================================================
 @$ Axis definition (y-axis: Temperature [K])
 @$ ==================================================================
-set axis 2 t 800 1800 25
-
-@$ ==================================================================
-@$ Output of results (List)
-@$ ==================================================================
-l ax
+set axis 2 t 300 1500 10
 
 @$ ==================================================================
 @$ Phase diagram calculation
@@ -55,16 +50,10 @@ map
 @$ Until then you have to restrict yourself to smaller diagrams
 @$ ==================================================================
 plot
-w%(C)
+w%(H)
 t
 axis y Temperature/K
 title map 7 fig 1
-@$ Label some areas (x, y, fontscale, angle, recalc, legend)
-text 0.4 1000 0.8 0 y ,
-text n 0.55 1300 0.8 0 y ,
-text n 0.50 1470 0.8 0 y ,
-text n 0.10 1450 0.8 0 y ,
-text n 0.80 1580 0.8 0 y ,
 render
 
 @$ ====================================================================
