@@ -44,9 +44,7 @@ map
 @$ ==================================================================
 @$ Plot the results.
 @$ ==================================================================
-plot
-w(Cr)
-t
+plot w(Cr) t
 axis y Temperature/K
 title map 6 fig 1
 @$ add some labels (x, y, fontscale, angle, recalc, legend)
