@@ -112,6 +112,12 @@
 3. oc6P steel_phase_diagram.OCM
 
 
+## Example: Al-Ni (4 sublattice model)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Al-Ni
+3. oc6P Al-Ni_phase_diagram.OCM
+
+
 ## Example: Fe-Mo (Gibbs energy curves)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Fe-Mo
@@ -126,12 +132,6 @@
 3. oc6P C-Fe_phase_diagram.OCM
 4. exit y
 5. oc6P C-Fe_gibbs_free_energy.OCM
-
-
-## Example: Al-Ni (4 sublattice model)
-1. cd ~/OpenCALPHAD-v6-examples
-2. cd Al-Ni
-3. oc6P Al-Ni_phase_diagram.OCM
 
 
 ## Example: HSS-melting
