@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+https://www.matcalc.at/index.php/databases/open-databases
+--------------------------------------------------------------------------------
+Thermodynamic databases
+Database	Release	Date	Elements
+Steel database, mc_fe.tdb	2.060	2016-07-26	Fe, Al, B, C, Co, Cr, Cu, H, Hf, La, Mn, Mo, N, Nb, Ni, O, P, Pd, S, Si, Ti, V, W, Y
+Bainite database1, mc_fe_bainite.tdb	1.000	2023-03-31	Fe, Al, B, C, Co, Cr, Cu, H, Hf, La, Mn, Mo, N, Nb, Ni, O, P, Pd, S, Si, Ti, V, W, Y
+Ni-base, mc_ni.tdb	2.034	2016-04-21	Ni, Al, B, C, Co, Cr, Cu, Fe, Hf, La, Mn, Mo, N, Nb, Ni, O, S, Si, Ti, V, W, Y, Zr
+Al-base, mc_al.tdb	2.035	2021-03-18	Al, Cr, Cu, Fe, Mg, Mn, Ni, Sc, Si, Ti, Zn, Zr
+--------------------------------------------------------------------------------
+Diffusion mobility databases
+Database	Release	Date	Comments
+Steel database, mc_fe.ddb	2.012	2018-04-26	For use with thermodynamic mc_fe_v2.060.tdb or newer.
+Ni-base, mc_ni.ddb	2.007	2015-12-11	For use with thermodynamic mc_ni_v2.034.tdb or newer.
+Al-base, mc_al.ddb	2.005	2015-05-12	For use with thermodynamic mc_al_v2.032.tdb or newer.
+--------------------------------------------------------------------------------
+Physical databases
+Database	Release	Date	Comments
+physical_data.pdb	1.03	2009-06-19	Phases: Liquid, BCC_A2, FCC_A1, HCP_A3, AlN, Cementite, Cu_S, Diamond_A4, Laves_Phase, M6C, M3C2, M7C3, M23C6 
+--------------------------------------------------------------------------------

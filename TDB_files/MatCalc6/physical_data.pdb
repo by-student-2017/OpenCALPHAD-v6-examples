@@ -1,0 +1,459 @@
+$
+$***************************************************************************
+$
+$ physical data generated for use with MatCalc program, edited by Erwin Povoden-Karadeniz (epk) starting with version 1.02 
+$ last update: 2001-01-08
+$ last update: 2008-07-07    added volumetric misfit for bcc-Cu (=3% to Fe), ref. 13.
+$ last update: 2008-12-18    added data for Al-Si-Mg system
+$ Database version 1.02, 2009-06-18: new DTALFCC, DTFEBCC, DTFEFCC (slightly different polynoms for Fe than in previous DB-versions), and PARAMETER DP(BCC_A2,AL:VA)(epk)
+$ Database version 1.03, 2009-06-19: new polynomials according to ref 14 and ref 15 for Al, Co, Cr, Cu, Fe, Mg, Mo, Nb, Ni, Sc, Si, Ti, V, W, Zn, Zr, and C (ref 19), assess AlN, include Diamond_A4 (epk)
+$ 
+$***************************************************************************
+$
+$thermo-physical
+DEFINE_PARAMETER DP density!
+$
+$***************************************************************************
+$
+$ crystal structures
+$
+$***************************************************************************
+$
+$ FCC   face centered cubic
+$ BCC   body centered cubic
+$ HCP   hexagonal closed packed
+$ TETR  tetragonal
+$ RHOH  rhombohedral
+$ ORHO  orthorhombic
+$ DIAM  diamant
+$ MONO  monoclinic
+$ CUB   cubic
+$
+$***************************************************************************
+$
+$ densities at reference T 298 K
+$
+$***************************************************************************
+$
+$ density of pure elements at 298 K !
+$ densities from ref 14 are based on molar volume data, except Cr (based on density data)
+FUNCTION D0FCC_AG     2.98150E+02   10490.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_AL     2.98150E+02   2698.15; 6.00000E+03   N REF 16    !
+FUNCTION D0RHOH_AS    2.98150E+02    5720.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_AU     2.98150E+02   19320.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0TETR_B     2.98150E+02    2350.0; 6.00000E+03   N REF 4/17  !
+FUNCTION D0BCC_BA     2.98150E+02    3650.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0HCP_BE     2.98150E+02    1848.0; 6.00000E+03   N REF 4/17  !
+FUNCTION D0RHOH_BI    2.98150E+02    9800.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0DIAM_C     2.98150E+02    3513.0; 6.00000E+03   N REF 19    !
+FUNCTION D0FCC_CA     2.98150E+02    1540.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0HCP_CD     2.98150E+02    8640.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_CE     2.98150E+02    6770.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_CO     2.98150E+02    8729.5; 6.00000E+03   N REF 14    !
+FUNCTION D0HCP_CO     2.98150E+02    8834.2; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_CR     2.98150E+02    7200.0; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_CS     2.98150E+02    1900.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_CU     2.98150E+02    8935.0; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_FE     2.98150E+02    7874.0; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_K      2.98150E+02     860.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_LA     2.98150E+02    6160.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0BCC_LI     2.98150E+02     533.0; 6.00000E+03   N REF 15    !
+FUNCTION D0HCP_MG     2.98150E+02    1736.3; 6.00000E+03   N REF 17    !
+FUNCTION D0BCC_MN     2.98150E+02    7440.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0BCC_MO     2.98150E+02   10223.8; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_NB     2.98150E+02    8584.0; 6.00000E+03   N REF 14    !
+FUNCTION D0HCP_ND     2.98150E+02    7004.0; 6.00000E+03   N REF 4/21  !
+FUNCTION D0FCC_NI     2.98150E+02    8914.0; 6.00000E+03   N REF 14    !
+FUNCTION D0HCP_OS     2.98150E+02   22610.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0MONO_P     2.98150E+02    1820.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_PB     2.98150E+02   11340.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_PD     2.98150E+02   12020.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_PT     2.98150E+02   21450.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0CUB_S      2.98150E+02    2070.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_SB     2.98150E+02    6690.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0HCP_SC     2.98150E+02    2988.0; 6.00000E+03   N REF 14    !
+FUNCTION D0DIAM_SI    2.98150E+02   2329.05; 6.00000E+03   N REF 18    !
+FUNCTION D0TETR_SN    2.98150E+02    7290.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0FCC_SR     2.98150E+02    2630.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0BCC_TA     2.98150E+02   16680.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0HCP_TI     2.98150E+02    4499.0; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_TI     2.98150E+02    4438.0; 6.00000E+03   N REF 14    !
+FUNCTION D0ORHO_U     2.98150E+02   18970.0; 6.00000E+03   N REF 3/0   !
+FUNCTION D0BCC_V      2.98150E+02    6118.0; 6.00000E+03   N REF 14    !
+FUNCTION D0BCC_W      2.98150E+02   19263.4; 6.00000E+03   N REF 14    !
+FUNCTION D0HCP_ZN     2.98150E+02    7137.5; 6.00000E+03   N REF 14    !
+FUNCTION D0HCP_ZR     2.98150E+02    6570.0; 6.00000E+03   N REF 14    !
+$
+$Density of intermetallics at 298K
+FUNCTION D0_ALN       2.98150E+02    3260.0; 6.00000E+03   N REF 20     !
+FUNCTION D0_B4N       2.98150E+02    2500.0; 6.00000E+03   N REF 5/30   !
+FUNCTION D0_CR23C6    2.98150E+02    6954.0; 6.00000E+03   N REF 6/156  !
+FUNCTION D0_CR7C3     2.98150E+02    6898.0; 6.00000E+03   N REF 6/156  !
+FUNCTION D0_CR3C2     2.98150E+02    6659.0; 6.00000E+03   N REF 6/156  !
+FUNCTION D0_CRN       2.98150E+02    6140.0; 6.00000E+03   N REF 6/333  !
+FUNCTION D0_CR2N      2.98150E+02    6510.0; 6.00000E+03   N REF 6/333  !
+FUNCTION D0_FE3C      2.98150E+02    7685.0; 6.00000E+03   N REF 8      !
+FUNCTION D0_FES       2.98150E+02    4800.0; 6.00000E+03   N REF 5/40   !
+FUNCTION D0_MNS       2.98150E+02    4000.0; 6.00000E+03   N REF 5/56   !
+FUNCTION D0_MO2C      2.98150E+02    9180.0; 6.00000E+03   N REF 6/156  !
+FUNCTION D0_MOC       2.98150E+02    9150.0; 6.00000E+03   N REF 6/156  !
+FUNCTION D0_NBC       2.98150E+02    7798.0; 6.00000E+03   N REF 6/132  !
+FUNCTION D0_NB2C      2.98150E+02    8320.0; 6.00000E+03   N from Nb2N  !
+FUNCTION D0_NBN       2.98150E+02    8200.0; 6.00000E+03   N REF 6/321  !
+FUNCTION D0_NB2N      2.98150E+02    8320.0; 6.00000E+03   N REF 6/321  !
+FUNCTION D0_SIC       2.98150E+02    3200.0; 6.00000E+03   N REF 5/72   !
+FUNCTION D0_TIC       2.98150E+02    4930.0; 6.00000E+03   N REF 6/97   !
+FUNCTION D0_TIN       2.98150E+02    5213.0; 6.00000E+03   N REF 6/303  !
+FUNCTION D0_VC        2.98150E+02    5710.0; 6.00000E+03   N REF 6/125  !
+FUNCTION D0_VN        2.98150E+02    5987.0; 6.00000E+03   N REF 6/315  !
+FUNCTION D0_WC        2.98150E+02   15700.0; 6.00000E+03   N REF 6/191  !
+FUNCTION D0_W2C       2.98150E+02   17230.0; 6.00000E+03   N REF 6/191  !
+FUNCTION D0_WN        2.98150E+02   15700.0; 6.00000E+03   N !
+$
+$$Nickel-base alloys
+FUNCTION D0_DELTA     2.98150E+02   8827.0; 6.00000E+03   N 0.25*(3*D0FCC_NI + D0BCC_NB) !
+$
+$***************************************************************************
+$
+$ thermo-physical data
+$
+$***************************************************************************
+$
+$ ####################################################################
+$            Delta of densities (d(T)-d(T0) as functions of temperature
+$ ####################################################################
+$
+$ Hallstedt, ref 15: molar volumina of fcc, bcc, hcp for many elements very similar in first approx, reasonably simplified as same values!
+$FUNCTION DTALFCC  2.98150E+02  +45.5689-0.13303*T-0.00007658*T**2; 6.00000E+03   N REF 14 !
+FUNCTION DTALFCC  2.98150E+02  +46.34733-0.132992*T-0.00007778*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTALLIQ  2.98150E+02  +46.166364-0.13202*T-0.00007844*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTALN   2.98150E+02  +13.1+0.0373*T-0.000021*T**2; 6.00000E+03   N epk !
+FUNCTION DTCDIAM  2.98150E+02  +5.24-0.00628*T-0.000025*T**(+2)+0.000000003976*T**(+3); 6.00000E+03   N REF epk!
+FUNCTION DTCOHCP  2.98150E+02  +95.0742-0.29626*T-0.00007593*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTCOFCC  2.98150E+02  +180.695927+0.8478*T+0.00113234247*T**(+2)
+                               +0.0000009463*T**(+3)+0.000000000251*T**(+4); 6.00000E+03   N REF 14!
+$FUNCTION DTCRBCC  2.98150E+02  +35-0.085*T-1.5e-4*T**2; 6.00000E+03   N REF 7!
+$FUNCTION DTCRBCC  2.98150E+02   +32.5-0.082*T-9.5e-005*T**(+2); 6.00000E+03   N REF 10!
+FUNCTION DTCRBCC  2.98150E+02   +73.9748-0.263244367*T-0.00013071*T**(+2)-0.000000073784*T**(+3); 6.00000E+03   N REF 14!
+FUNCTION DTCUFCC   2.98150E+02  +127.2174-0.3953*T-0.00008967466*T**2; 6.00000E+03   N REF 14 !
+$FUNCTION DTFEBCC  2.98150E+02  82.8951-0.266297*T-5.62e-5*T**2; 6.00000E+03   N REF 8 !
+$FUNCTION DTFEBCC  2.98150E+02  +90.854-0.28*T-5.6e-005*T**(+2); 6.00000E+03   N REF 9 !
+FUNCTION DTFEBCC  2.98150E+02  +87.4457338-0.26883685*T-0.0000577846*T**2; 6.00000E+03   N REF 14 !
+$FUNCTION DTFEFCC  2.98150E+02  +425-0.55*T; 6.00000E+03   N  REF 8!
+$FUNCTION DTFEFCC  2.98150E+02  +425-0.58*T+1.5e-005*T**(+2); 6.00000E+03   N  REF !
+FUNCTION DTFEFCC  2.98150E+02  +436.6908-0.57723*T+0.000019*T**(+2); 6.00000E+03   N  REF 14 !
+FUNCTION DTFELIQ  2.98150E+02  +661-0.835*T; 6.00000E+03   N REF 8 !
+FUNCTION DTFE3C   2.98150E+02  -3.72+0.1041*T-3.12e-4*T**2; 6.00000E+03   N REF 8 !
+FUNCTION DTLIBCC  2.98150E+02  +18.81789-0.05119*T-0.00004047*T**(+2); 6.00000E+03   N  REF 14 !
+FUNCTION DTMGHCP   2.98150E+02  +37.8358-0.11454*T-0.000037*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTMGLIQ   2.98150E+02  +140.66133-0.35844*T+0.00005129*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTMNBCC  2.98150E+02  +120,331-0.47*T-8.424059e-005*T**(+2); 6.00000E+03   N REF 7+10!
+FUNCTION DTMNFCC  2.98150E+02  +151.3-0.51*T-2.033229e-005*T**(+2); 6.00000E+03   N REF 7+10!
+FUNCTION DTMOBCC  2.98150E+02   +49.966-0.17146*T+0.0000161584*T**(+2)-0.0000000151*T**(+3); 6.00000E+03   N REF 14!
+FUNCTION DTNBBCC  2.98150E+02  +55.654-0.18434*T-0.0000157047*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTNIFCC  2.98150E+02  +103.38-0.3432863*T-0.0000627364*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTSCHCP  2.98150E+02  +21.77-0.0657586*T-0.000030253*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTSIDIAM  2.98150E+02  +7.075567-0.021496*T-0.0000038285*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTSIFCC  2.98150E+02  +734.063765-0.030514*T-0.000011497*T**2; 6.00000E+03   N REF 15 !
+FUNCTION DTSILIQ  2.98150E+02  +8.6145+0.9985*T; 6.00000E+03   N REF 15 !
+FUNCTION DTTIBCC  2.98150E+02  +38.55556-0.119795*T-0.00004449*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTTIHCP  2.98150E+02  +40.49588-0.12664*T-0.00003109*T**(+2); 6.00000E+03   N REF 14!
+FUNCTION DTVBCC  2.98150E+02  +49.9557-0.1635*T-0.0000116*T**2-0.000000007716*T**3; 6.00000E+03   N REF 14 !
+FUNCTION DTWBCC  2.98150E+02   +77.109-0.254692*T-0.0000041286*T**(+2)-0.000000007926*T**(+3); 6.00000E+03   N REF 10!
+FUNCTION DTZNHCP  2.98150E+02  +186.5785-0.59686*T-0.000083085*T**2; 6.00000E+03   N REF 14 !
+FUNCTION DTZRHCP  2.98150E+02  +33.507-0.1195*T-0.000028026*T**2; 6.00000E+03   N REF 14 !
+$
+$ ####################################################################
+$            Densities of phases
+$ ####################################################################
+$ phase LIQUID
+$
+$ individual
+PARAMETER DP(LIQUID,AL) 2.98150E+02            D0FCC_AL+DTALLIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,C)  2.98150E+02            D0DIAM_C+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,CO) 2.98150E+02            D0HCP_CO+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,CR) 2.98150E+02            D0BCC_CR+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,CU) 2.98150E+02            D0FCC_CU+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,FE) 2.98150E+02            D0BCC_FE+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,MG) 2.98150E+02            D0HCP_MG+DTMGLIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,MN) 2.98150E+02            D0BCC_MN+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,MO) 2.98150E+02            D0BCC_MO+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,N)  2.98150E+02            D0DIAM_C+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,NB) 2.98150E+02            D0BCC_NB+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,NI) 2.98150E+02            D0FCC_NI+DTFELIQ;  6.00000E+03   N !
+$PARAMETER DP(LIQUID,P)  2.98150E+02            D0MONO_P+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,S)  2.98150E+02            D0CUB_S+DTFELIQ;   6.00000E+03   N !
+PARAMETER DP(LIQUID,SI) 2.98150E+02            D0DIAM_SI+DTSILIQ; 6.00000E+03   N !
+PARAMETER DP(LIQUID,TI) 2.98150E+02            D0HCP_TI+DTFELIQ;  6.00000E+03   N !
+PARAMETER DP(LIQUID,V)  2.98150E+02            D0BCC_V+DTFELIQ;   6.00000E+03   N !
+PARAMETER DP(LIQUID,W)  2.98150E+02            D0BCC_W+DTFELIQ;   6.00000E+03   N !
+$
+$ default
+PARAMETER DP(LIQUID,*)  2.98150E+02  D0BCC_FE+DTFELIQ; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase BCC_A2
+$
+$individual
+PARAMETER DP(BCC_A2,AL:VA) 2.98150E+02          D0FCC_AL+DTALFCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,CO:VA) 2.98150E+02          D0FCC_CO+DTCOFCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,CR:VA) 2.98150E+02          D0BCC_CR+DTCRBCC;   6.00000E+03   N !
+$PARAMETER DP(BCC_A2,CU:VA) 2.98150E+02         D0FCC_CU+DTFEBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,CU:VA) 2.98150E+02          1.102*D0BCC_FE+DTFEBCC;   6.00000E+03   N REF: !
+PARAMETER DP(BCC_A2,FE:VA) 2.98150E+02          D0BCC_FE+DTFEBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,MN:VA) 2.98150E+02          D0BCC_MN+DTMNBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,MO:VA) 2.98150E+02          D0BCC_MO+DTMOBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,NB:VA) 2.98150E+02          D0BCC_NB+DTNBBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,NI:VA) 2.98150E+02          D0FCC_NI+DTNIFCC;   6.00000E+03   N !
+$PARAMETER DP(BCC_A2,P:VA)  2.98150E+02          D0MONO_P+DTFEBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,S:VA)  2.98150E+02          D0CUB_S+DTFEBCC;    6.00000E+03   N !
+PARAMETER DP(BCC_A2,SI:VA) 2.98150E+02          D0DIAM_SI+DTSIFCC;  6.00000E+03   N !
+PARAMETER DP(BCC_A2,TI:VA) 2.98150E+02          D0HCP_TI+DTFEBCC;   6.00000E+03   N !
+PARAMETER DP(BCC_A2,V:VA)  2.98150E+02          D0BCC_V+DTVBCC;    6.00000E+03   N !
+PARAMETER DP(BCC_A2,W:VA)  2.98150E+02          D0BCC_W+DTWBCC;    6.00000E+03   N !
+$
+$ interactions with Va 
+PARAMETER DP(BCC_A2,FE:C,VA;0)  2.98150E+02       +23000; 6.00000E+03   N REF: 8 !
+PARAMETER DP(BCC_A2,FE:C,VA;1)  2.98150E+02       +24500; 6.00000E+03   N REF: 8 !
+$
+$Fe-Cu System
+PARAMETER DP(BCC_A2,CU,FE:VA;0)  2.98150E+02       -350; 6.00000E+03   N REF: Koze !
+$
+$altes Assessment Koze/Rindler 3/2001
+$ PARAMETER DP(BCC_A2,FE,CR:VA;0)  2.98150E+02       +150-1.2*T+0.002485*T**(+2)-1.12e-006*T**(+3); 
+$                                                                  6.00000E+03   N REF: 2 (WNr. 14024) !
+$ neues Assessment, Rindler, 8/2001
+$ PARAMETER DP(BCC_A2,FE,CR:VA;0)  2.98150E+02       +140-1.18*T+0.002485*T**(+2)-1.12e-006*T**(+3); 
+$                                                  6.00000E+03   N REF: 2 (WNr. 14024) + NF 616 data package !
+$
+$ neues Assessment, Rindler, 8/2001, die zweite
+PARAMETER DP(BCC_A2,FE,CR:VA;0)  2.98150E+02       +150-1.2*T-40000*T**(-1)+0.002485*T**(+2)-1.12e-006*T**(+3); 
+							   6.00000E+03   N REF: 2 (WNr. 14024) + NF 616 data package !
+$ interactions with C, N
+PARAMETER DP(BCC_A2,FE:C)  2.98150E+02          0.25*D0BCC_FE+0.75*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(BCC_A2,FE:N)  2.98150E+02          0.25*D0BCC_FE+0.75*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+$
+$ default
+PARAMETER DP(BCC_A2,*)    2.98150E+02          D0BCC_FE+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(BCC_A2,*:C)  2.98150E+02          0.25*D0BCC_FE+0.75*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(BCC_A2,*:N)  2.98150E+02          0.25*D0BCC_FE+0.75*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+$
+$PARAMETER DP(BCC_B2,*)  2.98150E+02  D0BCC_FE+DTFEBCC; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase FCC_A1
+$
+$ individuals
+PARAMETER DP(FCC_A1,AL:VA) 2.98150E+02           D0FCC_AL+DTALFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,CO:VA) 2.98150E+02           D0HCP_CO+DTCOFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,CR:VA) 2.98150E+02           D0BCC_CR+DTCRBCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,CU:VA) 2.98150E+02           D0FCC_CU+DTCUFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,FE:VA) 2.98150E+02           D0BCC_FE+DTFEFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,MG:VA) 2.98150E+02           D0HCP_MG+DTMGHCP;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,MN:VA) 2.98150E+02           D0BCC_MN+DTMNFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,MO:VA) 2.98150E+02           D0BCC_MO+DTMOBCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,NB:VA) 2.98150E+02           D0BCC_NB+DTFEFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,NI:VA) 2.98150E+02           D0FCC_NI+DTNIFCC;   6.00000E+03   N !
+$PARAMETER DP(FCC_A1,P:VA)  2.98150E+02           D0MONO_P+DTFEFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,S:VA)  2.98150E+02           D0CUB_S+DTFEFCC;    6.00000E+03   N !
+PARAMETER DP(FCC_A1,SI:VA) 2.98150E+02           D0DIAM_SI+DTSIFCC;  6.00000E+03   N !
+PARAMETER DP(FCC_A1,TI:VA) 2.98150E+02           D0HCP_TI+DTFEFCC;   6.00000E+03   N !
+PARAMETER DP(FCC_A1,V:VA)  2.98150E+02           D0BCC_V+DTFEFCC;    6.00000E+03   N !
+PARAMETER DP(FCC_A1,W:VA)  2.98150E+02           D0BCC_W+DTWBCC;    6.00000E+03   N !
+$
+$ interactions with Va
+PARAMETER DP(FCC_A1,FE:C,VA;0) 2.98150E+02       -200;   6.00000E+03   N REF 8!
+$ PARAMETER DP(FCC_A1,FE,CR:VA;0)  2.98150E+02     -1300+2.3*T-0.0008*T**(+2);  6.00000E+03   N REF: 2 (W.Nr. 14024) + 12 !
+$
+$Assessment rindler 8/2001
+PARAMETER DP(FCC_A1,FE,CR:VA;0)  2.98150E+02     -1300+2.015*T-0.00065*T**(+2);  6.00000E+03   N REF: 2 (W.Nr. 14024) + 12 !
+$
+$ Al-Mg-Si system: interactions
+PARAMETER DP(FCC_A1,AL,SI:VA;0) 2.98150E+02       -2750;   6.00000E+03   N REF epk !
+PARAMETER DP(FCC_A1,AL,MG:VA;0) 2.98150E+02       -1000;   6.00000E+03   N REF ???!
+$
+$ interactions with C, N
+PARAMETER DP(FCC_A1,FE:C)  2.98150E+02           0.5*D0BCC_FE+0.5*D0DIAM_C+DTFEFCC; 6.00000E+03   N !
+PARAMETER DP(FCC_A1,FE:N)  2.98150E+02           0.5*D0BCC_FE+0.5*D0DIAM_C+DTFEFCC; 6.00000E+03   N !
+PARAMETER DP(FCC_A1,NB:C)  2.98150E+02           D0_NBC+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,TI:C)  2.98150E+02           D0_TIC+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,V:C)   2.98150E+02           D0_VC+DTFEBCC;  6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,W:C)   2.98150E+02           D0_WC+DTFEBCC;  6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,CR:N)  2.98150E+02           D0_CRN+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,NB:N)  2.98150E+02           D0_NBN+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,TI:N)  2.98150E+02           D0_TIN+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,V:N)   2.98150E+02           D0_VN+DTFEBCC;  6.00000E+03   N REF 6!
+PARAMETER DP(FCC_A1,W:N)   2.98150E+02           D0_WN+DTFEBCC;  6.00000E+03   N REF 6!
+$ default
+PARAMETER DP(FCC_A1,*)    2.98150E+02            D0BCC_FE+DTFEFCC; 6.00000E+03   N !
+PARAMETER DP(FCC_A1,*:C)  2.98150E+02            0.4*D0BCC_FE+0.6*D0DIAM_C+DTFEFCC; 6.00000E+03   N !
+PARAMETER DP(FCC_A1,*:N)  2.98150E+02            0.4*D0BCC_FE+0.6*D0DIAM_C+DTFEFCC; 6.00000E+03   N !
+$
+$PARAMETER DP(FCC_L12,*)  2.98150E+02  D0FCC_FE+DTFEFCC; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase HCP_A3
+$ Rein-Titan und M2(C,N)
+$
+$ individuals
+PARAMETER DP(HCP_A3,AL:VA) 2.98150E+02          D0FCC_AL+DTALFCC;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,CO:VA) 2.98150E+02          D0HCP_CO+DTCOHCP;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,MG:VA) 2.98150E+02          D0HCP_MG+DTMGHCP;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,SI:VA) 2.98150E+02          D0DIAM_SI+DTSIFCC;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,TI:VA) 2.98150E+02          D0HCP_TI+DTFEBCC;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,ZN:VA) 2.98150E+02          D0HCP_ZN+DTZNHCP;  6.00000E+03   N !
+PARAMETER DP(HCP_A3,ZR:VA) 2.98150E+02          D0HCP_ZR+DTZRHCP;  6.00000E+03   N !
+$
+$ Interactions with C, N
+PARAMETER DP(HCP_A3,CR:N) 2.98150E+02           D0_MO2C+DTFEBCC;   6.00000E+03   N REF 6!
+PARAMETER DP(HCP_A3,MO:C) 2.98150E+02           D0_MO2C+DTFEBCC;   6.00000E+03   N REF 6!
+PARAMETER DP(HCP_A3,Nb:N) 2.98150E+02           D0_NB2C+DTFEBCC;   6.00000E+03   N REF 6!
+PARAMETER DP(HCP_A3,W:C)  2.98150E+02           D0_W2C+DTFEBCC;    6.00000E+03   N REF 6!
+$
+$ default
+PARAMETER DP(HCP_A3,*)    2.98150E+02           D0HCP_TI+DTFEBCC;  6.00000E+03   N!
+$
+$ *************************************************************************
+$ phase ALUMINIUM NITRIDE
+$
+PARAMETER DP(ALN,AL:N) 2.98150E+02  D0_ALN+DTALN; 6.00000E+03   N !
+$PARAMETER DP(AL1N1,AL:N) 2.98150E+02  D0_ALN+DTFEBCC; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase CEMENTITE
+$
+PARAMETER DP(CEMENTITE,FE:C) 2.98150E+02  D0_FE3C+DTFE3C; 6.00000E+03   N  REF 8!
+$PARAMETER DP(CEMENTITE,MN:C) 2.98150E+02  0.95*D0_FE3C+DTFE3C; 6.00000E+03   N  REF 8!
+$
+$ default
+PARAMETER DP(CEMENTITE,*) 2.98150E+02  D0_FE3C+DTFE3C; 6.00000E+03   N  REF 8!
+$
+$ *************************************************************************
+$ phase COPPER_SOLID
+$
+PARAMETER DP(CU_S,CU) 2.98150E+02  D0FCC_CU+DTFEBCC; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase DELTA (Ni3Nb)
+$
+$PARAMETER DP(DELTA,NI:NB) 2.98150E+02  D0_DELTA+DTFEBCC; 6.00000E+03   N  REF 8!
+$
+$ default
+$PARAMETER DP(DELTA,*) 2.98150E+02  D0_DELTA+DTFEBCC; 6.00000E+03   N  REF 8!
+$
+$ *************************************************************************
+$ phase DIAMOND_A4
+$
+PARAMETER DP(DIAMOND_A4,SI) 2.98150E+02          D0DIAM_SI+DTSIDIAM;   6.00000E+03   N !
+PARAMETER DP(DIAMOND_A4,TI) 2.98150E+02          D0HCP_TI+DTTIHCP;   6.00000E+03   N !
+PARAMETER DP(DIAMOND_A4,AL) 2.98150E+02          D0FCC_AL+DTALFCC;   6.00000E+03   N !
+PARAMETER DP(DIAMOND_A4,B) 2.98150E+02          D0BCC_FE+DTFEBCC;   6.00000E+03   N !
+PARAMETER DP(DIAMOND_A4,C) 2.98150E+02          D0DIAM_C+DTCDIAM;   6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase LAVES_PHASE
+$
+PARAMETER DP(LAVES_PHASE,CR:MO) 2.98150E+02  0.66*D0BCC_CR+0.34*D0BCC_MO+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,CR:NB) 2.98150E+02  0.66*D0BCC_CR+0.34*D0BCC_NB+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,CR:TI) 2.98150E+02  0.66*D0BCC_CR+0.34*D0HCP_TI+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,CR:W)  2.98150E+02  0.66*D0BCC_CR+0.34*D0BCC_W+DTFEBCC;  6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,FE:MO) 2.98150E+02  0.66*D0BCC_FE+0.34*D0BCC_MO+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,FE:NB) 2.98150E+02  0.66*D0BCC_FE+0.34*D0BCC_NB+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,FE:TI) 2.98150E+02  0.66*D0BCC_FE+0.34*D0HCP_TI+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(LAVES_PHASE,FE:W)  2.98150E+02  0.66*D0BCC_FE+0.34*D0BCC_W+DTFEBCC;  6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase MANGANESE SULFIDE
+$
+$PARAMETER DP(MN1S1,MN:S) 2.98150E+02  D0BCC_MN+DTFEBCC; 6.00000E+03   N !
+$
+$ *************************************************************************
+$ phase M2C
+$ C-sublattice doppelt nehmen
+$
+$ individual
+$
+$ default
+PARAMETER DP(M6C,*) 2.98150E+02  
+     1.2*D0_MO2C+DTFEBCC; 6.00000E+03   N REF 6!
+$
+$ *************************************************************************
+$ phase M3C2
+$ C-sublattice doppelt nehmen
+$ erstes sublattice hher wichten
+$
+PARAMETER DP(M3C2,CR:C) 2.98150E+02  D0_CR3C2+DTFEBCC; 6.00000E+03   N  REF 6!
+$
+$ default
+PARAMETER DP(M3C2,*)    2.98150E+02  D0_CR3C2+DTFEBCC; 6.00000E+03   N  REF 6!
+$
+$ *************************************************************************
+$ phase M6C
+$
+$ individual
+$
+$ default
+PARAMETER DP(M6C,*) 2.98150E+02  
+     1.2*D0_MO2C+DTFEBCC; 6.00000E+03   N REF 6!
+$
+$ *************************************************************************
+$ phase M7C3
+$ C-sublattice doppelt nehmen
+$ erstes sublattice hher wichten
+$
+PARAMETER DP(M7C3,CR:C) 2.98150E+02  1.00*D0_CR7C3+DTFEBCC; 6.00000E+03   N  REF 6!
+PARAMETER DP(M7C3,FE:C) 2.98150E+02  1.10*D0_CR7C3+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M7C3,MN:C) 2.98150E+02  1.05*D0_CR7C3+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M7C3,MO:C) 2.98150E+02  1.44*D0_CR7C3+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M7C3,W:C) 2.98150E+02   2.50*D0_CR7C3+DTFEBCC; 6.00000E+03   N !
+$
+$ default
+PARAMETER DP(M7C3,*) 2.98150E+02  D0_CR7C3+DTFEBCC; 6.00000E+03   N REF 6!
+$
+$ *************************************************************************
+$ phase M23C6
+$ C-sublattice hher nehmen
+$ erste beide sublattices etwas hher wichten
+$
+PARAMETER DP(M23C6,CR:CR:C) 2.98150E+02  
+         D0_CR23C6+DTFEBCC; 6.00000E+03   N  REF 6!
+PARAMETER DP(M23C6,CR:FE:C) 2.98150E+02  
+         0.69*D0BCC_CR+0.1*D0BCC_FE+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M23C6,FE:CR:C) 2.98150E+02  
+         0.69*D0BCC_FE+0.1*D0BCC_CR+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M23C6,FE:FE:C) 2.98150E+02  
+         0.69*D0BCC_FE+0.1*D0BCC_FE+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M23C6,FE:MO:C) 2.98150E+02  
+         0.69*D0BCC_FE+0.1*D0BCC_MO+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+$
+$ default
+PARAMETER DP(M23C6,*) 2.98150E+02  
+         D0_CR23C6+DTFEBCC; 6.00000E+03   N REF 6!
+PARAMETER DP(M23C6,*:W:C) 2.98150E+02  
+         0.69*D0BCC_FE+0.1*D0BCC_W+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+PARAMETER DP(M23C6,*:MO:C) 2.98150E+02  
+         0.69*D0BCC_FE+0.1*D0BCC_MO+0.21*D0DIAM_C+DTFEBCC; 6.00000E+03   N !
+$
+$***************************************************************************
+$ references
+
+$ 1: ThermoCalc: gefittete Daten
+$ 2: Physikalische Eigenschaften gebraeuchlicher Staehle: Rohloff, Zastera
+$ 3: Periodensystem der Elemente: VCH
+$ 4: GoodFellow Handbuch 1994/1995
+$ 5: Datensammlung Chemie in SI-Einheiten: Aylward/Findlay
+$ 6: Hartstoffe: Kieffer/Benesovsky
+$ 7: Gmelin: Handbuch der anorganischen Chemie
+$ 8: Jablonka A., Harste K. and Schwerdtfeger K, "Thermomechanical properties of iron and iron-carbon alloys: density and thermal contraction", steel res. 62 (1991) 24-33.
+$ 9: 'Thermophysical Properties of matter', vol. 12: Thermal expansion, recommended values.
+$ 10: Smithells Metals reference book, 7th ed.
+$ 11: Moyer and Ansell: "The volume expansion accompanying the martensite transformation in Iron-Carbon Alloys", Met. Trans. 6A, (1975), 1785-1791
+$ 12: Rindler: Dilatometer Messdaten fr GX12 von Tanja Lube, Leoben, 2001.
+$ 13: M.E. Fine, D. Isheim: "Origin of copper precipitation strengthening in steel revisited, Scripta Mater. 53 (2005) 115-118.
+$ 14: epk using X-G Lu, M. Selleby, B. Sundman, Assessments of molar volume and thermal expansion for selected bcc, fcc and hcp metallic elements, CALPHAD 29 (2005) 68-89.
+$ 15: B. Hallstedt, Molar volumes of Al, Li, Mg, Si, CALPHAD 31 (2007), 292-302.
+$ 16: A. Smakula, J. Kalnajs, Phys. Rev. 99 (1955), 1737-1743.
+$ 17: F.W. von Batchelder, R.F. Raechle, Phys. Rev. 105 (1957) 2109.
+$ 18: P. De Bievre, S. Valkiers, R. Gonfiantini, P.D.P. Taylor, H. Bettin, etc., IEEE Trans. Meas. 46 (1997) 592-595.
+$ 19: L.E. Fried, W.M. Howard, Explicit Gibbs free energy equation of state applied to the carbon phase diagram, Phys. Rev. B, 61, No. 13, 8734-8743.
+$ 20: K.-M. Lee, D.-K. Oh, W.-S. Choi, T. Weissgdrber, B. Kieback, Thermomechanical properties of AlN-Cu composite materials prepared by solid state processing, J. Alloy Cmpd., 434-435, 2007, 375-377.

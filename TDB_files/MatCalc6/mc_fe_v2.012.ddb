@@ -1,0 +1,1561 @@
+	
+
+$**************************************************************************
+$
+$ mc_fe_v2.012.ddb
+$
+$************RELEASE VERSION*********************************************** 
+$
+$ MatCalc mobility diffusion database for steel, created 2018-04-26
+$
+$ This database contains a selection of published 
+$ as well as newly assessed diffusion mobility data.
+$ Parameters have been assessed at TU Wien by Povoden-Karadeniz Erwin. 
+$
+$ #########################################################################
+$
+$ use with MatCalc version 5.62.0.010 or higher
+$
+$ #########################################################################
+$ 
+$ Copyright holder and editor: 
+$ Erwin Povoden-Karadeniz (erwin.povoden-karadeniz@tuwien.ac.at)
+$
+$ This database mc_fe_v2.012.ddb is made available under the 
+$ Open Database License: http://opendatacommons.org/licenses/odbl/1.0/. 
+$ Any rights in individual contents of the database are licensed under the 
+$ Database Contents License: http://opendatacommons.org/licenses/dbcl/1.0/. 
+$
+$ #########################################################################
+
+
+$**************************************************************************
+$
+$ Definition of elementary functions
+$
+$**************************************************************************
+
+$ activation energy and frequency factor for fcc Cu
+FUNCTION QCU_FCC 273.00 +204670; 6000.00  N
+Ref:10 !
+FUNCTION D0CU_FCC 273.00 +6.0E-5-4.7E-8*T+2.5e-11*T**2; 6000.00  N
+Ref:10 !
+
+$ activation energy and frequency factor for fcc Fe 
+FUNCTION QFE_FCC 273.00 +286000; 6000.00  N
+Ref:18 !
+FUNCTION D0FE_FCC 273.00 +7.0E-5; 6000.00  N
+Ref:18 !
+
+$ activation energy and frequency factor for bcc iron 
+FUNCTION QFE_BCC 273.00 +218000; 6000.00  N
+Ref:14 !
+FUNCTION D0FE_BCC 273.00 +4.6E-5; 6000.00  N
+Ref:14 !
+
+$ Diffusion mobility of H in bcc iron 
+FUNCTION QHFE 273.00 +10130; 6000.00  N
+Ref:50 !
+FUNCTION DHFE 273.00 +7.5E-8; 6000.00  N
+Ref:50 !
+
+$ Diffusion mobility of H in fcc iron 
+FUNCTION QHFEG 273.00 +50000; 6000.00  N
+Ref:pov18 !
+FUNCTION DHFEG 273.00 +7E-7; 6000.00  N
+Ref:pov18 !
+
+$##########################################################################
+$                  D I F F U S I O N     D A T A
+$##########################################################################
+
+$ define the magnetic parameters for the bcc phase
+
+DIFFUSION  MAGNETIC  BCC_A2 
+    ALPHA=0.3 
+    ALPHA2&C=1.8 
+    ALPHA2&N=0.6  
+Ref:15,16 !
+
+$ --------------------------------------------------------------------
+$ default: if no explicit parameters are given, this value is used
+$ --------------------------------------------------------------------
+
+
+$##########################################################################
+$                  PHASE:  F C C
+$##########################################################################
+
+$ ********************************************************************
+$                              AL - Aluminum
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Al in Fe.
+
+PARAMETER MQ(FCC_A1&AL,*) 273.00 -QFE_FCC+R*T*LN(5.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Al diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&AL,AL:*) 273.00 -142000+R*T*LN(1.71E-4); 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,CR:*) 273.00 -235000-82*T; 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,CU:*) 273.00 -181583.4-99.8*T; 6000.00  N
+Ref:46 !
+PARAMETER MQ(FCC_A1&AL,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(5.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&AL,NI:*) 273.00 -284000+R*T*LN(7.5E-4); 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,TI:*) 273.00 -284000-59.8*T; 6000.00  N
+Ref:20 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&AL,AL,CR:*;0) 273.00 +335000; 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,AL,CU:*;0) 273.00 -183094.3+159.01*T; 6000.00  N
+Ref:46 !
+PARAMETER MQ(FCC_A1&AL,AL,NI:*;0) 273.00 -41300-91.2*T; 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,AL,TI:*;0) 273.00 +335000; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&AL,CR,NI:*;0) 273.00 -53200; 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&AL,CU,FE:*;0) 273.00 -92388.59; 6000.00  N
+Ref:6 !
+PARAMETER MQ(FCC_A1&AL,NI,TI:*;0) 273.00 -53200; 6000.00  N
+Ref:20 !
+
+$ ********************************************************************
+$                              B - BORON
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of B in Fe.
+
+PARAMETER MQ(FCC_A1&B,*) 273.00 -110929+R*T*LN(2.6E-7); 6000.00  N
+Ref:32 !
+
+$ -------------------------------------
+$ explicit parameters for B diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&B,FE:*) 273.00 -110929+R*T*LN(2.6E-7); 6000.00  N
+Ref:32 !
+PARAMETER MQ(FCC_A1&B,NI:*) 273.00 -96287+R*T*LN(6.6E-7); 6000.00  N
+Ref:32 !
+
+$ ********************************************************************
+$                              C - CARBON
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of C in Fe.
+
+PARAMETER MQ(FCC_A1&C,*) 273.00 -147724+32.809*T
+ +R*T*LN(4.529E-7); 6000.00  N
+Ref:22 !
+
+$ -------------------------------------
+$ explicit parameters for C diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&C,CR:VA) 273.00 -150000-90*T; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE:VA) 273.00 -147724+32.809*T
+ +R*T*LN(4.529E-7); 6000.00  N
+Ref:22 !
+PARAMETER MQ(FCC_A1&C,NI:VA) 273.00 -154700-81.7*T; 6000.00  N
+Ref:13 !
+
+$removed this parameter. Very strange behavior. 
+$The original literature is certainly
+$not convincing here (Fig 12 in Ref. 13). Removed by Koze (2014-01-27)
+$PARAMETER MQ(FCC_A1&C,CR:C) 273.00 -2E6; 6000.00  N
+$Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE:C) 273.00 +72078-16.009*T
+ +R*T*LN(4.529E-7); 6000.00  N
+Ref:22 !
+PARAMETER MQ(FCC_A1&C,NI:C) 273.00 -154700-31*T; 6000.00  N
+Ref:13 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&C,CR,FE:VA;0) 273.00 -240000+170*T; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,CR,NI:VA;0) 273.00 -74000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:VA;0) 273.00 +5000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:VA;1) 273.00 +15000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:VA;2) 273.00 +1e-8; 6000.00  N
+Ref:13 !
+
+PARAMETER MQ(FCC_A1&C,CR,FE:C;0) 273.00 -240000+170*T; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,CR,NI:C;0) 273.00 -74000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:C;0) 273.00 +5000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:C;1) 273.00 +15000; 6000.00  N
+Ref:13 !
+PARAMETER MQ(FCC_A1&C,FE,NI:C;2) 273.00 +1e-8; 6000.00  N
+Ref:13 !
+
+$ ********************************************************************
+$                              CO - Cobalt
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Co in Fe.
+
+PARAMETER MQ(FCC_A1&CO,*) 273.00 -QFE_FCC+R*T*LN(0.5*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for CO diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&CO,CO:*) 273.00 -301654-70.10*T; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&CO,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(0.5*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&CO,NI:*) 273.00 -287000+R*T*LN(0.00032); 6000.00  N
+Ref:37 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&CO,CO,FE:*;0) 273.00 +305495-201.71*T; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&CO,CO,NI:*;0) 273.00 -5000; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&CO,CO,FE,NI:*;0) 273.00 -826550; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&CO,CO,FE,NI:*;1) 273.00 +319460; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&CO,CO,FE,NI:*;2) 273.00 +494820; 6000.00  N
+Ref:37 !
+
+$ ********************************************************************
+$                              CR - Chromium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Cr in Fe.
+
+PARAMETER MQ(FCC_A1&CR,*) 273.00 -286000-71.9*T; 6000.00  N
+Ref:19 !
+
+$ -------------------------------------
+$ explicit parameters for Cr diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&CR,AL:*) 273.00 -261700-3.71*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&CR,CR:*) 273.00 -235000-82.0*T; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&CR,FE:*) 273.00 -286000-71.9*T; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&CR,NI:*) 273.00 -287000-64.4*T; 6000.00  N
+Ref:19 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&CR,AL,CR:*;0) 273.00 +487000; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&CR,AL,NI:*;0) 273.00 -118000; 6000.00  N
+Ref:41 !
+PARAMETER MQ(FCC_A1&CR,CR,FE:*;0) 273.00 -105000; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&CR,CR,NI:*;0) 273.00 -68000; 6000.00  N
+Ref:41 !
+PARAMETER MQ(FCC_A1&CR,FE,NI:*;0) 273.00 +16100; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,NI:*;0) 273.00 +310000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,NI:*;1) 273.00 +320000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,NI:*;2) 273.00 +120000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&CR,FE,MN:*;0) 273.00 +150000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&CR,FE,MN:*;1) 273.00 -150000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,MN:*;0) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,MN:*;1) 273.00 +1000000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&CR,CR,FE,MN:*;2) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+
+$ ********************************************************************
+$                              CU - Copper
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Cu in Fe.
+
+PARAMETER MQ(FCC_A1&CU,*) 273.00 -QFE_FCC+R*T*LN(1.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for CU diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&CU,AL:*) 273.00 -133900+R*T*LN(4.44E-5); 6000.00  N
+Ref:24 !
+PARAMETER MQ(FCC_A1&CU,CU:*) 273.00 -QCU_FCC
+ +R*T*LN(1.0*D0CU_FCC); 6000.00  N
+Ref:10 !
+PARAMETER MQ(FCC_A1&CU,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(1.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&CU,NI:*) 273.00 -255000+R*T*LN(0.61E-4); 6000.00  N
+Ref:11 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&CU,AL,CU:*;0) 273.00 -31461.4+78.91*T; 6000.00  N
+Ref:46 !
+PARAMETER MQ(FCC_A1&CU,CU,FE:*;0) 273.00 -4930.84-24.75*T; 6000.00  N
+Ref:46 !
+
+$ ********************************************************************
+$                              FE - Iron
+$ ********************************************************************
+
+$ Default value: Fe self diffusion
+
+PARAMETER MQ(FCC_A1&FE,*) 273.00 -QFE_FCC+R*T*LN(1.0*D0FE_FCC); 6000.00  N
+Ref:18 !
+
+$ -------------------------------------
+$ explicit parameters for Fe diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&FE,AL:*) 273.00 -214000+R*T*LN(3.62E-1); 6000.00  N
+Ref:24 !
+PARAMETER MQ(FCC_A1&FE,CO:*) 273.00 -253301-97.97*T; 6000.00  N
+Ref:38 !
+PARAMETER MQ(FCC_A1&FE,CU:*) 273.00 -207421-81.91*T; 6000.00  N
+Ref:46 !
+PARAMETER MQ(FCC_A1&FE,CR:*) 273.00 -235000-82.0*T; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&FE,MN:*) 273.00 -212755.85-98.07*T; 6000.00  N
+Ref:44 !
+PARAMETER MQ(FCC_A1&FE,NI:*) 273.00 -287000-67.5*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&FE,PD:*) 273.00 -272534.28-82.4*T; 6000.00  N
+Ref:49 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&FE,AL,CU:*;0) 273.00 +214878.6; 6000.00  N
+Ref:46 !
+PARAMETER MQ(FCC_A1&FE,CO,FE:*;0) 273.00 -63300+48.68*T; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&FE,CR,FE:*;0) 273.00 +15900; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&FE,CR,NI:*;0) 273.00 -77500; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&FE,CU,FE:*;0) 273.00 -100000; 6000.00  N
+Ref:pov14 !
+PARAMETER MQ(FCC_A1&FE,CU,FE:*;1) 273.00 -125000; 6000.00  N
+Ref:pov14 !
+PARAMETER MQ(FCC_A1&FE,CU,FE:*;2) 273.00 -50000; 6000.00  N
+Ref:pov14 !
+PARAMETER MQ(FCC_A1&FE,FE,MN:*;0) 273.00 -10711.05-26.32*T; 6000.00  N
+Ref:44 !
+PARAMETER MQ(FCC_A1&FE,FE,MN:*;1) 273.00 +16312.22; 6000.00  N
+Ref:44 !
+PARAMETER MQ(FCC_A1&FE,FE,NI:*;0) 273.00 -115000+104*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&FE,FE,NI:*;1) 273.00 +78800-73.3*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&FE,FE,PD:*;0) 273.00 +58558.77+27.47*T; 6000.00  N
+Ref:49 !
+PARAMETER MQ(FCC_A1&FE,CO,FE,NI:*;0) 273.00 +8688; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&FE,CO,FE,NI:*;1) 273.00 +514100; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&FE,CO,FE,NI:*;2) 273.00 -265830; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,NI:*;0) 273.00 -740000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,NI:*;1) 273.00 -540000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,NI:*;2) 273.00 +750000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,MN:*;0) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,MN:*;1) 273.00 +1000000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&FE,CR,FE,MN:*;2) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+
+$ ********************************************************************
+$                              H - Hydrogen
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of H in Fe.
+
+PARAMETER MQ(FCC_A1&H,*) 273.00 -QHFEG
+ +R*T*LN(DHFEG); 6000.00  N
+Ref:pov18 !
+
+$ -------------------------------------
+$ explicit parameters for H diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&H,FE:VA) 273.00 -QHFEG
+ +R*T*LN(DHFEG); 6000.00  N
+Ref:pov18 !
+PARAMETER MQ(FCC_A1&H,NI:VA) 273.00 -41400
+ +R*T*LN(9.2E-7); 6000.00  N
+Ref:pov18 !
+
+$ ********************************************************************
+$                            HF - Hafnium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Hf in Fe.
+
+PARAMETER MQ(FCC_A1&HF,*) 273.00 -407278+R*T*LN(0.36); 6000.00  N
+Ref:43 !
+
+$ -------------------------------------
+$ explicit parameters for Hf diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&HF,HF:*) 273.00 -235350-123*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&HF,NI:*) 273.00 -251956-71.2*T; 6000.00  N
+Ref:20 !
+
+$ ********************************************************************
+$                            LA - Lanthanum
+$ ********************************************************************
+
+$ Assume same values as for Yttrium.
+
+PARAMETER MQ(FCC_A1&LA,*) 273.00 -350000+R*T*LN(D0FE_FCC); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for La diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                            MN - Manganese
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Mn in Fe.
+
+PARAMETER MQ(FCC_A1&MN,*) 273.00 -QFE_FCC+R*T*LN(2.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Mn diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&MN,AL:*) 273.00 -211500+R*T*LN(1.35E-2); 6000.00  N
+Ref:24 !
+PARAMETER MQ(FCC_A1&MN,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(2.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&MN,MN:*) 273.00 -212755.85-98.07*T; 6000.00  N
+Ref:44 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&MN,FE,MN:*;0) 273.00 -24655.58+25.32*T; 6000.00  N
+Ref:44 !
+PARAMETER MQ(FCC_A1&MN,FE,MN:*;1) 273.00 -32017.56; 6000.00  N
+Ref:44 !
+PARAMETER MQ(FCC_A1&MN,CR,FE:*;0) 273.00 +50000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&MN,CR,FE:*;1) 273.00 -50000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&MN,CR,FE:*;2) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&MN,CR,FE,MN:*;0) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&MN,CR,FE,MN:*;1) 273.00 +1000000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&MN,CR,FE,MN:*;2) 273.00 +1e-8; 6000.00  N
+Ref:pov13 !
+
+$ ********************************************************************
+$                            MO - Molybdenum
+$ ********************************************************************
+
+$ Default: Impurity diffusion of Mo in Fe
+
+PARAMETER MQ(FCC_A1&MO,*) 273.00 -QFE_FCC+R*T*LN(3.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Mo diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&MO,CO:*) 273.00 -256943+R*T*LN(1.2061e-5); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&MO,CR:*) 273.00 -242800+R*T*LN(2.7E-7); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&MO,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(3.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&MO,MO:*) 273.00 -254975-81.5*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&MO,NI:*) 273.00 -267585-79.5*T; 6000.00  N
+Ref:20 !
+
+$ ********************************************************************
+$                            N - Nitrogen
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of N in Fe.
+
+PARAMETER MQ(FCC_A1&N,*) 273.00 -168560+R*T*LN(0.91E-4); 6000.00  N
+Ref:11 !
+
+$ -------------------------------------
+$ explicit parameters for N diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&N,FE:*) 273.00 -168560+R*T*LN(0.91E-4); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&N,NI:*) 273.00 -95600+R*T*LN(+3e-010); 6000.00  N
+Ref:48 !
+
+$ ********************************************************************
+$                            NB - Niobium
+$ ********************************************************************
+
+$ Default value: impurity diffusion of Nb in FE
+
+PARAMETER MQ(FCC_A1&NB,*) 273.00 -QFE_FCC+R*T*LN(6.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for NB diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&NB,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(6.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&NB,NB:*) 273.00 -438400+R*T*LN(3.7E-4); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&NB,NI:*) 273.00 -215000+R*T*LN(+2e-006); 6000.00  N
+Ref:21 !
+
+$ ********************************************************************
+$                            NI - Nickel
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Ni in Fe.
+
+PARAMETER MQ(FCC_A1&NI,*) 273.00 -286000-86.0*T; 6000.00  N
+Ref:18 !
+
+$ -------------------------------------
+$ explicit parameters for Ni diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&NI,AL:*) 273.00 -145900-64.3*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,CO:*) 273.00 -315816-57.16*T; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&NI,CR:*) 273.00 -235000-82.0*T; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&NI,FE:*) 273.00 -286000-86.0*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&NI,NI:*) 273.00 -287000-69.8*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&NI,TI:*) 273.00 -287000-69.8*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,W:*) 273.00 -628250-63.5*T; 6000.00  N
+Ref:20 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&NI,AL,CR:*;0) 273.00 -211000; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,AL,NI:*;0) 273.00 -113000+65.5*T; 6000.00  N
+Ref:12 !
+PARAMETER MQ(FCC_A1&NI,AL,TI:*;0) 273.00 -211000; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,CO,NI:*;0) 273.00 +9335; 6000.00  N
+Ref:37 !
+PARAMETER MQ(FCC_A1&NI,CR,FE:*;0) 273.00 -119000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&NI,CR,NI:*;0) 273.00 -81000; 6000.00  N
+Ref:19 !
+PARAMETER MQ(FCC_A1&NI,FE,NI:*;0) 273.00 +124000-51.4*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&NI,FE,NI:*;1) 273.00 -300000+213*T; 6000.00  N
+Ref:18 !
+PARAMETER MQ(FCC_A1&NI,NI,TI:*;0) 273.00 -81000; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,NI,W:*;0) 273.00 +175736; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&NI,CO,FE,NI:*;0) 273.00 -185730; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&NI,CO,FE,NI:*;1) 273.00 -6610; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&NI,CO,FE,NI:*;2) 273.00 -38480; 6000.00  N
+Ref:39 !
+PARAMETER MQ(FCC_A1&NI,CR,FE,NI:*;0) 273.00 +1840000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&NI,CR,FE,NI:*;1) 273.00 +670000; 6000.00  N
+Ref:17 !
+PARAMETER MQ(FCC_A1&NI,CR,FE,NI:*;2) 273.00 -1120000; 6000.00  N
+Ref:17 !
+
+$ ********************************************************************
+$                              O - OXYGEN
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of O in Fe.
+
+PARAMETER MQ(FCC_A1&O,*) 273.00  -167500+R*T*LN(3.5E-4); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for O diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&O,CU:*) 273.00  -68000+R*T*LN(1.5e-6); 6000.00  N
+Ref:pov12 !
+PARAMETER MQ(FCC_A1&O,NI:*) 273.00  -260000+R*T*LN(3); 6000.00  N
+Ref:pov12 !
+
+$ ********************************************************************
+$                              P - Phosphorus
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of P in Fe.
+
+PARAMETER MQ(FCC_A1&P,*) 273.00 -QFE_FCC+R*T*LN(30*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for P diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                            PD - Palladium
+$ ********************************************************************
+
+$ Default value: assumed impurity diffusion in Fe.
+
+PARAMETER MQ(FCC_A1&PD,*) 273.00 -QFE_FCC+R*T*LN(2*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for PD diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&PD,PD:*) 273.00 -279931.89-79.51*T; 6000.00  N
+Ref:49 !
+ 
+$ interactions
+PARAMETER MQ(FCC_A1&PD,FE,PD:*;0) 273.00 -11021.81+63.55*T; 6000.00  N
+Ref:49 !
+
+$ ********************************************************************
+$                            S - Sulfur
+$ ********************************************************************
+
+$ Default value: impurity diffusion of S in FE.
+
+PARAMETER MQ(FCC_A1&S,*) 273.00 -QFE_FCC+R*T*LN(150*D0FE_FCC); 6000.00  N
+Ref:31 !
+ 
+$ -------------------------------------
+$ explicit parameters for S diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&S,CU:*) 273.00 -QCU_FCC+R*T*LN(0.0018); 6000.00  N
+Ref:33 !
+
+$ ********************************************************************
+$                            SI - Silicon
+$ ********************************************************************
+
+$ Default value: impurity diffusion of Si in Fe.
+
+PARAMETER MQ(FCC_A1&SI,*) 273.00 -QFE_FCC+R*T*LN(10.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+ 
+$ -------------------------------------
+$ explicit parameters for Si diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&SI,AL:*) 273.00 -117600+R*T*LN(1.38E-5); 6000.00  N
+Ref:24 !
+PARAMETER MQ(FCC_A1&SI,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(10.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&SI,SI:*) 273.00 -448400+R*T*LN(154E-4); 6000.00  N
+Ref:11 !
+
+$ ********************************************************************
+$                            TI - Titanium
+$ ********************************************************************
+
+$ Default value: impurity diffusion of Ti in Fe.
+
+PARAMETER MQ(FCC_A1&TI,*) 273.00 -QFE_FCC+R*T*LN(4.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Ti diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&TI,AL:*) 273.00 -260000+R*T*LN(1.12e-1); 6000.00  N
+Ref:47 !
+PARAMETER MQ(FCC_A1&TI,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(4.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&TI,NI:*) 273.00 -256900-77.4*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&TI,TI:*) 273.00 -256900+R*T*LN(8.6e-5); 6000.00  N
+Ref:41 !
+
+$ interactions
+PARAMETER MQ(FCC_A1&TI,AL,NI:*;0) 273.00 -175000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&TI,AL,TI:*;0) 273.00 +275000; 6000.00  N
+Ref:pov13 !
+PARAMETER MQ(FCC_A1&TI,NI,TI:*;0) 273.00 -68000; 6000.00  N
+Ref:20 !
+
+$ ********************************************************************
+$                            V - Vanadium
+$ ********************************************************************
+
+$ Default value: impurity diffusion of V in Fe.
+
+PARAMETER MQ(FCC_A1&V,*) 273.00 -QFE_FCC+R*T*LN(5.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for V diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&V,AL:*) 273.00 -302500+R*T*LN(1.6E0); 6000.00  N
+Ref:24 !
+PARAMETER MQ(FCC_A1&V,CR:*) 273.00 -419000+R*T*LN(381E-4); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&V,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(5.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&V,NI:*) 273.00 -278400+R*T*LN(0.87E-4); 6000.00  N
+Ref:11 !
+PARAMETER MQ(FCC_A1&V,V:*) 273.00 -334680+R*T*LN(0.288E-4); 6000.00  N
+Ref:11 !
+
+$ ********************************************************************
+$                            W - Tungsten
+$ ********************************************************************
+
+$ Default value: impurity diffusion of W in Fe.
+
+PARAMETER MQ(FCC_A1&W,*) 273.00 -QFE_FCC+R*T*LN(4.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for W diffusion
+$ -------------------------------------
+
+PARAMETER MQ(FCC_A1&W,FE:*) 273.00 -QFE_FCC
+ +R*T*LN(4.0*D0FE_FCC); 6000.00  N
+Ref:31 !
+PARAMETER MQ(FCC_A1&W,NI:*) 273.00 -282130-87.2*T; 6000.00  N
+Ref:20 !
+PARAMETER MQ(FCC_A1&W,W:*) 273.00 -311423-70.05*T; 6000.00  N
+Ref:20 !
+
+$ interaction
+PARAMETER MQ(FCC_A1&W,NI,W:*) 273.00 -97025; 6000.00  N
+Ref:20 !
+
+$ ********************************************************************
+$                            Y - Yttrium
+$ ********************************************************************
+
+$ Default value: assume same difference between impurity diffusion 
+$ of Y in Fe and self diffusion of Fe as for bcc 
+$ and higher activation energy.
+
+PARAMETER MQ(FCC_A1&Y,*) 273.00 -350000+R*T*LN(D0FE_FCC); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for Y diffusion
+$ -------------------------------------
+
+
+$##########################################################################
+$                  PHASE:  B C C
+$##########################################################################
+
+$ ********************************************************************
+$                              AL - Aluminum
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Al in bcc Fe.
+
+PARAMETER MQ(BCC_A2&AL,*) 273.00 -218000; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&AL,*) 273.00 +R*T*LN(40*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Al diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&AL,AL:*) 273.00 -215000; 6000.00  N
+Ref:23 !
+PARAMETER MF(BCC_A2&AL,AL:*) 273.00 +R*T*LN(6.5E-5); 6000.00  N
+Ref:23 !
+
+$ ********************************************************************
+$                              B - Boron
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of B in bcc Fe.
+
+PARAMETER MQ(BCC_A2&B,*) 273.00 -91000; 6000.00  N
+Ref:32 !
+PARAMETER MF(BCC_A2&B,*) 273.00 +R*T*LN(0.00000019); 6000.00  N
+Ref:32 !
+
+$ -------------------------------------
+$ explicit parameters for B diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              C - CARBON
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of C in bcc Fe.
+
+PARAMETER MQ(BCC_A2&C,*) 273.00 -63400; 6000.00  N
+Ref:15 !
+PARAMETER MF(BCC_A2&C,*) 273.00 -120*T; 6000.00  N
+Ref:15 !
+
+$ -------------------------------------
+$ explicit parameters for C diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&C,CR:*) 273.00 -110000; 6000.00  N
+Ref:15 !
+PARAMETER MF(BCC_A2&C,CR:*) 273.00 -120*T; 6000.00  N
+Ref:15 !
+
+$ ********************************************************************
+$                              CO - Cobalt
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Co in bcc Fe.
+
+PARAMETER MQ(BCC_A2&CO,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&CO,*) 273.00 +R*T*LN(0.5*D0FE_BCC); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for CO diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              CR - Chromium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Cr in bcc Fe.
+
+PARAMETER MQ(BCC_A2&CR,*) 273.00 -218000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,*) 273.00 +R*T*LN(8.5E-5); 6000.00  N
+Ref:14 !
+
+$ -------------------------------------
+$ explicit parameters for Cr diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&CR,CR:*) 273.00 -407000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR:*) 273.00 -35.6*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,MO:*) 273.00 -289338; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&CR,MO:*) 273.00 -107.8*T; 6000.00  N
+Ref:43 !
+PARAMETER MQ(BCC_A2&CR,V:*) 273.00 -270500; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&CR,V:*) 273.00 -115.26*T; 6000.00  N
+Ref:40 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&CR,CR,FE:*;0) 273.00 +361000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,FE:*;0) 273.00 -116*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,CR,FE:*;1) 273.00 +2820; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,FE:*;1) 273.00 +37.5*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,CR,NI:*;0) 273.00 +350000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,FE,NI:*;0) 273.00 +150000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,FE,NI:*;1) 273.00 +150000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,FE,NI:*;1) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,CR,FE,NI:*;1) 273.00 -2400000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,FE,NI:*;1) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&CR,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&CR,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+
+$ ********************************************************************
+$                              CU - Copper
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Cu in bcc Fe.
+
+PARAMETER MQ(BCC_A2&CU,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&CU,*) 273.00 +R*T*LN(2.0*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Cu diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&CU,CU:*) 273.00 -151800; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&CU,CU:*) 273.00 -79*T; 6000.00  N
+Ref:45 !
+$ interactions
+PARAMETER MQ(BCC_A2&CU,CU,FE:*;0) 273.00 -191623.11; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&CU,CU,FE:*;0) 273.00 +1e-8; 6000.00  N
+Ref:45 !
+
+$ ********************************************************************
+$                              FE - Iron
+$ ********************************************************************
+
+$ Default value: bcc Fe self diffusion
+
+PARAMETER MQ(BCC_A2&FE,*) 273.00 -218000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,*) 273.00 +R*T*LN(4.6E-5); 6000.00  N
+Ref:14 !
+
+$ -------------------------------------
+$ explicit parameters for Fe diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&FE,CR:*) 273.00 -407000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR:*) 273.00 -17.2*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,CU:*) 273.00 -151800; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&FE,CU:*) 273.00 -79*T; 6000.00  N
+Ref:45 !
+PARAMETER MQ(BCC_A2&FE,MO:*) 273.00 -347797; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&FE,MO:*) 273.00 -91.614*T; 6000.00  N
+Ref:43 !
+PARAMETER MQ(BCC_A2&FE,SI:*) 273.00 -67735.82; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&FE,SI:*) 273.00 -91.82*T; 6000.00  N
+Ref:45 !
+PARAMETER MQ(BCC_A2&FE,TI:*) 273.00 -132758; 6000.00  N
+Ref:42 !
+PARAMETER MF(BCC_A2&FE,TI:*) 273.00 -116.82*T; 6000.00  N
+Ref:42 !
+PARAMETER MQ(BCC_A2&FE,V:*) 273.00 -315361; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&FE,V:*) 273.00 -70.343*T; 6000.00  N
+Ref:40 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&FE,CR,FE:*;0) 273.00 +267000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,FE:*;0) 273.00 -117*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,CR,FE:*;1) 273.00 -416000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,FE:*;1) 273.00 +348*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,CR,NI:*;0) 273.00 +350000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,FE,MO:*;0) 273.00 +112767; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&FE,FE,MO:*;0) 273.00 +37.942*T; 6000.00  N
+Ref:43 !
+PARAMETER MQ(BCC_A2&FE,FE,NI:*;0) 273.00 +150000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,FE,SI:*;0) 273.00 -104880.52; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&FE,FE,SI:*;0) 273.00 +81.18*T; 6000.00  N
+Ref:45 !
+PARAMETER MQ(BCC_A2&FE,FE,TI:*;0) 273.00 -146360; 6000.00  N
+Ref:42 !
+PARAMETER MF(BCC_A2&FE,FE,TI:*;0) 273.00 +159.56*T; 6000.00  N
+Ref:42 !
+PARAMETER MQ(BCC_A2&FE,FE,TI:*;1) 273.00 +713717; 6000.00  N
+Ref:42 !
+PARAMETER MF(BCC_A2&FE,FE,TI:*;1) 273.00 -415.49*T; 6000.00  N
+Ref:42 !
+PARAMETER MQ(BCC_A2&FE,V,FE:*;0) 273.00 +112059; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&FE,V,FE:*;0) 273.00 +1e-8; 6000.00  N
+Ref:40 !
+PARAMETER MQ(BCC_A2&FE,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,CR,FE,NI:*;1) 273.00 +1400000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,FE,NI:*;1) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&FE,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&FE,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+
+$ ********************************************************************
+$                              H - Hydrogen
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of H in Fe.
+
+PARAMETER MQ(BCC_A2&H,*) 273.00 -QHFE; 6000.00  N
+Ref:50 !
+PARAMETER MF(BCC_A2&H,*) 273.00 +R*T*LN(DHFE); 6000.00  N
+Ref:50 !
+
+$ -------------------------------------
+$ explicit parameters for H diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                            HF - Hafnium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Hf in Fe.
+
+PARAMETER MQ(BCC_A2&HF,*) 273.00 -290420; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&HF,*) 273.00 +R*T*LN(1.31e-4); 6000.00  N
+Ref:43 !
+
+$ -------------------------------------
+$ explicit parameters for Hf diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              LA - Lanthanum
+$ ********************************************************************
+
+$ Default value: assume same impurity diffusion as Y in bcc Fe.
+
+PARAMETER MQ(BCC_A2&LA,*) 273.00 -265000; 6000.00  N
+Ref:pov12 !
+PARAMETER MF(BCC_A2&LA,*) 273.00 +R*T*LN(5e-6); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for LA diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              MN - Manganese
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Mn in bcc Fe.
+
+PARAMETER MQ(BCC_A2&MN,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&MN,*) 273.00 +R*T*LN(2.0*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ ********************************************************************
+$                              MO - Molybdenum
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Mo in bcc Fe.
+
+PARAMETER MQ(BCC_A2&MO,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:35 !
+PARAMETER MF(BCC_A2&MO,*) 273.00 +R*T*LN(1.5*D0FE_BCC); 6000.00  N
+Ref:35 !
+
+$ -------------------------------------
+$ explicit parameters for MO diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&MO,CR:*) 273.00 -242625; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&MO,CR:*) 273.00 -125.8*T; 6000.00  N
+Ref:43 !
+PARAMETER MQ(BCC_A2&MO,MO:*) 273.00 -491311; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&MO,MO:*) 273.00 -58.707*T; 6000.00  N
+Ref:43 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&MO,CR,FE:*;0) 273.00 +161371; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&MO,CR,FE:*;0) 273.00 +1e-8; 6000.00  N
+Ref:43 !
+
+PARAMETER MQ(BCC_A2&MO,FE,MO:*;0) 273.00 +272835; 6000.00  N
+Ref:43 !
+PARAMETER MF(BCC_A2&MO,FE,MO:*;0) 273.00 -306.487*T; 6000.00  N
+Ref:43 !
+
+$ ********************************************************************
+$                              N - Nitrogen
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of N in bcc Fe.
+
+PARAMETER MQ(BCC_A2&N,*) 273.00 -70300; 6000.00  N
+Ref:15 !
+PARAMETER MF(BCC_A2&N,*) 273.00 -122*T; 6000.00  N
+Ref:15 !
+
+$ -------------------------------------
+$ explicit parameters for N diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&N,CR:*) 273.00 -111000; 6000.00  N
+Ref:15 !
+PARAMETER MF(BCC_A2&N,CR:*) 273.00 -120*T; 6000.00  N
+Ref:15 !
+
+$ ********************************************************************
+$                              NB - Niobium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Nb in bcc Fe.
+
+PARAMETER MQ(BCC_A2&NB,*) 273.00 -QFE_BCC; 6000.00 N
+Ref:31 !
+PARAMETER MF(BCC_A2&NB,*) 273.00 +R*T*LN(2.0*D0FE_BCC); 6000.00 N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Nb diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              NI - Nickel
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Ni in bcc Fe.
+
+PARAMETER MQ(BCC_A2&NI,*) 273.00 -204000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,*) 273.00 +R*T*LN(1.8E-5); 6000.00  N
+Ref:14 !
+
+$ -------------------------------------
+$ explicit parameters for Ni diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&NI,CR:*) 273.00 -407000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR:*) 273.00 -17.2*T; 6000.00  N
+Ref:14 !
+$ interactions
+PARAMETER MQ(BCC_A2&NI,CR,FE:*;0) 273.00 +88000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR,FE:*;0) 273.00 +10*T; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&NI,CR,NI:*;0) 273.00 +350000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&NI,FE,NI:*;0) 273.00 +150000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&NI,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR,FE,NI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&NI,CR,FE,NI:*;1) 273.00 -500000; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR,FE,NI:*;1) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MQ(BCC_A2&NI,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+PARAMETER MF(BCC_A2&NI,CR,FE,NI:*;2) 273.00 +1e-8; 6000.00  N
+Ref:14 !
+
+$ ********************************************************************
+$                              O - OXYGEN
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of O in Fe.
+
+PARAMETER MQ(BCC_A2&O,*) 273.00  -167500; 6000.00  N
+Ref:pov12 !
+PARAMETER MF(BCC_A2&O,*) 273.00  273.00 +R*T*LN(3.5E-4); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for O diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&O,CR:*) 273.00  -155000; 6000.00  N
+Ref:36 !
+PARAMETER MF(BCC_A2&O,CR:*) 273.00  +R*T*LN(5e-8); 6000.00  N
+Ref:36 !
+PARAMETER MQ(BCC_A2&O,MO:*) 273.00  -130000; 6000.00  N
+Ref:36 !
+PARAMETER MF(BCC_A2&O,MO:*) 273.00  +R*T*LN(3e-6); 6000.00  N
+Ref:36 !
+PARAMETER MQ(BCC_A2&O,NB:*) 273.00  -109000; 6000.00  N
+Ref:pov12 !
+PARAMETER MF(BCC_A2&O,NB:*) 273.00  +R*T*LN(5.7e-7); 6000.00  N
+Ref:pov12 !
+PARAMETER MQ(BCC_A2&O,V:*) 273.00  -124000; 6000.00  N
+Ref:pov12 !
+PARAMETER MF(BCC_A2&O,V:*) 273.00  +R*T*LN(2.6e-6); 6000.00  N
+Ref:pov12 !
+PARAMETER MQ(BCC_A2&O,W:*) 273.00  -100500; 6000.00  N
+Ref:36 !
+PARAMETER MF(BCC_A2&O,W:*) 273.00  +R*T*LN(1.3e-8); 6000.00  N
+Ref:36 !
+
+$ ********************************************************************
+$                              P - Phosphorus
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of P in bcc Fe.
+
+PARAMETER MQ(BCC_A2&P,*) 273.00 -200000; 6000.00  N
+Ref:koz16 !
+PARAMETER MF(BCC_A2&P,*) 273.00 +R*T*LN(2.5e-5); 6000.00  N
+Ref:koz16 !
+
+$ -------------------------------------
+$ explicit parameters for P diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                            PD - Palladium
+$ ********************************************************************
+
+$ Default value: assumed impurity diffusion in Fe.
+
+PARAMETER MQ(BCC_A2&PD,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&PD,*) 273.00 +R*T*LN(1*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for PD diffusion
+$ -------------------------------------
+
+$  ********************************************************************
+$                            S - Sulfur
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of S in bcc Fe.
+
+PARAMETER MQ(BCC_A2&S,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&S,*) 273.00 +R*T*LN(40*D0FE_BCC); 6000.00  N
+Ref:31 !
+ 
+$ -------------------------------------
+$ explicit parameters for S diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              SI - Silicon
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Si in bcc Fe.
+
+PARAMETER MQ(BCC_A2&SI,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&SI,*) 273.00 +R*T*LN(7.0*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for Si diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&SI,SI:*) 273.00 -67735.82; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&SI,SI:*) 273.00 -91.82*T; 6000.00  N
+Ref:45 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&SI,FE,SI:*;0) 273.00 -387744.92; 6000.00  N
+Ref:45 !
+PARAMETER MF(BCC_A2&SI,FE,SI:*;0) 273.00 +125.7*T; 6000.00  N
+Ref:45 !
+
+$ ********************************************************************
+$                              TI - Titanium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Ti in bcc Fe.
+
+PARAMETER MQ(BCC_A2&TI,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:35 !
+PARAMETER MF(BCC_A2&TI,*) 273.00 +R*T*LN(6.0*D0FE_BCC); 6000.00  N
+Ref:35 !
+
+$ -------------------------------------
+$ explicit parameters for Ti diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&TI,TI:*) 273.00 -147686+22.28*T; 6000.00  N
+Ref:42 !
+PARAMETER MF(BCC_A2&TI,TI:*) 273.00 -151*T; 6000.00  N
+Ref:42 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&TI,FE,TI:*;0) 273.00 -250000; 6000.00  N
+Ref:pov14 !
+PARAMETER MF(BCC_A2&TI,FE,TI:*;0) 273.00 +1e-8; 6000.00  N
+Ref:pov14 !
+
+$ ********************************************************************
+$                              V - Vanadium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of V in bcc Fe.
+
+PARAMETER MQ(BCC_A2&V,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:31 !
+PARAMETER MF(BCC_A2&V,*) 273.00 +R*T*LN(3.0*D0FE_BCC); 6000.00  N
+Ref:31 !
+
+$ -------------------------------------
+$ explicit parameters for V diffusion
+$ -------------------------------------
+
+PARAMETER MQ(BCC_A2&V,CR:*) 273.00 -418826; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&V,CR:*) 273.00 -27.246*T; 6000.00  N
+Ref:40 !
+PARAMETER MQ(BCC_A2&V,V:*) 273.00 -308051; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&V,V:*) 273.00 -87.386*T; 6000.00  N
+Ref:40 !
+
+$ interactions
+PARAMETER MQ(BCC_A2&V,CR,FE:*;0) 273.00 +262769; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&V,CR,FE:*;0) 273.00 -117.559*T; 6000.00  N
+Ref:40 !
+PARAMETER MQ(BCC_A2&V,V,FE:*;0) 273.00 +74193; 6000.00  N
+Ref:40 !
+PARAMETER MF(BCC_A2&V,V,FE:*;0) 273.00 +1e-8; 6000.00  N
+Ref:40 !
+
+$ ********************************************************************
+$                              W - Tungsten
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of W in bcc Fe.
+
+PARAMETER MQ(BCC_A2&W,*) 273.00 -QFE_BCC; 6000.00  N
+Ref:35 !
+PARAMETER MF(BCC_A2&W,*) 273.00 +R*T*LN(1.0*D0FE_BCC); 6000.00  N
+Ref:35 !
+
+$ -------------------------------------
+$ explicit parameters for W diffusion
+$ -------------------------------------
+
+$ ********************************************************************
+$                              Y - Yttrium
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of Y in bcc Fe.
+
+PARAMETER MQ(BCC_A2&Y,*) 273.00 -265000; 6000.00  N
+Ref:pov12 !
+PARAMETER MF(BCC_A2&Y,*) 273.00 +R*T*LN(5e-6); 6000.00  N
+Ref:pov12 !
+
+$ -------------------------------------
+$ explicit parameters for Y diffusion
+$ -------------------------------------
+
+$##########################################################################
+$                  PHASE:  H _ B C C
+$##########################################################################
+
+$ ********************************************************************
+$                              FE - Iron
+$ ********************************************************************
+
+$ Default value: bcc Fe self diffusion
+
+PARAMETER MQ(H_BCC&FE,*) 273.00 -218000; 6000.00  N
+Ref:14 !
+PARAMETER MF(H_BCC&FE,*) 273.00 +R*T*LN(4.6E-5); 6000.00  N
+Ref:14 !
+
+$ ********************************************************************
+$                              H - Hydrogen
+$ ********************************************************************
+
+$ Default value: Impurity diffusion of H in Fe.
+
+PARAMETER MQ(H_BCC&H,*) 273.00 -QHFE; 6000.00  N
+Ref:50 !
+PARAMETER MF(H_BCC&H,*) 273.00 +R*T*LN(DHFE); 6000.00  N
+Ref:50 !
+
+$ -------------------------------------
+$ explicit parameters for H diffusion
+$ -------------------------------------
+
+$**************************************************************************
+$
+$ References
+$
+$**************************************************************************
+
+LIST_OF_REFERENCES
+
+D0001-10  E. Kozeschnik, 
+             'Assessment of diffusional mobility of Cu and Zn in alpha brass', 
+             Z. Metallkde. Vol. 91, 57-63, 2000.
+00000-11  Smithells Metals Reference Book, 
+             Seventh Edition, Butterworth-Heinemann, Oxford, 1999.  
+D0002-12  A. Engström and J. Agren, 
+             Assessment of diffusional mobilities in face-centered cubic Ni-Cr-Al alloys, 
+             Z. Metallkd. Vol. 87, No. 2, 92-97, 1996.
+00000-13  B. Jönsson, 
+             Assessment of the mobility of carbon in fcc C-Cr-Fe-Ni alloys, 
+             Z. Metallkd. Vol. 85, No. 7, 502-509, 1994. 
+D0003-14  B. Jönsson, 
+             Assessment of the mobilities of Cr, Fe and Ni in bcc Cr-Fe-Ni alloys, 
+             ISIJ Int., Vol. 35, No. 11, 1415-1421, 1995.
+00000-15  B. Jönsson, 
+             Ferromagnetic ordering and diffusion of carbon and nitrogen in bcc Cr-Fe-Ni, 
+             Z. Metallkd. Vol. 85, No. 7, 498-501, 1994.  
+00000-16  B. Jönsson, 
+             Ferromagnetic ordering and lattice diffusion-A simple model, 
+             Z. Metallkd. Vol. 83, No. 5, 349-355, 1992. 
+00000-17  B. Jönsson, 
+             Assessment of the mobilities of Cr, Fe and Ni in fcc Cr-Fe-Ni alloys, 
+             Z. Metallkd. Vol. 86, No. 10, 686-692, 1995.
+D0004-18  B. Jönsson, 
+             Mobilities in Fe-Ni alloys-Assessment of the mobilities of Fe and Ni in fcc Fe-Ni alloys, 
+             Scandinavian J. Metall. Vol. 23, 201-208, 1994.
+00000-19  B. Jönsson, 
+             Assessment of the mobilities of Cr, Fe and Ni in binary fcc Cr-Fe and Cr-Ni alloys, 
+             Scandinavian J. Metall. Vol. 24, 21-27, 1995.
+D0005-20  C.E. Campbell, W.J. Boettinger, U.R. Kattner, 
+             Development of a diffusion mobility database for Ni-base superalloys, 
+             Acta Mater., Vol. 50, 775-792, 2002.
+D0006-21  R.V. Patil and G.B. Kale, 
+             Chemical diffusion of niobium in nickel, 
+             J. Nucl. Mater., Vol 230, 57-60, 1996.    
+D0007-22  J. Agren, 
+             A revised expression for the diffusivity of carbon in binary Fe-C austenite, 
+             Scripta Metal., Vol. 20, 1507-1510, 1986.
+D0008-23  T. Helander and J. Agren, 
+             A Phenomenological Treatment of Diffusion in Al-Fe and Al-Ni alloys having B2-BCC ordered structures, 
+             Acta Mater., Vol. 47, No. 4, 1141-1152, 1999.
+D0009-24  Y. Du, Y.A. Chang, B. Huang, W. Gong, 
+             Diffusion coefficients of some solutes in fcc and liquid Al: critical evaluation and correlation, 
+             Mater. Sci. Eng., Vol. A363, 140-151, 2003.
+D0016-31  J. Fridberg, L.-E. Törndahl, M. Hillert, 
+             Diffusion in Iron, 
+             Jernkontorets Ann., Vol 153, 263-276, 1969.
+D0012-32  W. Wang, S. Zhang and X. He, Diffusion of Boron in alloys, Acta metal. mater., Vol. 43, No. 4, 1693-1699, 1995.
+D0013-33  N. Barbouth and J. Oudar, 
+             Solubility and diffusion of sulfur in metals and alloys, 
+             Memoires et etudes sci. Rev. Metal., Dec. 1989, 777-788.
+D0019-35  Y. Liu, L. Zhang, Y. Du, D. Liang, 
+             Ferromagnetic ordering and mobility end-members for impurity diffusion in bcc Fe, 
+             CALPHAD, Vol. 33, 732-736, 2009.
+00000-36  D. Bergner, Krist. Tech., Vol. 7, 651, 1972.
+D0014-37  Y.-W. Cui, M. Jiang, I. Ohnuma, K. Oikawa, R. Kainuma, K. Ishida, 
+             Computational study of atomic mobility for fcc phase of Co-Fe and Co-Ni binaries, 
+             J. Phase Equilib. Diff., Vol. 29, 2-10, 2008.
+D0017-38  M. Badia, A. Vignes, 
+             Iron, Nickel and Cobalt diffusion in transition metals of iron group, 
+             Acta Met., Vol. 17, 177-187, 1969.
+D0015-39  Y,-W- Cui, M. Jiang, I. Ohnuma, K. Oikawa, R. Kainuma, K. Ishida, 
+             Computational study of atomic mobility in Co-Fe-Ni ternary fcc alloys, 
+             J. Phase Equilib. Diff., Vol. 29, 312-321, 2008.
+D0021-40  G. Lindwall, K. Frisk, 
+             Assessment and evaluation of mobilities for diffusion in the bcc Cr-V-Fe system, 
+             J. Phase Equilib. Diffusion, Vol. 30, 323-333, 2009.
+D0020-41  N. Matan, H.M.A. Winand, P. Carter, M. Karunartne, P.D. Bogdanoff, R.C. Reed, 
+             A coupled thermodynamic/kinetic model for diffusional processes in superalloys, 
+             Acta Mater., Vol. 46, 4587-4600, 1998.
+D0024-42  L. Pandelaers, P. Wollants, 
+             An optimized diffusion database for the disordered and ordered bcc phases in the binary Fe-Ti system,
+             CALPHAD, Vol. 35, 518-522, 2011.
+00000-43  A.W. Bowen, G.M. Leak, 
+             Solute diffusion in alpha- and gamma-iron, 
+             Metal. Trans., Vol. 1, 1695-1700, 1970.
+D0025-43  G. Lindwall and K. Frisk, 
+             Assessment and evaluation of mobilities for diffusion in the bcc Cr-Mo-Fe system, 
+             J. Phase Equilib. Diffusion, Vol. 33, 375-389, 2012. 
+D0026-44  Y. Liu, L. Zhang, Y. Du, D. Yu, D. Liang, 
+             Atomic mobilities, uphill diffusion and proeutectic ferrite growth in Fe-Mn-C alloys, 
+             CALPHAD, Vol. 33, 614-623, 2009. 
+D0027-45  S. Wang, P. Zhou, W. Zhang, S. Cui, L. Zhang, M. Yin, D. Liu, H. Xu, S. Liu, Y. Du, 
+             Atomic mobility and diffusivity of bcc_A2 phase in the Fe-X (X=Cu,Si,Zn) systems, 
+             CALPHAD, Vol. 36, 127-134, 2012.
+D0028-46  C. Dai, H.H. Xu, S.Q. Wang, M. Yin, S.L. Cui, L.J. Zhang, Y. Du, F. Zheng, 
+             Interdiffusivities and atomic mobilities in fcc Cu-Al-Fe alloys, 
+             CALPHAD, Vol. 35, 556-561, 2011.
+00000-47  D. Bergner, 
+             Neue Huette, Vol. 29, 207, 1984.
+00000-48  R. Lappalainen and A. Anttila, 
+             Annealing behaviour of implanted nitrogen in bulk and evaporated Ni, 
+             Appl. Phys., Vol. A 42, 263-267, 1987.
+D0050-49  Y. Liu, J. Wang, Y. Du, L. Zhang, D. Liang, 
+             Mobilities and diffusivities in fcc Fe-X (X=Ag,Au,Cu,Pd,Pt) alloys, 
+             CALPHAD, Vol. 34, 253-262, 2010.
+00000-50  The Landolt-Börnstein Database,  
+             The diffusion of H, D, and T in solid metals, 9.4.8 Iron group metals, Ref.  83K.
+D0057-51  H. Hagi, 
+             Diffusion coefficients of hydrogen in Ni-Cu and Ni-Co alloys, 
+             Trans. Jap. Inst. Metal., Vol. 27, 233-240, 1986.
+             
+pov12     E. Povoden-Karadeniz, unpublished 2012.
+pov13     E. Povoden-Karadeniz, unpublished 2013.
+pov14     E. Povoden-Karadeniz, unpublished 2014.
+pov18     E. Povoden-Karadeniz, assessed 2018.
+koz16     E. Kozeschnik, unpublished 2016.
+
