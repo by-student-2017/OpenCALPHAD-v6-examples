@@ -62,19 +62,19 @@
 - Note: For some reason, the lines don't connect and there is a gaping hole. I have no choice but to think that this is by design. This is the same situation with Pandat.
 
 
-## Example: Cr-Fe-Mo
-1. cd ~/OpenCALPHAD-v6-examples
-2. cd Cr-Fe-Mo
-3. oc6P Cr-Fe-Mo_phase_diagram.OCM
-- steel1.TDB: C, Cr, Fe, Mo, Si, V, Vacuum
-- "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
-
-
 ## Example: Cr-Fe-Ni
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Cr-Fe-Ni
 3. oc6P Cr-Fe-Ni_phase_diagram.OCM
 - saf2507.TDB: Cr, Fe, Mn, Mo, N, Ni, Vacuum
+- "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
+
+
+## Example: Cr-Fe-Mo
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Cr-Fe-Mo
+3. oc6P Cr-Fe-Mo_phase_diagram.OCM
+- steel1.TDB: C, Cr, Fe, Mo, Si, V, Vacuum
 - "gibbs" and "fix" are just something I tried out. I don't know if it's correct or not.
 
 
@@ -112,10 +112,23 @@
 3. oc6P steel_phase_diagram.OCM
 
 
-## Example: Al-Ni (4 sublattice model)
+## Example: C-Cr-Fe (Fe-13%Cr-C)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd C-Cr-Fe
+3. oc6P map16.OCM
+
+
+## Example: Al-Ni (A 4 sublattice ordering model)
 1. cd ~/OpenCALPHAD-v6-examples
 2. cd Al-Ni
 3. oc6P Al-Ni_phase_diagram.OCM
+
+
+## Example: Al-Fe (A 4 sublattice ordering model)
+1. cd ~/OpenCALPHAD-v6-examples
+2. cd Al-Fe
+3. oc6P map17.OCM
+
 
 
 ## Example: Fe-Mo (Gibbs energy curves)
