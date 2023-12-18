@@ -58,8 +58,7 @@ axis y Temperature/K
 @$ Label some areas (x, y, fontscale, angle, recalc, legend)
 @$ text 0.3 1900 0.9 0 y ,
 @$ text n 0.05 1400 0.9  0 y ,
-title
-step magnet1 fig1
+title map magnet1 fig1
 render
 
 @$ ====================================================================

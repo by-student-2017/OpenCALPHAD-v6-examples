@@ -51,7 +51,7 @@ x(Nd)
 G(*)
 axis y Gibbs energy, G [J/mol]
 @$ scale_ranges y N -40000 40000
-title fig 1
+title step magnet1 fig1
 render
 
 @$ ====================================================================
