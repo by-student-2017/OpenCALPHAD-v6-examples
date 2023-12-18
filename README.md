@@ -191,6 +191,18 @@
 - TDB-6: https://www.oecd-nea.org/jcms/pl_22166/thermochemical-database-tdb-project
 
 
+## Widom Alloy Database
+- https://alloy.phys.cmu.edu/
+
+
+## CAMP databases (CAMP Homepage)
+- https://databases.fysik.dtu.dk/
+
+
+## 2NN MEAM Interatomc Potential
+- https://cmse.postech.ac.kr/home_2nnmeam
+
+
 ## MatCalc Open Databases
 - Al-base
 ```
@@ -223,6 +235,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 - If you only need ternary phase diagrams, pycalphad is recommended. It is very unfortunate that in the current state of development, it is not possible to draw a ternary system phase diagram by fixing other elements such as a quaternary system.
 - I'm not particularly confident about "heat capacity". Just tried it.
+- Development of a prototype thermodynamic database for Nd-Fe-B permanent magnets. T.Abe, et al., STAM, 22, (2021), 557-570. doi.org/10.1080/14686996.2021.1936627
 
 
 Acknowledgment
