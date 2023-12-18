@@ -1,0 +1,294 @@
+$ BFEND
+$
+$ TDB-file for the thermodynamic assessment of the B-Fe system
+$
+$------------------------------------------------------------------------------
+$ 2012.05.31
+$ 
+$TDB file created by K.Hashimoto, T.Abe and Y.Sawada,
+$
+$ Particle Simulation and Thermodynamics Group, National Institute for 
+$ Materials Science. 1-2-1 Sengen, Tsukuba, Ibaraki 305-0047, Japan
+$ e-mail: abe.taichi@nims.go.jp
+$ Copyright (C) NIMS 2012
+$
+$
+$ PARAMETERS ARE TAKEN FROM 
+$
+$ [1995Hal] Thermodynamic assessment of the Fe-Nd-B phase diagram,
+$  B.Hallemans, P.Wollants, J.R.Roos, J.Phase Equilib., 16 (1995) 137-149.
+$ [1994Hal1] Thermodynamic reassessment and calculation of the Fe-B phase
+$  diagram, B.Hallemans, J.R.Roos, Z.Metallkd., 85 (1994) 675-682.
+$ [1994Hal2] Thermodynamic reassessment of the Fe-B system and calculation of
+$  the Fe-Nd and Nd-B phase diagram, B.Hallemans, P.Bellen, P.Wollants,
+$  J.R.Roos,  presented at Calphad ⅩⅩⅢ, Madison, U.S.A., June 12-17, 1994.
+
+$------------------------------------------------------------------------------
+ ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT B    RHOMBO                    1.0810E+01  1.2220E+03  5.9000E+00!
+ ELEMENT FE   BCC_A2                    5.5847E+01  4.4890E+03  2.7280E+01!
+ ELEMENT ND   DOUBLE_HCP(ABAC)          1.4424E+02  0.0000E+00  0.0000E+00!
+
+$------------------------------------------------------------------------------
+ FUNCTION GHSERBB  298.15  -7735.284+107.111864*T-15.6641*T*LN(T)
+    -.006864515*T**2+6.18878E-07*T**3+370843*T**(-1);                  1100 Y
+    -16649.474+184.801744*T-26.6047*T*LN(T)-7.9809E-04*T**2-2.556E-08*T**3
+    +1748270*T**(-1);                                                  2348 Y
+    -36667.582+231.336244*T-31.5957527*T*LN(T)-.00159488*T**2+1.34719E-07*T**3
+    +11205883*T**(-1);                                                 3000 Y
+    -21530.653+222.396264*T-31.4*T*LN(T);                              6000 N !
+ FUNCTION GBBLIQ   298.15  +40723.275+86.843839*T-15.6641*T*LN(T)
+    -.006864515*T**2+6.18878E-07*T**3+370843*T**(-1);                   500 Y
+    +41119.703+82.101722*T-14.9827763*T*LN(T)-.007095669*T**2+5.07347E-07*T**3
+    +335484*T**(-1);                                                   2348 Y
+    +28842.012+200.94731*T-31.4*T*LN(T);                               6000 N !
+ FUNCTION GBBBCC   298.15  +50208-13.478*T+GHSERBB#;             6000 N ! 
+ FUNCTION GBBFCC   298.15  +43514-12.217*T+GHSERBB#;             6000 N ! 
+
+ FUNCTION GHSERFE 298.15  +1225.7+124.134*T-23.5143*T*LN(T)-.00439752*T**2
+     -5.89269E-08*T**3+77358.5*T**(-1);                                1811 Y
+     -25383.581+299.31255*T-46*T*LN(T)+2.2960305E+31*T**(-9);          6000 N !
+ FUNCTION GFEFCC  298.15  -1462.4+8.282*T-1.15*T*LN(T)+6.4E-04*T**2+GHSERFE#;
+                                                                       1811 Y
+      -1713.815+.94001*T+4.925095E+30*T**(-9)+GHSERFE#;                6000 N !
+ FUNCTION GFELIQ   298.15
+    +13265.87+117.57557*T-23.5143*T*LN(T)-4.39752E-3*T**2-0.058927E-6*T**3
+    +77359*T**(-1)-367.516E-23*T**7;                                   1811 Y
+    -10838.83+291.302*T-46*T*LN(T);                                    6000 N !
+ FUNCTION GHSERND   298.15  
+    -8402.93+111.10239*T-27.0858*T*LN(T)
+    +5.56125E-04*T**2-2.6923E-06*T**3+34887*T**(-1);                    900 Y
+    -6984.083+83.662617*T-22.7536*T*LN(T)-.00420402*T**2-1.802E-06*T**3;  
+                                                                       1128 Y
+    -225610.846+1673.04075*T-238.182873*T*LN(T)+.078615997*T**2
+    -6.048207E-06*T**3+38810350*T**(-1);                               1800 N !
+ FUNCTION GNDLIQ    298.15
+    +5350.01-86.593963*T+5.357301*T*LN(T)-.046955463*T**2+6.860782E-06*T**3
+    -374380*T**(-1);                                                   1128 Y
+    -16335.232+268.625903*T-48.7854*T*LN(T);                           1800 N !
+ FUNCTION GNDBCC    298.15
+    -6965.635+110.556109*T-27.0858*T*LN(T)+5.56125E-04*T**2
+    -2.6923E-06*T**3+34887*T**(-1);                                     400 Y
+    +7312.2-153.033976*T+14.9956777*T*LN(T)-.050479*T**2+7.287217E-06*T**3
+    -831810*T**(-1);                                                   1128 Y
+    -18030.266+239.677322*T-44.5596*T*LN(T);                           1289 Y
+    +334513.017-2363.9199*T+311.409193*T*LN(T)-.156030778*T**2
+    +1.2408421E-05*T**3-64319604*T**(-1);                              1800 N !
+ FUNCTION UN_ASS     298.15  0.0;                                       300 N !
+ 
+$------------------------------------------------------------------------------
+ TYPE_DEFINITION % SEQ *!
+ DEFINE_SYSTEM_DEFAULT ELEMENT 2 !
+ DEFAULT_COMMAND DEF_SYS_ELEMENT VA !
+
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR LIQUID PHASE
+$------------------------------------------------------------------------------
+ PHASE LIQUID:L %  1  1.0  !
+  CONSTITUENT LIQUID:L :B,FE,ND :  !
+  PARAMETER G(LIQUID,B;0)    298.15  +GBBLIQ#;                         6000 N !
+  PARAMETER G(LIQUID,FE;0)   298.15  +GFELIQ#;                         6000 N !
+  PARAMETER G(LIQUID,ND;0)   298.15  +GNDLIQ#;                         1800 N !
+  PARAMETER G(LIQUID,FE,ND;0) 298.15  +3221;                   6000 N ! 
+  PARAMETER G(LIQUID,FE,ND;1) 298.15  +6216;                   6000 N ! 
+  PARAMETER G(LIQUID,FE,ND;2) 298.15  +4826;                   6000 N ! 
+  PARAMETER G(LIQUID,B,FE;0) 298.15  -133438+33.95*T;          6000 N ! 
+  PARAMETER G(LIQUID,B,FE;1) 298.15  +7771;                    6000 N ! 
+  PARAMETER G(LIQUID,B,FE;2) 298.15  +29739;                   6000 N ! 
+  PARAMETER G(LIQUID,B,ND;0) 298.15  -123735+42.87*T;                  6000 N !
+  PARAMETER G(LIQUID,B,ND;1) 298.15  -41869;                           6000 N !
+  PARAMETER G(LIQUID,B,FE,ND;0) 298.15  +0;                            6000 N !
+ 
+$------------------------------------------------------------------------------
+$ FUNCTIONS FOR BCC_A2 PHASE
+$------------------------------------------------------------------------------
+ TYPE_DEFINITION ) GES A_P_D BCC_A2 MAGNETIC  -1.0    4.00000E-01 !
+ PHASE BCC_A2  %)  2 1   3 !
+  CONSTITUENT BCC_A2  :B,FE,ND : VA :  !
+  PARAMETER G(BCC_A2,B:VA;0)       298.15  +GBBBCC#;                   6000 N !
+  PARAMETER G(BCC_A2,FE:VA;0)      298.15  +GHSERFE#;                  6000 N !
+  PARAMETER G(BCC_A2,ND:VA;0)      298.15  +GNDBCC#;                   1800 N !
+  PARAMETER TC(BCC_A2,FE:VA;0)     298.15  +1043;              6000 N ! 
+  PARAMETER BMAGN(BCC_A2,FE:VA;0)  298.15  +2.22;              6000 N ! 
+  PARAMETER G(BCC_A2,B,FE:VA;0)    298.15  -47920+42.09*T;     6000 N ! 
+  PARAMETER G(BCC_A2,FE,ND:VA;0)   298.15  +50562-4.970*T;     6000 N ! 
+  PARAMETER G(BCC_A2,FE,ND:VA;1)   298.15  -38667+19.10*T;     6000 N ! 
+  PARAMETER G(BCC_A2,B,FE,ND:VA;0) 298.15  +0;                         6000 N !
+ 
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR FCC_A1 PHASE
+$------------------------------------------------------------------------------
+ TYPE_DEFINITION ' GES A_P_D FCC_A1 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FCC_A1  %'  2 1   1 !
+  CONSTITUENT FCC_A1  :B,FE,ND : VA :  !
+  PARAMETER G(FCC_A1,B:VA;0)       298.15  +GBBFCC#;                   6000 N !
+  PARAMETER G(FCC_A1,FE:VA;0)      298.15  +GFEFCC#;                   6000 N !
+  PARAMETER G(FCC_A1,ND:VA;0)      298.15  +GHSERND#+5000;             1800 N !
+  PARAMETER TC(FCC_A1,FE:VA;0)     298.15  -201;               6000 N ! 
+  PARAMETER BMAGN(FCC_A1,FE:VA;0)  298.15  -2.1;               6000 N ! 
+  PARAMETER G(FCC_A1,B,FE:VA;0)    298.15  -62952+49.90*T;     6000 N ! 
+  PARAMETER G(FCC_A1,FE,ND:VA;0)   298.15  +35356-2.962*T;     6000 N ! 
+ 
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR RHOMBO_B PHASE
+$------------------------------------------------------------------------------
+ PHASE RHOMB_B  %  1  1.0  !
+  CONSTITUENT RHOMB_B  :B :  !
+  PARAMETER G(RHOMB_B,B;0)  298.15  +GHSERBB#;                         6000 N !
+  
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR DHCP
+$------------------------------------------------------------------------------
+ PHASE DHCP  %  1  1.0  !
+    CONSTITUENT DHCP  :ND:  !
+   PARAMETER G(DHCP,ND;0)        298.15  +GHSERND#;                    1800 N !
+  
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR STOICHIOMETRIC COMPOUNDS(1mol)
+$------------------------------------------------------------------------------
+ PHASE FEB  %  2 0.5   0.5 !
+  CONSTITUENT FEB  :FE : B :  !
+  PARAMETER G(FEB,FE:B;0)  298.15 
+      +0.5*GHSERFE#+0.5*GHSERBB#-35287+5.992*T;                6000 N ! 
+
+ PHASE FE2B  %  2 0.6667  0.3333 !
+  CONSTITUENT FE2B  :FE : B :  !
+  PARAMETER G(FE2B,FE:B;0)  298.15 
+      +0.6667*GHSERFE#+0.3333*GHSERBB#-26261+3.466*T;          6000 N ! 
+
+ TYPE_DEFINITION & GES A_P_D FE17ND2 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE17ND2  %&  2 0.8947   0.1053 !
+    CONSTITUENT FE17ND2  :FE : ND :  !
+   PARAMETER TC(FE17ND2,FE:ND;0)     298.15  +327.15;          6000 N ! 
+   PARAMETER BMAGN(FE17ND2,FE:ND;0)  298.15  +2.3;             6000 N ! 
+   PARAMETER G(FE17ND2,FE:ND;0)      298.15
+   -7385+3.600*T+0.8947*GHSERFE#+0.1053*GHSERND#;              6000 N ! 
+   
+ TYPE_DEFINITION " GES A_P_D FE17ND5 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE17ND5  %"  2 0.7727  0.2273 !
+    CONSTITUENT FE17ND5  :FE :ND :  !
+   PARAMETER TC(FE17ND5,FE:ND;0)     298.15  +503.15;          6000 N ! 
+   PARAMETER BMAGN(FE17ND5,FE:ND;0)  298.15  +2.3;             6000 N ! 
+   PARAMETER G(FE17ND5,FE:ND;0)  298.15
+    -6175+2.698*T+0.7727*GHSERFE#+0.2273*GHSERND#;             6000 N ! 
+    
+ PHASE ND2B5  %  2   0.7143  0.2857 !
+  CONSTITUENT ND2B5  :B : ND :  !
+  PARAMETER G(ND2B5,B:ND;0)  298.15 
+     -63259+14.19*T+0.2857*GHSERND#+0.7143*GHSERBB#;                   6000 N !
+
+ PHASE NDB4  %  2   0.8  0.2 !
+  CONSTITUENT NDB4  :B : ND :  !
+  PARAMETER G(NDB4,B:ND;0)  298.15 
+     -71066+16.62*T+0.2*GHSERND#+0.8*GHSERBB#;                         6000 N !
+
+ PHASE NDB6  %  2   0.8571  0.1429 !
+  CONSTITUENT NDB6  :B : ND :  !
+  PARAMETER G(NDB6,B:ND;0)  298.15 
+     -50910+8.978*T+0.1429*GHSERND#+0.8571*GHSERBB#;                   6000 N !
+
+ PHASE NDB66  %  2   0.9851  0.0149 !
+  CONSTITUENT NDB66  :B : ND :  !
+  PARAMETER G(NDB66,B:ND;0)  298.15 
+     -7226+1.133*T+0.0149*GHSERND#+0.9851*GHSERBB#;                    6000 N !
+
+ TYPE_DEFINITION ( GES A_P_D FE14ND2B MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE14ND2B  %(  3  0.0588  0.8235  0.1177 !
+    CONSTITUENT FE14ND2B  :B : FE : ND :  !
+   PARAMETER TC(FE14ND2B,B:FE:ND;0)     298.15  +586.15;               6000 N !
+   PARAMETER BMAGN(FE14ND2B,B:FE:ND;0)  298.15  +2.4;                  6000 N !
+   PARAMETER G(FE14ND2B,B:FE:ND;0)      298.15
+   -11312+2.813*T+0.0588*GHSERBB#+0.8235*GHSERFE#+0.1177*GHSERND#;     6000 N !
+
+ TYPE_DEFINITION A  GES A_P_D FE4NDB4 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE4NDB4  %A  3 0.4391  0.4391  0.1218 !
+    CONSTITUENT FE4NDB4  :B : FE : ND :  !
+   PARAMETER TC(FE4NDB4,B:FE:ND;0)     298.15  +10.15;                 6000 N !
+   PARAMETER BMAGN(FE4NDB4,B:FE:ND;0)  298.15  +0.2;                   6000 N !
+   PARAMETER G(FE4NDB4,B:FE:ND;0)      298.15
+   -43929+9.106*T+0.4391*GHSERBB#+0.4391*GHSERFE#+0.1218*GHSERND#;     6000 N !
+
+ TYPE_DEFINITION ~  GES A_P_D FE2ND5B6 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE2ND5B6  %~  3  0.4615  0.1539  0.3846 !
+    CONSTITUENT FE2ND5B6  :B : FE : ND :  !
+   PARAMETER TC(FE2ND5B6,B:FE:ND;0)     298.15  +64.15;                6000 N !
+   PARAMETER BMAGN(FE2ND5B6,B:FE:ND;0)  298.15  +0.5;                  6000 N !
+   PARAMETER G(FE2ND5B6,B:FE:ND;0)      298.15
+   -42341+7.572*T+0.4615*GHSERBB#+0.1539*GHSERFE#+0.3846*GHSERND#;     6000 N !
+
+$------------------------------------------------------------------------------
+$ PARAMETERS FOR STOICHIOMETRIC COMPOUNDS
+$------------------------------------------------------------------------------
+$ PHASE FEB  %  2  1   1 !
+$  CONSTITUENT FEB  :FE : B :  !
+$  PARAMETER G(FEB,FE:B;0)  298.15 
+$      -70574+11.984*T+GHSERFE#+GHSERBB#;                      6000 N ! 
+
+$ PHASE FE2B  %  2 2   1 !
+$  CONSTITUENT FE2B  :FE : B :  !
+$  PARAMETER G(FE2B,FE:B;0)  298.15 
+$      -78783+10.398*T+2*GHSERFE#+GHSERBB#;                    6000 N ! 
+
+$ TYPE_DEFINITION & GES A_P_D FE17ND2 MAGNETIC  -3.0    2.80000E-01 !
+$ PHASE FE17ND2  %&  2  17   2 !
+$    CONSTITUENT FE17ND2  :FE : ND :  !
+$   PARAMETER TC(FE17ND2,FE:ND;0)     298.15  +327.15;         6000 N ! 
+$   PARAMETER BMAGN(FE17ND2,FE:ND;0)  298.15  +2.3;            6000 N ! 
+$   PARAMETER G(FE17ND2,FE:ND;0)      298.15
+$   -140315+68.4*T+17*GHSERFE#+2*GHSERND#;                     6000 N ! 
+   
+$ TYPE_DEFINITION " GES A_P_D FE17ND5 MAGNETIC  -3.0    2.80000E-01 !
+$ PHASE FE17ND5  %"  2  17   5 !
+$    CONSTITUENT FE17ND5  :FE :ND :  !
+$   PARAMETER TC(FE17ND5,FE:ND;0)     298.15  +503.15;         6000 N ! 
+$   PARAMETER BMAGN(FE17ND5,FE:ND;0)  298.15  +2.3;            6000 N ! 
+$   PARAMETER G(FE17ND5,FE:ND;0)  298.15
+$    -135850+59.356*T+17*GHSERFE#+5*GHSERND#;                  6000 N ! 
+    
+$ PHASE ND2B5  %  2   5   2 !
+$  CONSTITUENT ND2B5  :B : ND :  !
+$  PARAMETER G(ND2B5,B:ND;0)  298.15 
+$     -442813+99.33*T+2*GHSERND#+5*GHSERBB#;                           6000 N !
+
+$ PHASE NDB4  %  2   4   1 !
+$  CONSTITUENT NDB4  :B : ND :  !
+$  PARAMETER G(NDB4,B:ND;0)  298.15 
+$     -355330+83.1*T+GHSERND#+4*GHSERBB#;                              6000 N !
+
+$ PHASE NDB6  %  2   6   1 !
+$  CONSTITUENT NDB6  :B : ND :  !
+$  PARAMETER G(NDB6,B:ND;0)  298.15 
+$     -356370+62.846*T+GHSERND#+6*GHSERBB#;                            6000 N !
+
+$ PHASE NDB66  %  2   66   1 !
+$  CONSTITUENT NDB66  :B : ND :  !
+$  PARAMETER G(NDB66,B:ND;0)  298.15 
+$     -484142+75.911*T+GHSERND#+66*GHSERBB#;                           6000 N !
+
+$ TYPE_DEFINITION ( GES A_P_D FE14ND2B MAGNETIC  -3.0    2.80000E-01 !
+$ PHASE FE14ND2B  %(  3  1   14   2 !
+$    CONSTITUENT FE14ND2B  :B : FE : ND :  !
+$   PARAMETER TC(FE14ND2B,B:FE:ND;0)     298.15  +586.15;              6000 N !
+$   PARAMETER BMAGN(FE14ND2B,B:FE:ND;0)  298.15  +2.4;                 6000 N !
+$   PARAMETER G(FE14ND2B,B:FE:ND;0)      298.15
+$   -192304+47.821*T+GHSERBB#+14*GHSERFE#+2*GHSERND#;                  6000 N !
+
+$ TYPE_DEFINITION #  GES A_P_D FE4NDB4 MAGNETIC  -3.0    2.80000E-01 !
+$ PHASE FE4NDB4  %#  3  4   4   1.11 !
+$    CONSTITUENT FE4NDB4  :B : FE : ND :  !
+$   PARAMETER TC(FE4NDB4,B:FE:ND;0)     298.15  +536.15;               6000 N !
+$   PARAMETER BMAGN(FE4NDB4,B:FE:ND;0)  298.15  +0.2;                  6000 N !
+$   PARAMETER G(FE4NDB4,B:FE:ND;0)      298.15
+$   -400193.19+82.956*T+4*GHSERBB#+4*GHSERFE#+1.11*GHSERND#;           6000 N !
+
+$ TYPE_DEFINITION ~  GES A_P_D FE2ND5B6 MAGNETIC  -3.0    2.80000E-01 !
+$ PHASE FE2ND5B6  %~  3  6   2   5 !
+$    CONSTITUENT FE2ND5B6  :B : FE : ND :  !
+$   PARAMETER TC(FE2ND5B6,B:FE:ND;0)     298.15  +482.15;              6000 N !
+$   PARAMETER BMAGN(FE2ND5B6,B:FE:ND;0)  298.15  +0.5;                 6000 N !
+$   PARAMETER G(FE2ND5B6,B:FE:ND;0)      298.15
+$   -940433+98.436*T+6*GHSERBB#+2*GHSERFE#+5*GHSERND#;                 6000 N !
+
+$------------------------------------------------------------------ END OF LINE
+ 
