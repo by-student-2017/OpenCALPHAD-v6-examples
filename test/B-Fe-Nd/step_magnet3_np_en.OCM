@@ -10,7 +10,7 @@ set echo
 @$ ====================================================================
 @$ read tdb bfend_hal_en
 read tdb Nd-mag-STAM_en
-B Fe Nd 
+B Fe Nd
 
 @$ ====================================================================
 @$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
@@ -22,35 +22,28 @@ set condition  t=300  p=1e5  n=1  x(Nd)=0.15 ,  x(B)=0.08
 @$ ====================================================================
 calculate equilibrium
 
-
-@$ ====================================================================
-@$ Give the criterion for Gibbs free energy at output. 
-@$ ====================================================================
-set reference Fe BCC ,,,,,
-set reference  B BCC ,,,,,
-set reference Nd BCC ,,,,,
-
 @$ ====================================================================
 @$ x-axis definition
-@$ Here, the molar fraction of Nd is set from 0 to 1.
 @$ ====================================================================
-set axis 1 x(Nd) 0 1
+set axis 1  t  300  1600  10
 
 @$ ====================================================================
 @$ step calculation
 @$ separate: Calculate the thermodynamic quantities of each phase
 @$ (not an equilibrium calculation)
 @$ ====================================================================
-step separate
+step
 
 @$ ====================================================================
 @$ Plot the results (x is mole fraction, y is Gibbs free energy)
+@$ Q(*) = Stability of phase
+@$ BP(*) = Mass of phase
+@$ NP(*) = Moles of phase
 @$ ====================================================================
-plot
-x(Nd)
-G(*)
-axis y Gibbs energy, G [J/mol]
-@$ scale_ranges y N -40000 40000
+@$ plot t Q(*)
+@$ plot t BP(*)
+plot t NP(*)
+axis x Temperature/K
 title step magnet1 fig1
 render
 
@@ -59,7 +52,7 @@ render
 @$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 @$ ====================================================================
 plot ,,
-graph 3 gibbs-free-energy Y
+graph 3 moles-of-phase Y
 
 @$ ====================================================================
 @$ If you do not write this, you will get an error
