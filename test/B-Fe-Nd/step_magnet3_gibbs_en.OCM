@@ -1,0 +1,67 @@
+@$ ====================================================================
+@$ R-Fe-Nb system
+@$ ====================================================================
+new Y
+set echo
+
+@$ ====================================================================
+@$ Read TDB file Nd-mag-STAM
+@$ (TDB-file for the Al-B-Co-Cu-Dy-Fe-Ga-Nd system)
+@$ ====================================================================
+@$ read tdb bfend_hal_en
+read tdb Nd-mag-STAM_en
+B Fe Nd 
+
+@$ ====================================================================
+@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+@$ ====================================================================
+set condition  t=300  p=1e5  n=1  x(Nd)=0.15 ,  x(B)=0.08
+
+@$ ====================================================================
+@$ one point calculation (Fix t, p, n and x)
+@$ ====================================================================
+calculate equilibrium
+
+
+@$ ====================================================================
+@$ Give the criterion for Gibbs free energy at output. 
+@$ ====================================================================
+set reference Fe BCC ,,,,,
+set reference  B BCC ,,,,,
+set reference Nd BCC ,,,,,
+
+@$ ====================================================================
+@$ x-axis definition
+@$ Here, the molar fraction of C is set from 0 to 1.
+@$ ====================================================================
+set axis 1 x(Nd) 0 1
+
+@$ ====================================================================
+@$ step calculation
+@$ separate: Calculate the thermodynamic quantities of each phase
+@$ (not an equilibrium calculation)
+@$ ====================================================================
+step separate
+
+@$ ====================================================================
+@$ Plot the results (x is mole fraction, y is Gibbs free energy)
+@$ ====================================================================
+plot
+x(Nd)
+G(*)
+axis y Gibbs energy, G [J/mol]
+@$ scale_ranges y N -40000 40000
+title fig 1
+render
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+graph 3 gibbs-free-energy Y
+
+@$ ====================================================================
+@$ If you do not write this, you will get an error
+set interactive
+@$ ====================================================================
