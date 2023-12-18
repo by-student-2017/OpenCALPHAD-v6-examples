@@ -220,6 +220,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - If the crystal structure is clear from the above calculation, use Akai-KKR to perform element substitution and calculate the formation energy. The formation energy obtained with Akai-KKR should be used as a reference only, as the structure may be retained even if it is somewhat energetically disadvantageous due to effects such as entropy.
 - VASP (QE, OpenMX, Siesta or ...) etc. can take into account the displacement of atomic positions, but because the calculation cost is high, this is done after checking the element substitution situation with Akai-KKR. If you can create an appropriate potential for molecular dynamics, it is best to use it to optimize the structure and finally confirm it using VASP (QE, OpenMX, Siesta or ...), etc.
 - e.g., (B, Al, Ga)-(Fe, Co, Cu)-(Nd, Dy) system
+- It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 
 
 Acknowledgment
