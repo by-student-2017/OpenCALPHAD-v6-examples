@@ -1,18 +1,19 @@
 @$ ====================================================================
-@$ Calculating the isothermal section at 1200 K for Cr-Fe-Ni
+@$ Calculating the isothermal section at 1200 K for Al-Mg-Zn
 @$ ====================================================================
 set echo
 
 @$ ====================================================================
-@$ Read TDB file
+@$ Read TDB file 
 @$ ====================================================================
-read tdb case
-Cr Fe Ni
+@$ read tdb ./Qiu_2015_en.TDB
+read tdb ./modified_almgzn_hay_oc6.tdb
+Al Mg Zn
 
 @$ ====================================================================
 @$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
 @$ ====================================================================
-set condition t=1200 p=1e5 n=1 x(Cr)=0.45 x(Ni)=0.5
+set condition t=608 p=1e5 n=1 x(Mg)=0.4 x(Zn)=0.3
 
 @$ ====================================================================
 @$ one point calculation (Fix t, p, n and x)
@@ -22,12 +23,12 @@ calculate equilibrium
 @$ ====================================================================
 @$ Axis definition (x-axis: mole fraction)
 @$ ====================================================================
-set axis 1 x(Cr) 0 1 ,,,,
+set axis 1 x(Mg) 0 1 ,,,,
 
 @$ ====================================================================
 @$ Axis definition (y-axis: mole fraction)
 @$ ====================================================================
-set axis 2 x(Ni) 0 1 ,,,,
+set axis 2 x(Zn) 0 1 ,,,,
 
 @$ ====================================================================
 @$ Phase diagram calculation
@@ -35,23 +36,40 @@ set axis 2 x(Ni) 0 1 ,,,,
 map
 
 @$ ====================================================================
-@$ The graphics for this kind of diagram is not fully developed 
+@$ Sometimes a part on the Mg rich side missing, add a new start point
+@$ modified_almgzn_hay_oc6.tdb case
+@$ ====================================================================
+set condition t=608 p=1e5 n=1 x(Mg)=0.7 x(Zn)=0.2
+calculate equilibrium
+map n
+
+@$ set condition t=608 p=1e5 n=1 x(Mg)=0.2 x(Zn)=0.2
+@$ calculate equilibrium
+@$ map n
+
+@$ set condition t=608 p=1e5 n=1 x(Mg)=0.4 x(Zn)=0.1
+@$ calculate equilibrium
+@$ map n
+
+@$ set condition t=608 p=1e5 n=1 x(Mg)=0.45 x(Zn)=0.15
+@$ calculate equilibrium
+@$ map n
+
+@$ ====================================================================
+@$ The graphics for this kind of diagram is not fully developed
+@$ Usually some parts are missing or have spurious tei-line
+@$ Mapping is still to be improved with experience
 @$ ====================================================================
 @$ plot as Gibbs triangle with tie-lines
 @$ ====================================================================
 plot ,,
-@$ Legend settings
-text 0.47 0.07 0.8 0 n {/Symbol s}
-text n 0.60 0.02 0.8 0 y ,
-text n 0.20 0.50 0.8 0 y ,
-extra tie_line 2
 extra gibbs Y
-text n 0.51 0.25 0.8 -48 y ,
 extra tie_line 3
 @$ Also set the color of the monovariants to red = FF0000
 extra color FF0000
-title map10 fig 1
-extra lower Fe
+title map18 fig 1
+@$ Set a text in the lower left corner
+extra lower Al
 
 @$ ====================================================================
 @$ PDF output settings
@@ -60,10 +78,10 @@ extra lower Fe
 plot ,,
 @$ Also set the color of green = a0ffa0
 @$ extra color a0ffa0
-title map10 fig 2
+title map18 fig 2
 graph 3 ternary-phase-diagram Y
 
-@$ ====================================================================
+@$ =================================================================
 @$ If you do not write this, you will get an error
 set interactive
-@$ ====================================================================
+@$ =================================================================
