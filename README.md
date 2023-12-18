@@ -166,6 +166,8 @@
 5. oc6P map10.OCM
 - Important files: step2.OCM and step6.OCM
 - Important files: map10.OCM and map14.OCM
+- Youtube: https://www.youtube.com/watch?v=mIRvrIzSj7I
+- Youtube (GUI): https://www.youtube.com/watch?v=OsO-DiCGJ00
 
 
 ## TDB files
