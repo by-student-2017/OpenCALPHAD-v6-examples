@@ -210,6 +210,11 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 ```
 
 
+## UTF-8
+1. sudo apt -y install nkf
+2. nkf -w bfend_hal.tdb > bfend_hal_en.tdb
+
+
 Acknowledgment
 =======
 - This project (modified version) is/was partially supported by the following :
