@@ -50,10 +50,16 @@ set axis 2  t  300  1600  10
 @$ ====================================================================
 map
 
+enter symbol
+cp
+hm.t;
+
+
 @$ ====================================================================
 @$ plot the phase amount
 @$ ====================================================================
-Plot x(Nd) t
+@$ Plot x(Nd) t
+Plot x(Nd) cp
 @$ Label some areas (x, y, fontscale, angle, recalc, legend)
 @$ text 0.3 1900 0.9 0 y ,
 @$ text n 0.05 1400 0.9  0 y ,
@@ -65,7 +71,7 @@ render
 @$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 @$ ====================================================================
 plot ,,
-graph 3 phase-diagram Y
+graph 3 phase-diagram-cp-comp Y
 
 @$ ====================================================================
 @$ If you do not write this, you will get an error

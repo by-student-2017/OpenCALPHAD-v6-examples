@@ -222,6 +222,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - e.g., (B, Al, Ga)-(Fe, Co, Cu)-(Nd, Dy) system
 - It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 - If you only need ternary phase diagrams, pycalphad is recommended. It is very unfortunate that in the current state of development, it is not possible to draw a ternary system phase diagram by fixing other elements such as a quaternary system.
+- I'm not particularly confident about "heat capacity". Just tried it.
 
 
 Acknowledgment
