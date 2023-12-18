@@ -188,6 +188,25 @@
 - TDB-6: https://www.oecd-nea.org/jcms/pl_22166/thermochemical-database-tdb-project
 
 
+## MatCalc
+- Al-base
+```
+awk 'NR>=6751 {$0="$ "$0}1' mc_al_v2.035.tdb > new_mc_al_v2.035.tdb
+```
+- Steel database
+```
+awk 'NR>=11625 {$0="$ "$0}1' mc_fe_v2.060.tdb > new_mc_fe_v2.060.tdb
+```
+- Bainite database1
+```
+awk 'NR>=11677 {$0="$ "$0}1' mc_fe_bainite.tdb > new_mc_fe_bainite.tdb
+```
+- Ni-base
+```
+awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
+```
+
+
 Acknowledgment
 =======
 - This project (modified version) is/was partially supported by the following :
