@@ -1,5 +1,8 @@
 @$ ====================================================================
 @$ B-Fe-R system
+@$ Fe-6at%B-0.1at%Cu-14at%(Nd-Dy)
+@$ 0.99wt%B-0.10wt%Cu-68.10wt%Fe-30.82wt%Nd
+@$ 0.95wt%B-0.09wt%Cu-65.54wt%Fe-33.42wt%Nd
 @$ ====================================================================
 new Y
 set echo
@@ -10,12 +13,12 @@ set echo
 @$ ====================================================================
 @$ read tdb bfend_hal_en
 read tdb Nd-mag-STAM_en
-B Fe Nd 
+B Cu Fe Dy Nd
 
 @$ ====================================================================
-@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+@$ t=Temperature, p=Pressure, n=mol, w%(Element)=weight% of Element
 @$ ====================================================================
-set condition  t=300  p=1e5  n=1  x(Nd)=0.15 ,  x(B)=0.08
+set condition  t=300  p=1e5  n=1 w%(B)=0.99 w%(Cu)=0.1 w%(Fe)=68.1 ,  w%(Nd)=15
 
 @$ ====================================================================
 @$ one point calculation (Fix t, p, n and x)
@@ -28,9 +31,9 @@ calculate equilibrium
 @$ l r 1
 
 @$ ==================================================================
-@$ Axis definition (x-axis: mole fraction)
+@$ Axis definition (x-axis: weight%)
 @$ ==================================================================
-set axis 1 x(Nd) 0 1 ,,
+set axis 1 w%(Nd) 0 30 ,,,,
 
 @$ ====================================================================
 @$ Now we calculate how the system changes with T
@@ -66,7 +69,7 @@ render
 @$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 @$ ====================================================================
 plot ,,
-graph 3 phase-diagram Y
+graph 3 phase-diagram-6system Y
 
 @$ ====================================================================
 @$ If you do not write this, you will get an error
