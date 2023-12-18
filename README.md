@@ -215,7 +215,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 2. nkf -w bfend_hal.tdb > bfend_hal_en.tdb
 
 
-## Fe-Nb-R (R = Rare-earth element)
+## B-Fe-Nd
 - I am preparing this as a test. I think it's worth using demo versions of Pandat and other commercial software if they match up roughly.
 - If the crystal structure is clear from the above calculation, use Akai-KKR to perform element substitution and calculate the formation energy. The formation energy obtained with Akai-KKR should be used as a reference only, as the structure may be retained even if it is somewhat energetically disadvantageous due to effects such as entropy.
 - VASP (QE, OpenMX, Siesta or ...) etc. can take into account the displacement of atomic positions, but because the calculation cost is high, this is done after checking the element substitution situation with Akai-KKR. If you can create an appropriate potential for molecular dynamics, it is best to use it to optimize the structure and finally confirm it using VASP (QE, OpenMX, Siesta or ...), etc.
