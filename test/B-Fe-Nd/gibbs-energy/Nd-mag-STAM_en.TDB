@@ -1,0 +1,1479 @@
+$ AlBCoCuDyFeGaNd
+$
+$ TDB-file for the Al-B-Co-Cu-Dy-Fe-Ga-Nd system
+$------------------------------------------------------------------------------
+$ 2019.7.9
+$ 
+$ TDB file created by K.Hashimoto, and T.Abe
+$
+$ ESICMM, National Institute for Materials Science, 
+$ 1-2-1 Sengen, Tsukuba, Ibaraki 305-0047, Japan
+$ e-mail: abe.taichi (at) nims.go.jp
+$ Copyright (C) NIMS 2019
+$
+$------------------------------------------------------------------------------
+$ About this TDB file 
+$------------------------------------------------------------------------------
+$  This file is constructed mostly based on the published parameters. 
+$ The key ternary system "Nd-Fe-B" is taken from the paper of Halleman etal. 
+$ wiht some modifications of magnetic terms and Dy mixings. 
+$ For phases with Ga, the parameters are not well assessed and taken from 
+$ those in Al-X systems due to similarities in phase diagrams. 
+$ Parameters of some compounds are given in J/(mole of unit-formula). For such
+$ phases BMAGN is converted to the value for non-unity expressions. 
+$                                                                   T.A.
+$------------------------------------------------------------------------------
+$ PARAMETERS ARE TAKEN FROM 
+$------------------------------------------------------------------------------
+$ Al-B
+$ [04Mir] Experimental study and thermodynamic re-assessment of the Al-B system
+$         D.Mirkovic, J.Grobner, R.Schmid-Fetzer, O.Fabrichnaya, H.L.Lukas, 
+$         J.Alloys.Compd., 384 (2004) 168-174.
+$ COMMENTS: in the original paper, B is treated as an interstitial element. 
+$ In this TDB, however, it was converted to a substitutional element.
+$ Al-Co
+$ [04Oht] Phase Separation of the B2 Structure Accompanied by an Ordering
+$         in Co-Al and Ni-Al Binary Systems,
+$         H.Ohtani, Y.Chen, M.Hasebe, 
+$         Materials Trans., 45 (2004) 1489-1498. 
+$ Al-Cu
+$ [13Min] Experimental investigation and thermodynamic calculations of
+$         the Al-Cu-Sb phase diagram,
+$         D.Minic, M.Premovic, V.Cosovic, D.Manasijevic, D.Zivkovic, A.Kostov,
+$         N.Talijan, 
+$         J.Alloys.Compd., 555 (2013) 347-356.
+$ Al-Dy
+$ [03Cac] The Al-R-Mg(R=Gd,Dy,Ho)systems.Part II:
+$         Thermodynamic modelling of the binary and ternary systems.
+$         G.Cacciamani, S.De Negri, A.Saccone, R.Ferro, 
+$         Intermetallics, 11 (2003) 1135-1151.
+$ COMMENTS: The lattice stability of DHCP is not listed in their reference
+$ 91Din. Thus, we used HCP for DHCP. It results the same.
+$ Al-Fe
+$ [91Sei] M.Seiersten
+$         COST 507, Thermochemical database for light metal alloys, vol.2
+$         Ed. I.Ansara, A.T.Dinsdale, M.H.Rand, (1998)
+$         ISBN: 92-828-3902-8
+$ Al-Ga
+$ [92Wat] PARS ARE TAKEN FROM
+$         Re-Assessment of phase diagram and thermodynamic properties of
+$         the Al-Ga system,
+$         A.Watson,CALPHAD, 16 (1992) 207-217.
+$ Al-Nd
+$ [05Gao] Reassessment of Al-Ce and Al-Nd binary systems Supported by Critical
+$         Experiments and First-Principles Energy Calculations, 
+$         M.C.Gao, N.Unlu, G.J.Shiflet, M.Mihalkovic, M.Widom,
+$         Metal.Mat.Tran.A 36A (2005) 3269-3279.
+$ B-Co 
+$ [02Du]  A Thermodynamic description of the B-Co system:
+$         modeling and exteriment,
+$         Y.Du, J.C.Schuster, Y.A.Chang, Z.Jin, B.Huang,
+$         Z.Metallkd., 93 (2002) 1157-1163.
+$ B-Cu 
+$ [09Wan] Thermodynamic assessment of the Cu-B and Cu-Tm systems
+$         C.P.Wang, S.H.Guo, A.T.Tang, F.S.Pan, X,J.Liu, K.Ishida,
+$         J.Alloy.Compd., 482 (2009) 67-72.
+$ B-Dy
+$ [NIMS]  Unpublished work.
+$
+$ B-Fe,B-Fe-Nd 
+$ [95Hal] Thermodynamic assessment of the Fe-Nd-B phase diagram,
+$         B.Hallemans, P.Wollants, J.R.Roos,
+$         J.Phase Equilib., 16 (1995) 137-149.
+$ [94Hal1] Thermodynamic reassessment and calculation of the Fe-B phase diagram, 
+$          B.Hallemans, J.R.Roos, 
+$          Z.Metallkd., 85 (1994) 675-682.
+$ [94Hal2] Thermodynamic reassessment of the Fe-B system and calculation of
+$          the Fe-Nd and Nd-B phase diagram,
+$          B.Hallemans, P.Bellen, P.Wollants, J.R.Roos,
+$          presented at Calphad XXIII, Madison, U.S.A., June 12-17, 1994.
+$ B-Ga
+$ [13Li]  Thermodynamic assessment of the Ga-X(X=B,Ca,Sr,Ba)systems supported
+$         by first-principles calculations,
+$         X.Li, K.Cheng, X.Yuan, D.Zhao, J.Xin, W.Wang, C.Zhang, Y.Du,
+$         CALPHAD, 43 (2013) 52-60.
+$ B-Nd 
+$ [95Hal] Thermodynamic assessment of the Fe-Nd-B phase diagram,
+$         B.Hallemans, P.Wollants, J.R.Roos,
+$         J.Phase Equilib., 16 (1995) 137-149.
+$ Co-Cu 
+$ [06Pal] Thermodynamic analysis of the stable and metastable Co-Cu and
+$         Co-Cu-Fe phase diagrams
+$         M. Palumbo, S. Curiotto, L. Battezzati, 
+$         CALPHAD 30 (2006) pp. 171-178
+$ Co-Dy 
+$ [98Su]  Thermodynamic Modeling of the Co-Dy System
+$         X.Su, W.Zhang, Z.Du, 
+$         Z.Metallkd., 89 (1998) 522-526.
+$ Co-Fe 
+$ [02Ohn] Phase equilibria in the Fe-Co binary system
+$         Ohnuma, I., Enoki, H., Ikeda, O., Kainuma, R., Ohtani, H., 
+$         Sundman, B., and Ishida, K. 
+$         Acta Materialia  50  (2002) p.379-393
+$ Co-Ga
+$ [10Cha] Thermodynamic remodeling of the Co-Ga system,
+$         A.Chari, A.Garay, R.Arroyave, 
+$         CALPHAD, 34 (2010) 189-195.
+$ Co-Nd 
+$ [07Liu] Thermodynamic assessment of the Co-Nd system,
+$         X.Liu, Z.Du, C.Guo, C.Li, 
+$         J.Alloys Compd., 439 (2007) 97-102.
+$ Cu-Dy 
+$ [09Zha] Thermodynamic assessment of the Cu-Dy binary system
+$         L.G.Zhang, G.X.Huang, H.Y.Qi, B.R.Jia, L.B.Liu, Z.P.Jin, 
+$         J.Alloys.Compd., 470 (2009) 214-217.
+$ Cu-Fe 
+$ [03Tur] Thermodynamics of Alloys and Phase Equilibria in Cupper-Iron System
+$         M. A Turchanin et al., 
+$         J. Phase Eq. 24, 4 (2003) p. 307
+$ Cu-Ga
+$ [08Li]  A Thermodynamic assessment of the copper-gallium system,
+$         J.-B.Li, L.N.Ji, J.K.Liang, Y.Zhang, J.Luo, C.R.Li, G.H.Rao,
+$         CALPHAD, 32 (2008) 447-453.
+$ Cu-Nd 
+$ [11Wan] Thermodynamic oputimization of the Cu-Nd system
+$         P.Wang, L.Zhou, Y.Du, H.Xu, S.Liu, L.Chen, Y.Ouyang,
+$         J.Alloy.Compd., 509 (2011) 2679-2683.
+$ Dy-Fe 
+$ [94Lan] Thermodynamic assessment of the Fe-Tb and Fe-Dy phase diagrams and
+$         prediction of Fe-Tb Dy phase diagram.
+$         S.Landin, J.Agren, 
+$         J.Alloys and Compd., 207/208 (1994) 449-453.
+$ Dy-Ga
+$ [NIMS]  Unpublished work.
+$
+$ Dy-Nd
+$ [NIMS]  Unpublished work.
+$
+$ Fe-Ga
+$ [NIMS]  Unpublished work.
+$
+$ Fe-Nd 
+$ [95Hal] Thermodynamic assessment of the Fe-Nd-B phase diagram.
+$         B.Hallemans, P.Wollants, J.R.Roos,
+$         J.Phase Equilib., 16 (1995), 137-149.
+$ B-Co-Fe 
+$ [11Liu] Thermodynamic optimization of the boron-cobalt-iron system.
+$         Y.Q.Liu, X.S.Zhao, J.Yang, J.Y.Shen, 
+$         J.Alloy.Compds., 509 (2011), 4805-4810.
+$ B-Dy-Fe
+$ [NIMS]  Unpublished work.
+$
+$ Al-Cu-Dy
+$ [09Zha] Thermodynamic assessment of Al-Cu-Dy system, 
+$          L.G.Zhang, X.M.Chen, H.Q.Dong, J.Shan, L.B.Liu, F.Zhang, Z.P.Jin,
+$          J.Alloys Compds., 480 (2009) 403-408.
+$ Al-Cu-Fe
+$ [09Che] Experimental investigation and thermodynamic modeling of the
+$          ternary Al-Cu-Fe system,
+$          H.L.Chen, Y.Du, H.Xu, W.Xiong,
+$          J. Mater. Res., 24 (2009) 3154-3164.
+$ Co-Cu-Fe
+$ [11Tur] Mixing enthapies of liquid alloys and thermodynamic assessment 
+$          of the Cu-Fe-Co system,
+$          M.A.Turchanin, L.A.Dreval, A.R.Abdulov, P.G.Agraval,
+$          Powder Metall. Metal Ceram., 50 (2011) 98-116.
+$ Cu-Fe-Nd
+$ [17Sae] Thermodynamic analysis of phase equilibria in the Nd-Fe-Cu 
+$          ternary system,
+$          M.Saeki, Y.Horino, L.Jinya, M.Enoki, H.Ohtani,
+$          J. Japan Inst. Met. Mater., 81 (2017) 32-42.
+$
+$------------------------------------------------------------------------------
+$ ELEMENT DATA
+$--------------------------------------------------------------------------
+ ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT AL   FCC_A1                    2.6982E+01  4.5773E+03  2.8322E+01!
+ ELEMENT B    RHOMBO                    1.0810E+01  1.2220E+03  5.9000E+00!
+ ELEMENT CU   FCC_A1                    6.3546E+01  5.0041E+03  3.3150E+01!
+ ELEMENT CO   HCP_A3                    5.8933E+01  4.7656E+03  3.0040E+01!
+ ELEMENT DY   HCP_A3                    1.6250E+02  0.0000E+00  0.0000E+00!
+ ELEMENT FE   BCC_A2                    5.5847E+01  4.4890E+03  2.7280E+01!
+ ELEMENT GA   ORTHORHOMBIC_CMCA         6.9723E+01  5.5731E+03  4.0828E+01!
+ ELEMENT ND   DOUBLE_HCP(ABAC)          1.4424E+02  0.0000E+00  0.0000E+00!
+
+
+ FUNCTION GHSERAL 300
+  -7976.15+137.093038*T-24.3671976*T*LN(T)-1.884662E-3*T**2-0.877664E-6*T**3+74092*T**(-1); 700 Y
+   -11276.24+223.048446*T-38.5844296*T*LN(T)+18.531982E-3*T**2-5.764227E-6*T**3 +74092*T**(-1); 933.473 Y
+   -11278.361+188.684136*T-31.748192*T*LN(T)-1230.622E25*T**(-9); 2900 N!
+ FUNCTION GALHCP 300 5481-1.8*T+GHSERAL; 2900 N!
+ FUNCTION GALBCC 300 10083-4.813*T+GHSERAL; 2900 N!
+ FUNCTION GALLIQ 300 11005.045-11.84185*T+79.337E-21*T**7+GHSERAL; 933.473 
+     Y-795.991+177.430209*T-31.748192*T*LN(T); 2900 N!
+ FUNCTION GALLAV     300  +15000+3*GHSERAL;     3000 N! 
+
+
+ SPECIES  CO2        CO2!
+
+ FUNCTION GHSERCO  300
+   310.241+133.36601*T-25.0861*T*LN(T)-2.654739E-3*T**2-0.17348E-6*T**3
+   +72527*T**(-1);  1768.00 Y
+   -17197.666+253.28374*T-40.5*T*LN(T)+934.88E28*T**(-9);  6000.00 N!
+ FUNCTION GCOFCC 300 427.591-0.615248*T+GHSERCO; 6000 N!
+ FUNCTION GCOLIQ 300 15085.037- 8.931932*T-219.801E-23*T**7+GHSERCO; 1768 Y
+  -846.61+243.599944*T-40.5*T*LN(T); 6000 N!
+ FUNCTION GCOBCC 300 2938-0.7138*T+GHSERCO; 6000 N!
+
+
+ FUNCTION GHSERBB   300
+   -7735.284+107.111864*T-15.6641*T*LN(T)-6.864515E-3*T**2+0.618878E-6*T**3
+   +370843*T**(-1);  1100.00 Y
+   -16649.474+184.801744*T-26.6047*T*LN(T)-0.79809E-3*T**2-0.02556E-6*T**3
+   +1748270*T**(-1);  2348.00 Y
+   -36667.582+231.336244*T-31.5957527*T*LN(T)-1.59488E-3*T**2+0.134719E6*T**3
+ +11205883*T**(-1);  3000.00 Y
+  -21530.653+222.396264*T-31.4*T*LN(T);  6000.00 N!
+ FUNCTION GBBLIQ    300
+  +40723.275+86.843839*T-15.6641*T*LN(T)-6.864515E-3*T**2+0.618878E-6*T**3
+  +370843*T**(-1);   500.00 Y
+  41119.703+82.101722*T-14.9827763*T*LN(T)-7.095669E-3*T**2+0.507347E-6*T**3+335484*T**(-1);  2348.00 Y
+   28842.012+200.94731*T-31.4*T*LN(T);  6000.00 N!
+ FUNCTION GBBHCP      300  +50208-9.706*T+GHSERBB;   6000 N!
+ 
+ 
+ FUNCTION GBBFCC     300  +50208-13.478*T+GHSERBB;  6000 N! 
+ FUNCTION GBBBCC     300  +43514-12.217*T+GHSERBB;  6000 N! 
+
+
+
+ FUNCTION GHSERCU  300
+-7770.458+130.485235*T-24.112392*T*LN(T)-2.65684E-3*T**2+0.129223E-6*T**3
+   +52478*T**(-1);  1357.77 Y
+   -13542.026+183.803828*T-31.38*T*LN(T)+364.167E27*T**(-9);  3200.00 N!
+ FUNCTION GCUBCC 300 4017-1.255*T+GHSERCU; 3200 N!
+ FUNCTION GCUHCP 300 600+0.2*T+GHSERCU; 3200 N!
+ FUNCTION GCULIQ 300 12964.735-9.511904*T-584.89E-23*T**7+GHSERCU; 1357.77 Y
+   -46.545+173.881484*T-31.38*T*LN(T); 3200 N!
+
+
+
+ FUNCTION GHSERDY  100 -7937.16586+102.307412*T-26.3917167*T*LN(T)
+         -7.61683657E-4*T**2-5.86914125E-7*T**3+4010.90565*T**(-1); 1000 Y
+    -13733.3280+214.012934*T-43.8283359*T*LN(T)+1.66909801E-2*T**2
+         -3.49702836E-6*T**3+1.73619874E-2*T**(-1); 1654.15 Y
+    -404681.371+2032.14150*T-272.123952*T*LN(T)+5.78301681E-2*T**2
+         -2.76169148E-6*T**3+109616238*T**(-1); 3000 N!
+ FUNCTION GDYBCC   100 -6428.98566+101.740795819*T
+         -26.3917167*T*LN(T)-7.61683657E-4*T**2-5.86914125E-7*T**3
+         +4010.90565*T**(-1); 1000 Y
+     327500.062-2868.04585*T+391.515418*T*LN(T)-2.24042148E-1*T**2
+         +2.04076075E-5*T**3-48652656.5*T**(-1); 1654.15 Y
+     -33708.7949+291.409631*T-50.208*T*LN(T); 1685.15 Y
+     -40775.4966+330.318068*T-55.2811171*T*LN(T)+1.5254673E-3*T**2
+         -7.74371160E-8*T**3+1776589.32*T**(-1); 3000 N!
+ FUNCTION GDYLIQ   100 5259.45264+94.7630477*T-26.3917167*T*LN(T)
+         -7.61683657E-4*T**2-5.86914125E-7*T**3+4010.90565*T**(-1); 1000 Y
+     300126.971-2519.78614*T+341.302578*T*LN(T)-1.96153225E-1*T**2
+         +1.76197799E-5*T**3-43071677.5*T**(-1); 1685.15 Y
+     -21864.7344+282.205014*T-49.9151*T*LN(T); 3000 N!
+ FUNCTION GDYFCC    300  +1300-0.08*R*T+GHSERDY ;    3000 N! 
+
+
+
+
+ FUNCTION GHSERFE  300
+   1225.7+124.134*T-23.5143*T*LN(T)-4.39752E-3*T**2-0.058927E-6*T**3
+   +77359*T**(-1); 1811 Y
+   -25383.581+299.31255*T-46*T*LN(T)+2296.03E28*T**(-9);  6000.00 N!
+ FUNCTION GFEFCC   300
+   -236.7+132.416*T-24.6643*T*LN(T)-3.75752E-3*T**2-0.058927E-6*T**3
+   +77359*T**(-1); 1811 Y
+   -27097.3963+300.252559*T-46*T*LN(T)+2788.54E28*T**(-9);  6000.00 N!
+ FUNCTION GFELIQ 300 12040.17-6.55843*T-367.516E-23*T**7+GHSERFE; 1811 Y
+   -10838.83+291.302*T-46*T*LN(T);  6000.00 N!
+ FUNCTION GFEHCP   300
+   -2480.08+136.725*T-24.6643*T*LN(T)-3.75752E-3*T**2-0.058927E-6*T**3
+   +77359*T**(-1);  1811.00 Y
+   -29340.776+304.561559*T-46*T*LN(T)+2788.54E28*T**(-9);  6000.00 N!
+
+
+ 
+ FUNCTION GHSERGA  200.00
+   -21312.331+585.263691*T-108.2287832*T*LN(T)+227.155636E-3*T**2
+  -118.575257E-6*T**3+439954*T**(-1);   302.91 Y
+  -7055.643+132.73019*T-26.0692906*T*LN(T)+0.1506E-3*T**2-0.040173E-6*T**3
+  -118332*T**(-1)+164.547E21*T**(-9);  4000.00 N!
+ FUNCTION GGALIQ 200 5491.298-18.073995*T-70.171E-18*T**7+GHSERGA; 302.91 Y
+  -1389.188+114.049043*T-26.0692906*T*LN(T)+0.1506E-3*T**2-0.040173E-6*T**3
+   -118332*T**(-1); 4000 N!
+ FUNCTION GGAHCP 200 4500-9.5*T+GHSERGA;  4000 N!
+ FUNCTION GGAFCC 200 3800-10.2*T+GHSERGA; 4000 N!
+ FUNCTION GGABCC 200 4500-11.7*T+GHSERGA; 4000 N!
+
+
+ FUNCTION GHSERND  300
+ -8402.93+111.10239*T-27.0858*T*LN(T)+0.556125E-3*T**2-2.6923E-6*T**3
+ +34887*T**(-1);   900.00 Y
+ -6984.083+83.662617*T-22.7536*T*LN(T)-4.20402E-3*T**2-1.802E-6*T**3;  1128.00 Y
+ -225610.846+1673.040749*T-238.1828733*T*LN(T)+78.615997E-3*T**2
+ -6.048207E-6*T**3+38810350*T**(-1);  1799.00 Y
+ -25742.331+276.257088*T-48.7854*T*LN(T);  1800.00 N!
+ FUNCTION GNDBCC   300
+ -6965.635+110.556109*T-27.0858*T*LN(T)+0.556125E-3*T**2-2.6923E-6*T**3
+ +34887*T**(-1);   400.00 Y
+   7312.2-153.033976*T+14.9956777*T*LN(T)-50.479E-3*T**2+7.287217E-6*T**3
+ -831810*T**(-1);  1128.00 Y
+ -18030.266+239.677322*T-44.5596*T*LN(T);  1289.00 Y
+ 334513.017-2363.919899*T+311.409193*T*LN(T)-156.030778E-3*T**2
+ +12.408421E-6*T**3-64319604*T**(-1);  1799 Y
+ -24495.579+274.879155*T-48.7854*T*LN(T); 1800 N!
+ FUNCTION GNDLIQ   300
+ -3351.187+109.517314*T-27.0858*T*LN(T)+0.556125E-3*T**2-2.6923E-6*T**3
+ +34887*T**(-1);   300.00 Y
+   5350.01-86.593963*T+5.357301*T*LN(T)-46.955463E-3*T**2+6.860782E-6*T**3
+ -374380*T**(-1);  1128.00 Y
+ -16335.232+268.625903*T-48.7854*T*LN(T);  1800.00 N!
+ FUNCTION GNDFCC 300 +500+GHSERND; 1800 N!
+
+
+
+ FUNCTION UN_ASS     300 +0;                                   6000 N!
+ FUNCTION GDYLAV     300 +15000+3*GHSERDY;                      3000 N! 
+ FUNCTION GC15ALDY   300 -162000+40.24*T;                       3000 N! 
+ FUNCTION GC36ALDY   300 +GC15ALDY+15000;                       3000 N! 
+
+ FUNCTION CU6CU6GA   300 +157967.9-99.2709*T+12*GHSERCU+GHSERGA;     6000 N!
+ FUNCTION CU6GA6GA   300 +27365.9-84.6505*T+6*GHSERCU+7*GHSERGA;     6000 N!
+    
+ FUNCTION ORD_CG_D   300 -9660.7-13.3550*T;                         6000 N!
+ FUNCTION ORD_CUGA   300 -4714.0;                                   6000 N!
+ FUNCTION A_CUGA     300 -998310.4+234.1156*T;                      6000 N!
+ FUNCTION CUGACU0    300 -ORD_CG_D-ORD_CUGA-249577.6+58.5289*T;      6000 N!
+ FUNCTION CUGACU1    300 +ORD_CUGA;                                 6000 N!
+ FUNCTION CUGAGA0    300 -ORD_CG_D+ORD_CUGA-249577.6+58.5289*T;      6000 N!
+ FUNCTION CUGAGA1    300 +ORD_CUGA;                                 6000 N!
+ FUNCTION CU9GA4     300 
+             +0.5*CU6CU6GA+0.5*CU6GA6GA+ORD_CG_D-249577.6+58.5289*T; 6000 N!
+
+ TYPE_DEFINITION % SEQ * !
+
+ PHASE ORTHORHOMBIC  %  2  1  1!
+  CONSTITUENT ORTHORHOMBIC  :GA : VA: ! 
+ PAR G(ORTHORHOMBIC,GA:VA;0)   300   +GHSERGA;            4000 N!
+
+
+ PHASE LIQUID:L %  1  1  !
+  CONSTITUENT LIQUID:L :AL,B,CO,CU,DY,FE,GA,ND:  !
+  PAR G(LIQUID,AL;0)     300  +GALLIQ;                  2900 N!
+  PAR G(LIQUID,B;0)      300  +GBBLIQ;                  6000 N!
+  PAR G(LIQUID,CU;0)     300  +GCULIQ;                  6000 N!
+  PAR G(LIQUID,CO;0)     300  +GCOLIQ;                  6000 N!
+  PAR G(LIQUID,DY;0)     300  +GDYLIQ;                  3000 N!
+  PAR G(LIQUID,FE;0)     300  +GFELIQ;                  6000 N!
+  PAR G(LIQUID,GA;0)     300  +GGALIQ;                  4000 N!
+  PAR G(LIQUID,ND;0)     300  +GNDLIQ;                  1800 N!
+  
+  PAR G(LIQUID,AL,B;0)   300  -927.53-5.11312*T;        6000 N! 
+  PAR G(LIQUID,AL,B;1)   300  +31961.6;                 6000 N! 
+  PAR G(LIQUID,AL,B;2)   300  -12992;                   6000 N! 
+  PAR G(LIQUID,AL,CO;0)  300  +3440-102.7*T;            6000 N! 
+  PAR G(LIQUID,AL,CO;1)  300  -65500;                   6000 N! 
+  PAR G(LIQUID,AL,CO;2)  300  -16700;                   6000 N! 
+  PAR G(LIQUID,AL,CO;3)  300  -1950;                    6000 N! 
+  PAR G(LIQUID,AL,CU;0)  300  -66622+8.1*T;             6000 N! 
+  PAR G(LIQUID,AL,CU;1)  300  +46800-90.8*T+10*T*LN(T); 6000 N! 
+  PAR G(LIQUID,AL,CU;2)  300  -2812;                    6000 N! 
+
+  PAR G(LIQUID,AL,DY;0)  300  -163500+58.07*T;          6000 N! 
+  PAR G(LIQUID,AL,DY;1)  300  -18300;                   6000 N! 
+  PAR G(LIQUID,AL,DY;2)  300  +16130;                   6000 N! 
+  PAR G(LIQUID,AL,FE;0)  300  -91976.5+22.1314*T;       6000 N! 
+  PAR G(LIQUID,AL,FE;1)  300  -5672.58+4.8728*T;        6000 N! 
+  PAR G(LIQUID,AL,FE;2)  300  +121.9;                   6000 N! 
+  PAR G(LIQUID,AL,GA;0)  300  +2613.3-2.94533*T;        6000 N! 
+  PAR G(LIQUID,AL,GA;1)  300  +692.4-0.09271*T;         6000 N! 
+  PAR G(LIQUID,AL,GA;2)  300  +319.5;                   6000 N! 
+  PAR G(LIQUID,AL,ND;0)  300  -159238+57.514*T;         6000 N! 
+  PAR G(LIQUID,AL,ND;1)  300  -1350-25.797*T;           6000 N! 
+  PAR G(LIQUID,AL,ND;2)  300  +24299-25.299*T;          6000 N! 
+  
+  PAR G(LIQUID,B,CO;0)   300  -162096.49+48.363*T;      6000 N! 
+  PAR G(LIQUID,B,CO;1)   300  -2542.75+4.712*T;         6000 N! 
+  PAR G(LIQUID,B,CO;2)   300  +32123.74;                6000 N! 
+  PAR G(LIQUID,B,CU;0)   300  -3156.2;                  6000 N! 
+  PAR G(LIQUID,B,CU;1)   300  +14390.26-9.98*T;         6000 N! 
+  PAR G(LIQUID,B,CU;2)   300  +42620-20*T;              6000 N! 
+  PAR G(LIQUID,B,DY;0)   300  -5000-11*T;               6000 N! 
+  PAR G(LIQUID,B,DY;1)   300  -11150;                   6000 N! 
+
+  PAR G(LIQUID,B,FE;0)   300  -133438+33.95*T;          6000 N! 
+  PAR G(LIQUID,B,FE;1)   300  +7771;                    6000 N! 
+  PAR G(LIQUID,B,FE;2)   300  +29739;                   6000 N! 
+
+  PAR G(LIQUID,B,GA;0)   500  +63118.89;                6000 N! 
+  PAR G(LIQUID,B,ND;0)   300  -123735+42.87*T;          6000 N! 
+  PAR G(LIQUID,B,ND;1)   300  -41869;                   6000 N! 
+
+
+  PAR G(LIQUID,CO,CU;0)  300  +31451.078-1.3140133*T;   6000 N! 
+  PAR G(LIQUID,CO,CU;1)  300  -595.04051;               6000 N! 
+  PAR G(LIQUID,CO,CU;2)  300  +3701.3751;               6000 N! 
+  PAR G(LIQUID,CO,DY;0)  300  -98072+40.952*T;          6000 N! 
+  PAR G(LIQUID,CO,DY;1)  300  -222.3-12.017*T;          6000 N! 
+  PAR G(LIQUID,CO,GA;0)  300  -61807+7.985*T;           6000 N! 
+  PAR G(LIQUID,CO,GA;1)  300  +12605.5;                 6000 N! 
+  PAR G(LIQUID,CO,FE;0)  300  -9753.82;                 6000 N! 
+  PAR G(LIQUID,CO,FE;2)  300  +2757.96;                 6000 N! 
+  PAR G(LIQUID,CO,ND;0)  300  -92297+9.652*T;           6000 N! 
+  PAR G(LIQUID,CO,ND;1)  300  -6060+20.427*T;           6000 N! 
+  PAR G(LIQUID,CO,ND;2)  300  +71682-39.014*T;          6000 N! 
+
+  PAR G(LIQUID,CU,DY;0)  300  -89354.3253+5.002*T;      6000 N! 
+  PAR G(LIQUID,CU,DY;1)  300  -33694.613+11.913*T;      6000 N! 
+
+  PAR G(LIQUID,CU,FE;0)  300 +73316.72-142.79*T+15.82*T*LN(T); 6000 N! 
+
+  PAR G(LIQUID,CU,FE;1)  300  +9100.15-5.94*T;          6000 N! 
+  PAR G(LIQUID,CU,FE;2)  300  +2428.96;                 6000 N! 
+  PAR G(LIQUID,CU,FE;3)  300  -233.62;                  6000 N! 
+
+  PAR G(LIQUID,CU,GA;0)  300  -58110.5+154.5439*T-18.3753*T*LN(T); 6000 N! 
+  PAR G(LIQUID,CU,GA;1)  300  -33884.7+1.9151*T;        6000 N! 
+  PAR G(LIQUID,CU,GA;2)  300  -11256.9;                 6000 N! 
+
+  PAR G(LIQUID,CU,ND;0)  300 -55583.6+5.8955*T-2.4901*T*LN(T); 6000 N! 
+  PAR G(LIQUID,CU,ND;1)  300 -27795.1+3.1830*T-1.2911*T*LN(T); 6000 N! 
+  PAR G(LIQUID,CU,ND;2)  300 -3806;                     6000 N! 
+
+  
+  PAR G(LIQUID,DY,FE;0)  800  -13027;                   3000 N! 
+  PAR G(LIQUID,DY,GA;0)  300   -9000-1*T;               6000 N! 
+  PAR G(LIQUID,FE,GA;0)  300 -9000 -87309.1+22.83096*T; 6000 N! 
+
+
+  PAR G(LIQUID,FE,ND;0)  300  +3221;                    6000 N! 
+  PAR G(LIQUID,FE,ND;1)  300  +6216;                    6000 N! 
+  PAR G(LIQUID,FE,ND;2)  300  +4826;                    6000 N! 
+  PAR G(LIQUID,GA,ND;0)  300  -5000;                    6000 N! 
+  PAR G(LIQUID,GA,ND;2)  300  -20000;                   6000 N! 
+
+
+  PAR G(LIQUID,AL,CU,FE;0) 300  -28836 +10.57665*T;        6000 N! 
+
+  PAR G(LIQUID,AL,CU,FE;1) 300  -43967 +7.47667*T;         6000 N! 
+  PAR G(LIQUID,AL,CU,FE;2) 300  +0;                        6000 N! 
+  PAR G(LIQUID,B,CO,FE;0)  300  -208172+16.8287*T;         6000 N! 
+  PAR G(LIQUID,B,CO,FE;1)  300  +245290-127.651*T;         6000 N! 
+  PAR G(LIQUID,B,CO,FE;2)  300  +245290-127.651*T;         6000 N! 
+  PAR G(LIQUID,B,DY,FE;0)  300  -1000;                     6000 N! 
+  PAR G(LIQUID,B,DY,FE;1)  300  -5000;                     6000 N! 
+  PAR G(LIQUID,B,DY,FE;2)  300  -50000-50*T;               6000 N! 
+
+
+  PAR G(LIQUID,CO,CU,FE;0) 300  +207886 -120.246*T;        6000 N! 
+  PAR G(LIQUID,CO,CU,FE;1) 300  -32445 -2.323*T;           6000 N! 
+  PAR G(LIQUID,CO,CU,FE;2) 300  +1629 -8.168*T;            6000 N! 
+
+  PAR G(LIQUID,CU,FE,ND;0) 300  +19048.34-144.82*T;        6000 N! 
+  PAR G(LIQUID,CU,FE,ND;1) 300  -217949.8-25.4*T;          6000 N! 
+  PAR G(LIQUID,CU,FE,ND;2) 300  -140014.9+136.31*T;        6000 N! 
+
+  PAR G(LIQUID,DY,FE,ND;0) 300  +0;                        6000 N! 
+  PAR G(LIQUID,DY,FE,ND;1) 300  -50000;                    6000 N! 
+  PAR G(LIQUID,DY,FE,ND;2) 300  +0;                        6000 N! 
+
+
+ TYPE_DEFINITION > GES A_P_D BCC_A2 MAGNETIC  -1.0    4.00000E-01 !
+ PHASE BCC_A2  %>  2 1   3 !
+  CONSTITUENT BCC_A2  :AL,B,CO,CU,DY,FE,GA,ND : VA :  !
+ PAR G(BCC_A2,AL:VA;0)        300  +GALBCC;                   6000 N!
+ PAR G(BCC_A2,B:VA;0)         300  +GBBBCC;                   6000 N!
+ PAR G(BCC_A2,FE:VA;0)        300  +GHSERFE;                  6000 N!
+ PAR G(BCC_A2,ND:VA;0)        300  +GNDBCC;                   1800 N!
+ PAR G(BCC_A2,CU:VA;0)        300  +GCUBCC;                   3200 N!
+ PAR G(BCC_A2,CO:VA;0)        300  +GCOBCC;                   6000 N!
+ PAR G(BCC_A2,DY:VA;0)        300  +GDYBCC;                   3000 N! 
+ PAR G(BCC_A2,GA:VA;0)        300  +GGABCC;                   6000 N!
+ 
+
+ PAR G(BCC_A2,AL,CU:VA;0)     300  -73554+4.0*T;         6000 N! 
+ PAR G(BCC_A2,AL,CU:VA;1)     300  +51500-11.84*T;       6000 N! 
+ PAR G(BCC_A2,AL,DY:VA;0)     300  -82000+30.64*T;            6000 N! 
+ PAR G(BCC_A2,AL,FE:VA;0)     300  -122960.+31.9888*T;        6000 N! 
+ PAR G(BCC_A2,AL,FE:VA;1)     300  +2945.2;                   6000 N! 
+
+ PAR G(BCC_A2,AL,ND:VA;0)     300  -150516+47.415*T;          6000 N! 
+ PAR G(BCC_A2,AL,ND:VA;1)     300  -36878;                    6000 N! 
+ 
+ PAR G(BCC_A2,B,DY:VA;0)      300 +100000;                    3000 N! 
+ PAR G(BCC_A2,B,FE:VA;0)      300  -47920+42.09*T;    6000 N! 
+ PAR G(BCC_A2,B,FE,ND:VA;0)   300  +0;                        6000 N!
+
+
+ PAR G(BCC_A2,CO,CU:VA;0)     300  +35000;                    6000 N! 
+ PAR G(BCC_A2,CO,DY:VA;0)     300  +100000;                   3000 N! 
+ PAR G(BCC_A2,CO,FE:VA;0)     300
+     -26222.7+125.000*T-15.502*T*LN(T)-632250*T**(-1);        6000 N! 
+ PAR G(BCC_A2,CO,FE:VA;2)     300  +2686.79+632250*T**(-1);   6000 N! 
+
+
+ PAR G(BCC_A2,CU,DY:VA;0)     300 -50054.3243-10.447*T;       6000 N! 
+ PAR G(BCC_A2,CU,FE:VA;0)     300  +40146.22-4.91*T;    6000 N! 
+
+ PAR G(BCC_A2,CU,GA:VA;0)     300  -55966.9+24.5934*T;        6000 N! 
+ PAR G(BCC_A2,CU,GA:VA;1)     300  -29932.0-28.7715*T;        6000 N! 
+ PAR G(BCC_A2,CO,ND:VA;0)     300  +2000;                     6000 N! 
+ 
+ PAR G(BCC_A2,DY,FE:VA;0)     300  +100000;                   6000 N! 
+ PAR G(BCC_A2,DY,GA:VA;0)     300  +11500-10*T;               6000 N! 
+
+ PAR G(BCC_A2,DY,ND:VA;0)     300 +0;                         3000 N! 
+
+ PAR G(BCC_A2,FE,GA:VA;0) 300 -122573.6+35.24598*T; 6000 N! 
+
+ PAR G(BCC_A2,FE,ND:VA;0)     300  +50562-4.970*T;  6000 N! 
+ PAR G(BCC_A2,FE,ND:VA;1)     300  -38667+19.10*T;  6000 N! 
+
+ PAR G(BCC_A2,GA,ND:VA;0)     300   +10000;  6000 N! 
+
+ PAR G(BCC_A2,AL,CU,FE:VA;0)  300 -267841 +131.45655*T; 6000 N! 
+ PAR G(BCC_A2,AL,CU,FE:VA;1)  300 -103924 +69.91943*T;  6000 N! 
+ PAR G(BCC_A2,AL,CU,FE:VA;2)  300 -29249;               6000 N! 
+
+ PARA G(BCC_A2,CO,CU,FE:VA;0) 300  -39510;              6000 N! 
+ PARA G(BCC_A2,CO,CU,FE:VA;1) 300  -39510;              6000 N! 
+ PARA G(BCC_A2,CO,CU,FE:VA;2) 300  -39510;              6000 N! 
+
+
+ PAR TC(BCC_A2,CO:VA;0)       300  +1450;               6000 N!
+ PAR BMAGN(BCC_A2,CO:VA;0)    300  +1.35;               6000 N!
+ PAR TC(BCC_A2,FE:VA;0)       300  +1043;               6000 N! 
+ PAR BMAGN(BCC_A2,FE:VA;0)    300  +2.22;               6000 N! 
+ PAR TC(BCC_A2,AL,FE:VA;1)    300  +504;                6000 N! 
+ PAR TC(BCC_A2,CO,FE:VA;0)    300  +590;                6000 N! 
+ PAR BMAGN(BCC_A2,CO,FE:VA;0) 300  +1.406;              6000 N! 
+ PAR BMAGN(BCC_A2,CO,FE:VA;1) 300  -0.6617;             6000 N! 
+ PARA TC(BCC_A2,FE,CU:VA;0)   300  -41.4;               6000 N! 
+
+
+
+
+ TYPE_DEFINITION 0 GES A_P_D FCC_A1 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FCC_A1  %0  2 1   1 !
+  CONSTITUENT FCC_A1  : AL,B,CO,CU,DY,FE,GA,ND : VA :  !
+ PAR G(FCC_A1,AL:VA;0)      300  +GHSERAL;                    2900 N!
+ PAR G(FCC_A1,B:VA;0)       300  +GBBFCC;                     6000 N!
+ PAR G(FCC_A1,CO:VA;0)      300  +GCOFCC;                     6000 N!
+ PAR G(FCC_A1,CU:VA;0)      300  +GHSERCU;                    3200 N!
+ PAR G(FCC_A1,DY:VA;0)      300  +GDYFCC;                     6000 N!
+ PAR G(FCC_A1,FE:VA;0)      300  +GFEFCC;                     6000 N!
+ PAR G(FCC_A1,GA:VA;0)      300  +GGAFCC;                     4000 N!  
+ PAR G(FCC_A1,ND:VA;0)      300  +GHSERND+5000;               1800 N! 
+
+
+ PAR G(FCC_A1,AL,B:VA;0)  300 +78810.2-16.65602*T+GHSERBB-GBBFCC; 6000 N! 
+ PAR G(FCC_A1,AL,CO:VA;0)   300  -117500-33.2*T;              6000 N! 
+ PAR G(FCC_A1,AL,CO:VA;1)   300  -9900-25.45*T;               6000 N! 
+ PAR G(FCC_A1,AL,CU:VA;0)   300  -53520+2*T;               6000 N! 
+ PAR G(FCC_A1,AL,CU:VA;1)   300  +38590-2*T;               6000 N! 
+ PAR G(FCC_A1,AL,CU:VA;2)   300  +1170;                    6000 N! 
+
+ PAR G(FCC_A1,AL,FE:VA;0)   300  -76066.1+18.6758*T;          6000 N! 
+ PAR G(FCC_A1,AL,FE:VA;1)   300  +21167.4+1.3398*T;           6000 N! 
+ PAR G(FCC_A1,AL,GA:VA;0)   300  +9195.8+8.18764*T;           6000 N! 
+ PAR G(FCC_A1,AL,GA:VA;1)   300  -7678.5;                     6000 N! 
+
+ PAR G(FCC_A1,B,CO:VA;0)    300  -18734.7;                    6000 N! 
+ PAR G(FCC_A1,B,CO,FE:VA;0) 300  -77346.8;                    6000 N! 
+
+ PAR G(FCC_A1,B,CU:VA;0)    300  +29600;                      6000 N! 
+ PAR G(FCC_A1,B,DY:VA;0)    300 +100000;                      3000 N! 
+ PAR G(FCC_A1,B,FE:VA;0)    300  -62952+49.90*T;       6000 N! 
+
+ PAR G(FCC_A1,CO,CU:VA;0)   300  +34598.871-4.0110432*T;      6000 N! 
+ PAR G(FCC_A1,CO,CU:VA;1)   300  -6405.9417+3.6618866*T;      6000 N! 
+ PAR G(FCC_A1,CO,CU:VA;2)   300  +4388.6750;                  6000 N! 
+ PAR G(FCC_A1,CO,DY:VA;0  ) 300 +12893;                       3000 N! 
+ PAR G(FCC_A1,CO,FE:VA;0)   300  -8968.75;                    6000 N! 
+ PAR G(FCC_A1,CO,FE:VA;2)   300  +3528.8;                     6000 N! 
+ PAR G(FCC_A1,CO,GA:VA;0)   300  -125202+54.131*T;            6000 N! 
+ PAR G(FCC_A1,CO,GA:VA;1)   300  +30657-25.625*T;             6000 N! 
+ PAR G(FCC_A1,CO,ND:VA;0)   300  +2000;                       6000 N! 
+
+ PAR G(FCC_A1,CU,DY:VA;0)   300 +100000;                      3000 N!
+ PAR G(FCC_A1,CU,FE:VA;0)   300  +48885.74-11.51*T;      6000 N! 
+ PAR G(FCC_A1,CU,FE:VA;1)   300  +12687.16-8.01*T;       6000 N! 
+ PAR G(FCC_A1,CU,FE:VA;2)   300  +4054.11;               6000 N! 
+ PAR G(FCC_A1,CU,GA:VA;0)   300  -38799.9+17.8403*T;          6000 N! 
+ PAR G(FCC_A1,CU,GA:VA;1)   300  -38704.9-16.5753*T;          6000 N! 
+
+ PAR G(FCC_A1,DY,FE:VA;0)   300 +100000;                      3000 N! 
+ PAR G(FCC_A1,DY,GA:VA;0)   300 +2000;                        3000 N! 
+ PAR G(FCC_A1,DY,ND:VA;0)   300 +0;                           3000 N! 
+ 
+ PAR G(FCC_A1,FE,GA:VA;0)   300 -75991.8+24.03721*T; 6000 N! 
+ PAR G(FCC_A1,FE,GA:VA;1)   300 -5000 -23866.5;      6000 N! 
+
+ PAR G(FCC_A1,FE,ND:VA;0)   300  +35356-2.962*T;     6000 N! 
+
+ PAR G(FCC_A1,CO,CU,FE:VA;0)  300 -7411;                      6000 N! 
+ PAR G(FCC_A1,CO,CU,FE:VA;1)  300 +0;                         6000 N! 
+ PAR G(FCC_A1,CO,CU,FE:VA;2)  300 -60353 +25.728*T;           6000 N! 
+
+ 
+ PAR TC(FCC_A1,CO:VA;0)       300  +1396;                     6000 N!
+ PAR BMAGN(FCC_A1,CO:VA;0)    300  +1.35;                     6000 N!
+ PAR TC(FCC_A1,FE:VA;0)       300  -201;                      6000 N!
+ PAR BMAGN(FCC_A1,FE:VA;0)    300  -2.1;                      6000 N!
+ PAR TC(FCC_A1,AL,CO:VA;0)    300  -2300;                     6000 N! 
+ PAR TC(FCC_A1,CO,CU:VA;0)    300  +811.55611;                6000 N! 
+ PAR TC(FCC_A1,CO,FE:VA;0)    300  +283;                      6000 N! 
+ PAR TC(FCC_A1,CO,FE:VA;1)    300  +879;                      6000 N! 
+ PAR BMAGN(FCC_A1,CO,FE:VA;0) 300  +8.407;                    6000 N! 
+ PAR BMAGN(FCC_A1,CO,FE:VA;1) 300  -3.644;                    6000 N! 
+
+
+
+
+ PHASE DHCP  %  1 1  !
+  CONSTITUENT DHCP  :AL,B,CO,CU,DY,FE,ND : !
+ PAR G(DHCP,AL;0)     300  +GALHCP;                             2900 N!
+ PAR G(DHCP,B;0)      300  +GBBHCP +5000;                       6000 N! 
+ PAR G(DHCP,CO;0)     300  +GHSERCO+5000;                       6000 N! 
+ PAR G(DHCP,CU;0)     300  +GCUHCP +5000;                       3000 N! 
+ PAR G(DHCP,DY;0)     300  +GHSERDY+500;                        3000 N! 
+ PAR G(DHCP,ND;0)     300  +GHSERND;                            6000 N! 
+ PAR G(DHCP,FE;0)     300  +GFEHCP +5000;                       6000 N! 
+PAR G(DHCP,AL,ND;0)  300  -132036+28.661*T;                    6000 N! 
+ PAR G(DHCP,AL,ND;1)  300  -61094;                              6000 N! 
+ PAR G(DHCP,B,CO;0)   300  +0;                                  6000 N! 
+PAR G(DHCP,CO,CU;0)  300  +30000;                              6000 N! 
+ PAR G(DHCP,CO,DY;0)  300  +100000;                             3000 N! 
+ PAR G(DHCP,CO,FE;0)  300  +5000;                               6000 N! 
+ PAR G(DHCP,CO,ND;0)  300  +2000;                               6000 N! 
+ PAR G(DHCP,CU,DY;0)  300  -36212.399-12.974*T;                 6000 N! 
+ PAR G(DHCP,CU,FE;0)  300  +100000;                             6000 N! 
+ PAR G(DHCP,CU,ND;0)  300  -10000;                              6000 N! 
+ PAR G(DHCP,DY,FE;0)  300  +15000;                              6000 N! 
+ PAR G(DHCP,DY,ND;0)  300  +0;                                  6000 N! 
+ PAR G(DHCP,FE,ND;0)  300  +100000;                             6000 N! 
+
+
+
+ TYPE_DEFINITION * GES A_P_D HCP_A3 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE HCP_A3  %*  2 1   0.5 !
+  CONSTITUENT HCP_A3  : AL,B,CO,CU,DY,FE,GA,ND : VA :  !
+ PAR G(HCP_A3,AL:VA;0)     300  +GALHCP;                        3000 N!
+ PAR G(HCP_A3,B:VA;0)      300  +GBBHCP;                        6000 N!
+ PAR G(HCP_A3,CO:VA;0)     300  +GHSERCO;                       6000 N!
+ PAR G(HCP_A3,CU:VA;0)     300  +GCUHCP;                        3000 N!
+ PAR G(HCP_A3,DY:VA;0)     300  +GHSERDY;                       3000 N!
+ PAR G(HCP_A3,ND:VA;0)     300  +GHSERND+1000;                  6000 N! 
+ PAR G(HCP_A3,FE:VA;0)     300  +GFEHCP;                        6000 N!
+ PAR G(HCP_A3,GA:VA;0)     300  +GGAHCP;                        6000 N!
+PAR G(HCP_A3,AL,FE:VA;0)  300  -106903.0+20.0*T;               6000 N! 
+PAR G(HCP_A3,B,CO:VA;0)   300  +0;                             6000 N! 
+PAR G(HCP_A3,B,DY:VA;0)   300  +50000;                         6000 N!  
+PAR G(HCP_A3,CO,CU:VA;0)  300  +30000;                         6000 N! 
+ PAR G(HCP_A3,CO,DY:VA;0)  300  +100000;                        3000 N! 
+ PAR G(HCP_A3,CO,FE:VA;0)  300  +5000;                          6000 N!
+ PAR G(HCP_A3,CO,GA:VA;0)  300  -87051+22.438*T;                3000 N! 
+PAR G(HCP_A3,CU,DY:VA;0)  300  -36212.399-12.974*T;            6000 N! 
+ PAR G(HCP_A3,CU,FE:VA;0)  300  +100000;                        6000 N! 
+ PAR G(HCP_A3,CU,GA:VA;0)  300  -44826.0+12.5993*T;             6000 N!
+ PAR G(HCP_A3,CU,GA:VA;1)  300  -36117.4-9.0000*T;              6000 N! 
+PAR G(HCP_A3,DY,ND:VA;0)  300  +0;                             6000 N! 
+PAR G(HCP_A3,DY,FE:VA;0)  300  +35000;                         6000 N! 
+  PAR G(HCP_A3,DY,GA:VA;0) 300   +20000-5*T;                    6000 N! 
+PAR G(HCP_A3,FE,ND:VA;0)  300  +100000;                        6000 N! 
+
+
+ PAR TC(HCP_A3,CO:VA;0)       300  +1396;                       6000 N!
+ PAR BMAGN(HCP_A3,CO:VA;0)    300  +1.35;                       6000 N!
+ PAR TC(HCP_A3,CO,FE:VA;0)    300  -253;                        6000 N! 
+ PAR TC(HCP_A3,CO,FE:VA;1)    300  +1494;                       6000 N! 
+ PAR BMAGN(HCP_A3,CO,FE:VA;0) 300  +5.41;                       6000 N! 
+ PAR BMAGN(HCP_A3,CO,FE:VA;1) 300  -0.24;                       6000 N! 
+ PAR TC(HCP_A3,DY:VA;0)       300  +179;                        3000 N!
+ PAR BMAGN(HCP_A3,DY:VA;0)    300  +3.0;                        3000 N!
+
+
+
+ PHASE RHOMB_B  %  1  1.0  !
+  CONSTITUENT RHOMB_B  :B,CU :  !
+ PAR G(RHOMB_B,B;0)    300  +GHSERBB;                           6000 N!
+ PAR G(RHOMB_B,CU;0)   300  +GHSERCU+5000;                      6000 N! 
+ PAR G(RHOMB_B,B,CU;0) 300  +34386;                             6000 N! 
+
+
+PHASE LAV_C14  %  2  1  2 !
+  CONSTITUENT LAV_C14  :AL,DY : AL,DY :  !
+ PAR G(LAV_C14,AL:AL;0)  300  +GALLAV;                         3000 N! 
+ PAR G(LAV_C14,DY:DY;0)  300  +GDYLAV;                         3000 N! 
+
+ TYPE_DEFINITION ' GES A_P_D LAV_C15 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE LAV_C15 %' 2 1 2 !
+ CONSTITUENT LAV_C15 : AL,DY,ND : AL,CO,DY,FE : !
+ PAR G(LAV_C15,AL:AL;0)  300 +GALLAV;                         3000 N!
+ PAR G(LAV_C15,AL:DY;0)  300 -GC15ALDY+30000+GHSERAL+2*GHSERDY; 3000 N! 
+ PAR G(LAV_C15,AL:CO;0)  300 +5000+GHSERAL+2*GHSERCO;         3000 N! 
+ PAR G(LAV_C15,AL:FE;0)  300 +5000+GHSERAL+2*GHSERFE;         3000 N! 
+
+ PAR G(LAV_C15,DY:AL;0) 300  +GC15ALDY+2*GHSERAL+GHSERDY;       3000 N! 
+ PAR G(LAV_C15,DY:DY;0) 300  +GDYLAV;                           3000 N!
+ PAR G(LAV_C15,DY:CO;0) 300 -56118-24.043*T+3.971*T*LN(T)
+     +2*GHSERCO+GHSERDY;                                        3000 N! 
+ PAR TC(LAV_C15,DY:CO;0)     300  +146.0;                       3000 N! 
+ PAR BMAGN(LAV_C15,DY:CO;0)  300  +6.93;                        3000 N! 
+ PAR G(LAV_C15,DY:FE;0)   800 -29922+0.99*T+2*GHSERFE+GHSERDY;  3000 N! 
+  PAR G(LAV_C15,DY:CO,DY;0)  300 +100000;                       3000 N! 
+  PAR G(LAV_C15,DY:DY,FE;0)  300 +100000;                       3000 N! 
+
+ PAR G(LAV_C15,ND:AL;0) 300  -162111+34.866*T+2*GHSERAL+GHSERND; 6000 N! 
+ PAR G(LAV_C15,ND:DY;0) 300  +100000+GHSERND+2*GHSERDY;          3000 N! 
+ PAR G(LAV_C15,ND:CO;0) 300  -86543+17.408*T+2*GHSERCO+GHSERND;  6000 N! 
+ PAR TC(LAV_C15,ND:CO;0)     300  +105.3;                        6000 N! 
+ PAR BMAGN(LAV_C15,ND:CO;0)  300  +3.45;                         6000 N! 
+ PAR G(LAV_C15,ND:FE;0) 300  +100000+GHSERND+2*GHSERFE;          3000 N! 
+
+
+
+PHASE LAV_C16 % 2 1 2 !
+ CONSTITUENT LAV_C16 : AL,B,CU : AL,CO,FE : !
+ PAR G(LAV_C16,AL:AL;0) 300 +3*GALBCC;                6000 N! 
+ PAR G(LAV_C16,AL:CO;0) 300 +100000+GALBCC+2*GHSERCO; 6000 N! 
+ PAR G(LAV_C16,AL:FE;0) 300 +100000+GALBCC+2*GHSERFE; 6000 N! 
+
+ PAR G(LAV_C16,B:AL;0) 300 +100000+GHSERBB+2*GALBCC;  6000 N! 
+ PAR G(LAV_C16,B:CO;0) 300 
+      -85691.01+15.23022*T+2*GHSERCO+GHSERBB; 6000 N! 
+ PAR G(LAV_C16,B:FE;0) 300 
+      -78783+10.398*T+2*GHSERFE+GHSERBB; 6000 N! 
+
+
+  PAR G(LAV_C16,B:CO,FE;0)     300  -20271.21+15.000*T;      6000 N! 
+  PAR G(LAV_C16,B:CO,FE;1)     300  -3237.94+5.000*T;        6000 N! 
+
+
+ PAR G(LAV_C16,CU:AL;0) 300 -47406+6.75*T+2*GHSERAL+GHSERCU; 6000 N! 
+PAR G(LAV_C16,CU:FE;0) 300 +100000+GHSERCU+2*GHSERFE;       6000 N! 
+PAR G(LAV_C16,CU:CO,FE;0) 300 +100000+GHSERCU+2*GHSERCO;    6000 N! 
+ PAR G(LAV_C16,AL,CU:AL;0) 300 +2211;                        6000 N! 
+
+
+
+
+ PHASE LAV_C36  %  2  1  2 !
+  CONSTITUENT LAV_C36  :AL,DY : AL,DY :  !
+ PAR G(LAV_C36,AL:AL;0)  300  +GALLAV;                           3000 N!
+ PAR G(LAV_C36,DY:DY;0)  300  +GDYLAV;                           3000 N!
+ PAR G(LAV_C36,AL:DY;0)  300  -GC36ALDY+30000+GHSERAL+2*GHSERDY; 3000 N! 
+ PAR G(LAV_C36,DY:AL;0)  300  +GC36ALDY+2*GHSERAL+GHSERDY;       3000 N! 
+
+
+
+TYPE_DEFINITION 5 GES A_P_D D011_1 MAGNETIC  -3.0    2.80000E-01  ! 
+ PHASE D011_1 %5 2 1 3 !
+   CONSTITUENT D011_1 : CO : DY, ND : !
+   PAR G(D011_1,CO:DY;0) 300 -50299+96.481*T-11.933*T*LN(T)
+                           +GHSERCO+3*GHSERDY;                 3000 N! 
+   PAR G(D011_1,CO:ND;0) 300 -67758+4.223*T+GHSERCO+3*GHSERND; 6000 N! 
+
+
+   PAR TC(D011_1,CO:DY;0)      300 +45;                        3000 N! 
+   PAR BMAGN(D011_1,CO:DY;0)   300 +6.4;                       3000 N! 
+   PAR TC(D011_1,CO:ND;0)      300 +14;                        6000 N! 
+   PAR BMAGN(D011_1,CO:ND;0)   300 +4.5;                       6000 N! 
+
+ TYPE_DEFINITION 6 GES A_P_D D2_D_1 MAGNETIC  -3.0    2.80000E-01  ! 
+ PHASE D2_D_1 %6 2 5 1 !
+   CONSTITUENT D2_D_1 : CO, CU : DY, ND : !
+ PAR G(D2_D_1,CO:DY;0) 300 -70000 +1*T +5*GHSERCO+GHSERDY; 6000 N! 
+ PAR G(D2_D_1,CO:ND;0) 300 -125252+31.012*T+5*GHSERCO+GHSERND; 6000 N! 
+ PAR G(D2_D_1,CU:DY;0) 300 
+       -99038.1936+0.78*T+5*GHSERCU+GHSERDY; 6000 N!   
+ PAR G(D2_D_1,CU:ND;0) 300 -94227+0.723*T+5*GHSERCU+GHSERND; 6000 N! 
+
+   PAR TC(D2_D_1,CO:ND;0)     300  +910;                      6000 N! 
+   PAR BMAGN(D2_D_1,CO:ND;0)  300  +10.6;                     6000 N! 
+
+
+
+ PHASE C23  %  2  1    2 !
+    CONSTITUENT C23 : AL : DY,ND :  !
+ PAR G(C23,AL:DY;0)  300 -115500+34.92*T+GHSERAL+2*GHSERDY;    3000 N! 
+ PAR G(C23,AL:ND;0)  300 -107574+30.219*T+GHSERAL+2*GHSERND;   6000 N! 
+
+
+
+
+ PHASE ALB12  %  2   1  12 !
+  CONSTITUENT ALB12  :AL : B :  !
+  PAR G(ALB12,AL:B;0) 300 -149722+5.78732*T+GHSERAL+12*GHSERBB; 6000 N! 
+
+ PHASE ALB2  %  2   1  2 !
+  CONSTITUENT ALB2  :AL : B :  !
+  PAR G(ALB2,AL:B;0)  300  -23000-3.05*T+GHSERAL+2*GHSERBB;      6000 N! 
+
+
+
+PHASE AL5CO2  %  2   0.714   0.286 !
+  CONSTITUENT AL5CO2  :AL : CO :  !
+  PAR G(AL5CO2,AL:CO;0) 300 -60200+8.91*T
+     +0.714*GHSERAL+0.286*GHSERCO;                            6000 N! 
+
+ PHASE AL3CO  %  2   0.75   0.25 !
+  CONSTITUENT AL3CO  :AL : CO :  !
+  PAR G(AL3CO,AL:CO;0)  300   
+        -54900+7.78*T+5.14E-4*T*LN(T)+0.75*GHSERAL+0.25*GHSERCO; 6000 N! 
+
+ PHASE AL13CO4  %  2   0.765   0.235 !
+  CONSTITUENT AL13CO4  :AL : CO :  !
+  PAR G(AL13CO4,AL:CO;0) 300 -52800+7.5*T
+       +0.765*GHSERAL+0.235*GHSERCO;                             6000 N! 
+       
+ PHASE AL9CO2 %  2   0.818   0.182 !
+  CONSTITUENT AL9CO2  :AL : CO :  !
+  PAR G(AL9CO2,AL:CO;0)  300   -45400+8.065*T+0.0026*T*LN(T)
+        +0.818*GHSERAL + 0.182*GHSERCO;                          6000 N! 
+
+ PHASE B2_ALCO %  4  0.25 0.25 0.25 0.25 !
+     CONSTITUENT B2_ALCO :AL,CO:AL,CO:AL,CO:AL,CO: !
+  PAR G(B2_ALCO,AL:AL:AL:AL;0)  300  +GALBCC;                    6000 N! 
+  PAR G(B2_ALCO,CO:CO:CO:CO;0)  300  +GCOBCC;                    6000 N!
+  PAR G(B2_ALCO,CO:AL:AL:AL;0)  300  -24200+1.56*T
+      +0.75*GALBCC+0.25*GCOBCC;                                  6000 N! 
+  PAR G(B2_ALCO,AL:CO:AL:AL;0)  300  -24200+1.56*T
+      +0.75*GALBCC+0.25*GCOBCC;                                  6000 N! 
+  PAR G(B2_ALCO,CO:CO:CO:AL;0)  300  -13600-13.2*T
+      +0.75*GCOBCC+0.25*GALBCC;                                  6000 N! 
+  PAR G(B2_ALCO,CO:CO:AL:CO;0)  300  -13600-13.2*T
+      +0.75*GCOBCC+0.25*GALBCC;                                  6000 N! 
+  PAR G(B2_ALCO,CO:CO:AL:AL;0)  300  -67700+0.477*T
+      +0.5*GCOBCC+0.5*GALBCC;                                    6000 N! 
+  PAR G(B2_ALCO,CO:CO:AL,CO:AL;0) 300 -12700+7.84*T;             6000 N! 
+
+
+
+ PHASE ALCU  %  2   1   1 !
+  CONSTITUENT ALCU  :AL,CU : CU :  !
+  PAR G(ALCU,AL:CU;0)    300 -40560+3.14*T+GHSERAL+GHSERCU;     6000 N! 
+  PAR G(ALCU,CU:CU;0)    300 +8034-2.51*T+2.0*GHSERCU;          6000 N! 
+  PAR G(ALCU,AL,CU:CU;0) 300 -25740-20*T;                       6000 N! 
+
+
+ PHASE AL2CU3  %  2   2    3 !
+  CONSTITUENT AL2CU3  :AL : CU :  !
+  PAR G(AL2CU3,AL:CU;0)  300 -106700.0+3.0*T
+      +2.0*GHSERAL+3.0*GHSERCU;                                 6000 N! 
+
+
+ PHASE AL9CU11  %  2   9    11 !
+  CONSTITUENT AL9CU11  :AL : CU :  !
+  PAR G(AL9CU11,AL:CU;0)  300 -420000+18*T
+      +9.0*GHSERAL+11.0*GHSERCU;                                6000 N! 
+
+
+ PHASE AL5CU8 %  3    4   1   8 !
+  CONSTITUENT AL5CU8 :AL : AL,CU : CU : !
+  PAR G(AL5CU8,AL:AL:CU;0)  300 -219258-45.5*T
+      +5.0*GHSERAL+8.0*GHSERCU;                                 6000 N! 
+  PAR G(AL5CU8,AL:CU:CU;0)  300 -200460-58.5*T
+      +4.0*GHSERAL+9.0*GHSERCU;                                 6000 N! 
+  PAR G(AL5CU8,AL:AL,CU:CU;0) 300 0.0;                          6000 N! 
+
+
+ PHASE AL4CU9 %  5    1   1   2   3   6 !
+  CONSTITUENT AL4CU9 :AL,CU : CU : CU : CU : AL,CU : !
+  PAR G(AL4CU9,AL:CU:CU:CU:AL;0) 300 -128762.9
+      +7*GHSERAL+6*GHSERCU;                                     6000 N! 
+  PAR G(AL4CU9,AL:CU:CU:CU:CU;0) 300 +72595.8
+      +GHSERAL+12*GHSERCU;                                      6000 N! 
+  PAR G(AL4CU9,CU:CU:CU:CU:AL;0) 300 +265000
+      +6*GHSERAL+7*GHSERCU;                                     6000 N! 
+  PAR G(AL4CU9,CU:CU:CU:CU:CU;0) 300 +265000+13.0*GHSERCU;      6000 N! 
+  PAR G(AL4CU9,AL,CU:CU:CU:CU:CU;0) 300 0;                      6000 N! 
+  PAR G(AL4CU9,AL,CU:CU:CU:CU:AL;0) 300 0;                      6000 N! 
+  PAR G(AL4CU9,CU:CU:CU:CU:AL,CU;0) 300 0;                      6000 N! 
+  PAR G(AL4CU9,AL:CU:CU:CU:AL,CU;0) 300 -791861+0.001*T;        6000 N! 
+
+
+ PHASE ALCU2 %  3   1    1    1 !
+  CONSTITUENT ALCU2 :CU : CU,VA : AL : !
+  PAR G(ALCU2,CU:CU:AL;0)    300 -50800+GHSERAL+2.0*GHSERCU;   6000 N! 
+  PAR G(ALCU2,CU:VA:AL;0)    300 -36976+1.2*T+GHSERAL+GHSERCU; 6000 N! 
+  PAR G(ALCU2,CU:CU,VA:AL;0) 300 -7600-4*T;                    6000 N! 
+
+ PHASE AL2DY3  %  2  2    3 !
+    CONSTITUENT AL2DY3 : AL : DY :  !
+ PAR G(AL2DY3,AL:DY;0) 300 -220000+64.78*T+2*GHSERAL+3*GHSERDY; 3000 N! 
+
+ PHASE ALDY  %  2  1  1 !
+    CONSTITUENT ALDY : AL : DY :  !
+ PAR G(ALDY,AL:DY;0)  300  -99000+27.2*T+GHSERAL+GHSERDY;       3000 N! 
+
+ PHASE AL3DY  %  2  3  1 !
+    CONSTITUENT AL3DY : AL : DY :  !
+ PAR G(AL3DY,AL:DY;0)  300  -150000+25.84*T+3*GHSERAL+GHSERDY;  3000 N! 
+
+ PHASE DO24  %  2  3  1 !
+    CONSTITUENT DO24 : AL : DY :  !
+ PAR G(DO24,AL:DY;0)  300  -170000+41.45*T+3*GHSERAL+GHSERDY;   3000 N! 
+
+
+
+ PHASE AL2DY % 2 2 1 !
+   CONSTITUENT AL2DY : AL,CU,DY : AL,CU,DY : !
+ PAR G(AL2DY,AL:AL;0) 300 15000+3*GHSERAL;                      2900 N! 
+ PAR G(AL2DY,DY:DY;0) 300 15000+3*GHSERDY;                      3000 N! 
+ PAR G(AL2DY,CU:CU;0) 300 15000+3*GHSERCU;                      3200 N! 
+ PAR G(AL2DY,AL:DY;0) 300 -162000+40.24*T+2*GHSERAL+GHSERDY;    3000 N! 
+ PAR G(AL2DY,DY:AL;0) 300 +192000-40.24*T+GHSERAL+2*GHSERDY;    3000 N! 
+ PAR G(AL2DY,AL:CU;0) 300 +30000+2*GHSERAL+GHSERCU;             3200 N! 
+ PAR G(AL2DY,CU:AL;0) 300 +30000+GHSERAL+2*GHSERCU;             3200 N! 
+ PAR G(AL2DY,CU:DY;0) 300 -66000+4.24*T+2*GHSERCU+GHSERDY;      3200 N! 
+ PAR G(AL2DY,DY:CU;0) 300 +96000-4.24*T+GHSERCU+2*GHSERDY;      3200 N! 
+ PAR G(AL2DY,AL,CU:DY;0) 300 -55000;                  3200 N! 
+
+
+ PHASE AL2FE   % 2  2  1   !
+   CONSTITUENT AL2FE  :AL:FE:  !
+  PAR G(AL2FE,AL:FE;0)  300 
+      -98097.0+18.7503*T+2*GHSERAL+GHSERFE;                     6000 N!
+
+ PHASE AL13FE4  %  3  0.6275  0.235  0.1375  !
+   CONSTITUENT AL13FE4  :AL:FE:AL,VA:  !
+  PAR G(AL13FE4,AL:FE:AL;0)  300
+      -30714.4+7.44*T+0.765*GHSERAL+0.235*GHSERFE;              6000 N! 
+  PAR G(AL13FE4,AL:FE:VA;0)  300
+      -27781.3+7.2566*T+0.6275*GHSERAL+0.235*GHSERFE;           6000 N! 
+
+ PHASE AL5FE2   % 2  5  2  !
+   CONSTITUENT AL5FE2  :AL:FE:  !
+  PAR G(AL5FE2,AL:FE;0)  300  
+      -228576+48.99503*T+5*GHSERAL+2*GHSERFE;                   6000 N! 
+
+ PHASE AL5FE4  % 1 1.0 !
+   CONSTITUENT AL5FE4  :AL,FE :  !
+  PAR G(AL5FE4,AL;0)     300  +12178.90-4.813*T+GHSERAL;        6000 N! 
+  PAR G(AL5FE4,FE;0)     300  +5009.03+GHSERFE;                 6000 N! 
+  PAR G(AL5FE4,AL,FE;0)  300  -131649+29.4833*T;                6000 N! 
+  PAR G(AL5FE4,AL,FE;1)  300  -18619.5;                         6000 N! 
+
+
+
+ PHASE AL4ND  %  2   0.8    0.2 !
+  CONSTITUENT AL4ND  :AL : ND :  !
+  PAR G(AL4ND,AL:ND;0)  300
+       -30097+1.365*T+0.8*GHSERAL+0.2*GHSERND;                  6000 N! 
+
+ PHASE AL11ND3  %  2   0.7857    0.2143 !
+  CONSTITUENT AL11ND3 :AL : ND :  !
+  PAR G(AL11ND3,AL:ND;0)  300
+       -39355+7.72*T+0.7857*GHSERAL+0.2143*GHSERND;             6000 N! 
+
+ PHASE AL3ND_BETA  %  2   0.75    0.25 !
+  CONSTITUENT AL3ND_BETA :AL : ND :  !
+  PAR G(AL3ND_BETA,AL:ND;0)  300
+       -43229+8.022*T+0.75*GHSERAL+0.25*GHSERND;                6000 N! 
+
+ PHASE AL3ND_ALPHA  %  2   0.75    0.25 !
+  CONSTITUENT AL3ND_ALPHA :AL : ND :  !
+  PAR G(AL3ND_ALPHA,AL:ND;0)  300
+       -45046+9.587*T+0.75*GHSERAL+0.25*GHSERND;                6000 N! 
+
+ PHASE ALND  %  2   0.5    0.5 !
+  CONSTITUENT ALND  :AL : ND :  !
+  PAR G(ALND,AL:ND;0)  300
+       -51110+15.354*T+0.5*GHSERAL+0.5*GHSERND;                 6000 N! 
+
+ PHASE ALND3  %  2   0.25    0.75 !
+  CONSTITUENT ALND3 :AL : ND :  !
+  PAR G(ALND3,AL:ND;0)  300
+       -27788+7.208*T+0.25*GHSERAL+0.75*GHSERND;                6000 N! 
+
+
+ PHASE BCO  %  2 0.5   0.5 !
+  CONSTITUENT BCO  :B : CO :  !
+  PAR G(BCO,B:CO;0)  300 -40616.6+134.82159*T-21.3264*T*LN(T)-0.0041898*T**2
+     +297858.09*T**(-1);                                     6000 N! 
+
+ PHASE CO3B % 2 0.25 0.75 !
+ CONSTITUENT CO3B : B : CO : !
+ PAR G(CO3B,B:CO;0)  300 
+      -21131.79+3.19280*T+0.75*GHSERCO+0.25*GHSERBB;           6000 N! 
+
+ PHASE B2DY  %  2  2  1  !
+    CONSTITUENT B2DY : B : DY :  !
+    PARA G(B2DY,B:DY;0)  300 -1200-116072.1897 +370.54342*T -65.4282*T*LN(T)
+       -0.00357903*T**2 -1.84558E-06*T**3 +827186*T**(-1); 6000 N! 
+
+ PHASE B4DY  %  2   4   1  !
+    CONSTITUENT B4DY : B : DY :  !
+    PARA G(B4DY,B:DY;0)  300 -180135.3572 +612.5575337*T -100.7564*T*LN(T)
+        -0.01730806*T**2 -6.07821E-07*T**3 +1568872*T**(-1); 6000 N! 
+
+ PHASE B6DY  %  2  6  1  !
+    CONSTITUENT B6DY : B : DY :  !
+    PARA G(B6DY,B:DY;0)  300  -216413.3246 +800.9908737*T -128.0846*T*LN(T)
+         -0.03103709*T**2 +6.29935E-07*T**3 +2310558*T**(-1);  6000 N! 
+
+ PHASE B12DY  %  2  12  1  !
+    CONSTITUENT B12DY : B : DY :  !
+    PARA G(B12DY,B:DY;0)  300  -267825.027 +1443.262054*T -222.0692*T*LN(T)
+         -0.07222418*T**2 +4.3432E-06*T**3 +4535616*T**(-1);  6000 N! 
+
+ PHASE B66DY  %  2  66  1  !
+    CONSTITUENT B66DY : B : DY :  !
+    PARA G(B66DY,B:DY;0)  300  -720530.348 +7238.40268*T -1067.9306*T*LN(T)
+       -0.44290799*T**2 +3.77626E-05*T**3 +24561138*T**(-1);  6000 N! 
+
+  PHASE FEB  %  2 0.5   0.5 !
+   CONSTITUENT FEB  :FE : B :  !
+  PAR G(FEB,FE:B;0)  300  
+      +0.5*GHSERFE+0.5*GHSERBB-35287+5.992*T;     6000 N! 
+
+PHASE ND2B5  %  2   0.7143  0.2857 !
+  CONSTITUENT ND2B5  :B : ND :  !
+   PAR G(ND2B5,B:ND;0)  300 
+      -63259+14.19*T+0.2857*GHSERND+0.7143*GHSERBB;  6000 N! 
+
+  PHASE NDB4  %  2   0.8  0.2 !
+  CONSTITUENT NDB4  :B : ND :  !
+   PAR G(NDB4,B:ND;0)  300 
+      -71066+16.62*T+0.2*GHSERND+0.8*GHSERBB;   6000 N! 
+
+ PHASE NDB6  %  2   0.8571  0.1429 !
+  CONSTITUENT NDB6  :B : ND :  !
+   PAR G(NDB6,B:ND;0)  300 
+     -50910+8.978*T+0.1429*GHSERND+0.8571*GHSERBB; 6000 N! 
+
+ PHASE NDB66  %  2   0.9851  0.0149 !
+  CONSTITUENT NDB66  :B : ND :  !
+   PAR G(NDB66,B:ND;0)  300 
+     -7226+1.133*T+0.0149*GHSERND+0.9851*GHSERBB;  6000 N! 
+
+
+
+TYPE_DEFINITION 3 GES A_P_D CO17DY2 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE CO17DY2  %3  3   15   1   2 ! 
+    CONSTITUENT CO17DY2 : CO : CO2,DY :  CO2,DY :  ! 
+ PAR G(CO17DY2,CO:DY:DY;0)      300  
+   -192744-235.937*T+30.560*T*LN(T)+15*GHSERCO+3*GHSERDY;       3000 N! 
+ PAR TC(CO17DY2,CO:DY:DY;0)     300  +960;                      3000 N! 
+ PAR BMAGN(CO17DY2,CO:DY:DY;0)  300  +1.1;                      3000 N! 
+ PAR G(CO17DY2,CO:CO2:DY;0)     300 
+                   -220618+32.404*T+17*GHSERCO+2*GHSERDY;       3000 N! 
+ PAR TC(CO17DY2,CO:CO2:DY;0)    300  +1166;                     3000 N! 
+ PAR BMAGN(CO17DY2,CO:CO2:DY;0) 300  +7.7;                      3000 N! 
+ PAR G(CO17DY2,CO:CO2:CO2;0)    300  +327454+21*GHSERCO;        3000 N! 
+ PAR G(CO17DY2,CO:DY:CO2;0)     300  +19*GHSERCO+GHSERDY;       3000 N! 
+ PAR G(CO17DY2,CO:CO2,DY:CO2;0) 300  +34451-4.983*T;            3000 N! 
+ PAR G(CO17DY2,CO:CO2,DY:DY;0)  300  +34451-4.983*T;            3000 N! 
+ PAR G(CO17DY2,CO:CO2:CO2,DY;0) 300  +13297-48.207*T;           3000 N! 
+ PAR G(CO17DY2,CO:DY:CO2,DY;0)  300  +13297-48.207*T;           3000 N! 
+
+ PHASE CO7DY12  %  2   7     12 !
+    CONSTITUENT CO7DY12 : CO : DY :  !
+ PAR G(CO7DY12,CO:DY;0)  300  
+                   -308895+74.994*T+7*GHSERCO+12*GHSERDY;       3000 N! 
+
+ TYPE_DEFINITION 2 GES A_P_D CO3DY MAGNETIC  -3.0    2.80000E-01 !
+ PHASE CO3DY  %2  2   3   1!
+    CONSTITUENT CO3DY : CO : DY :  !
+ PAR G(CO3DY,CO:DY;0)  300  
+                    -73458+8.656*T+3*GHSERCO+GHSERDY;           3000 N! 
+ PAR TC(CO3DY,CO:DY;0)     300  +452.5;                         3000 N! 
+ PAR BMAGN(CO3DY,CO:DY;0)  300  +4.4;                           3000 N! 
+
+ TYPE_DEFINITION 1 GES A_P_D CO7DY2 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE CO7DY2  %1  2   7  2!
+    CONSTITUENT CO7DY2 : CO : DY :  !
+ PAR G(CO7DY2,CO:DY;0)  300  
+                -154817+18.659*T+7*GHSERCO+2*GHSERDY;           3000 N! 
+ PAR TC(CO7DY2,CO:DY;0)     300  +640;                          3000 N! 
+ PAR BMAGN(CO7DY2,CO:DY;0)  300  +4.55;                         3000 N! 
+
+
+ PHASE COGA  %  2   0.5   0.5 ! 
+    CONSTITUENT COGA : CO,GA : CO,VA :  ! 
+    PAR G(COGA,CO:CO;0)    300  +GCOBCC;                       6000 N! 
+    PAR G(COGA,GA:CO;0)    300  -42125+9.519*T
+                                +0.5*GHSERCO+0.5*GHSERGA;      6000 N! 
+    PAR G(COGA,GA:VA;0)    300  +7250-6.35*T+0.5*GHSERGA;      6000 N! 
+    PAR G(COGA,CO:VA;0)    300  +23000+3*T +0.5*GCOBCC;        6000 N! 
+    PAR G(COGA,CO:CO,VA;0) 300  -6847+0.6913*T;                6000 N! 
+    PAR G(COGA,GA:CO,VA;0) 300  -24462+9.677*T;                6000 N! 
+    PAR G(COGA,CO,GA:CO;0) 300  -11752+3.505*T;                6000 N! 
+    PAR G(COGA,CO,GA:VA;0) 300  -7557-0.3907*T;                6000 N! 
+
+   PHASE COGA3  %  2  0.25  0.75 !
+    CONSTITUENT COGA3 : CO : GA :  !
+    PAR G(COGA3,CO:GA;0)  300  -30770+3.043*T
+                               +0.25*GHSERCO+0.75*GHSERGA;     6000 N! 
+
+TYPE_DEFINITION " GES A_P_D CO17ND2 MAGNETIC  -3.0    2.80000E-01 ! 
+ PHASE CO17ND2  %"  2  17   2 !
+    CONSTITUENT CO17ND2  :CO : ND :  !
+  PAR TC(CO17ND2,CO:ND;0)     300  +1157;                      6000 N! 
+  PAR BMAGN(CO17ND2,CO:ND;0)  300  +33.5;                      6000 N! 
+  PAR G(CO17ND2,CO:ND;0)  300 
+                        -313664+94.459*T+17*GHSERCO+2*GHSERND; 6000 N! 
+
+ TYPE_DEFINITION 9 GES A_P_D CO19ND5 MAGNETIC  -3.0    2.80000E-01 ! 
+ PHASE CO19ND5  %9  2  19   5 !
+    CONSTITUENT CO19ND5  :CO : ND :  !
+  PAR TC(CO19ND5,CO:ND;0)     300  +714;                       6000 N! 
+  PAR BMAGN(CO19ND5,CO:ND;0)  300  +31.0;                      6000 N! 
+  PAR G(CO19ND5,CO:ND;0)  300 
+      -607724+219.708*T-7.707899*T*LN(T)+19*GHSERCO+5*GHSERND; 6000 N! 
+
+ TYPE_DEFINITION 8 GES A_P_D CO7ND2 MAGNETIC  -3.0    2.80000E-01 ! 
+ PHASE CO7ND2  %8  2  7   2 !
+    CONSTITUENT CO7ND2  :CO : ND :  !
+  PAR TC(CO7ND2,CO:ND;0)     300  +609;                        6000 N! 
+  PAR BMAGN(CO7ND2,CO:ND;0)  300  +13.1;                       6000 N!
+  PAR G(CO7ND2,CO:ND;0) 300 
+                         -230419+58.917*T+7*GHSERCO+2*GHSERND; 6000 N! 
+ TYPE_DEFINITION 7 GES A_P_D CO3ND MAGNETIC  -3.0    2.80000E-01 ! 
+ PHASE CO3ND  %7  2  3   1 !
+    CONSTITUENT CO3ND  :CO : ND :  !
+  PAR TC(CO3ND,CO:ND;0)     300  +392.6;                       6000 N! 
+  PAR BMAGN(CO3ND,CO:ND;0)  300  +5.52;                        6000 N! 
+  PAR G(CO3ND,CO:ND;0) 300 -106751+25.870*T+3*GHSERCO+GHSERND; 6000 N! 
+
+ PHASE CO3ND2_ALPHA  %  2  3   2 !
+    CONSTITUENT CO3ND2_ALPHA  :CO : ND :  !
+ PAR G(CO3ND2_ALPHA,CO:ND;0) 300 
+                         -147698+35.561*T+3*GHSERCO+2*GHSERND; 6000 N! 
+
+ PHASE CO3ND2_BETA  %  2  3   2 !
+    CONSTITUENT CO3ND2_BETA  :CO : ND :  !
+  PAR G(CO3ND2_BETA,CO:ND;0) 300 
+                        -147228+35.012*T+3*GHSERCO+2*GHSERND;  6000 N! 
+
+ PHASE CO3ND4  %  2  3   4 !
+    CONSTITUENT CO3ND4  :CO : ND :  !
+  PAR G(CO3ND4,CO:ND;0)  300  
+                         -187038+45.082*T+3*GHSERCO+4*GHSERND; 6000 N! 
+
+ PHASE CO2ND5  %  2  2   5 !
+    CONSTITUENT CO2ND5  :CO : ND :  !
+  PAR G(CO2ND5,CO:ND;0)  300  
+                         -133113+13.951*T+2*GHSERCO+5*GHSERND; 6000 N! 
+
+
+
+ PHASE CUDY % 2 0.5 0.5 !
+   CONSTITUENT CUDY : AL,CU : DY : !
+ PAR G(CUDY,AL:DY;0) 300 -27500+0.2*T+0.5*GHSERAL+0.5*GHSERDY; 3200 N! 
+ PAR G(CUDY,CU:DY;0) 300 
+                 -25910.8476+0.5347*T+0.5*GHSERCU+0.5*GHSERDY; 3200 N! 
+   PARA G(CUDY,AL,CU:DY;0)   300   -31000;                     3200 N! 
+
+ PHASE CU7DY  %  2 0.875  0.125 !
+    CONSTITUENT CU7DY : CU : DY :  !
+    PAR G(CU7DY,CU:DY;0)  300  -10936.4348-1.2792*T
+                                   +0.875*GHSERCU+0.125*GHSERDY;  6000 N! 
+
+ PHASE CU5DY_L  %  2 0.833333  0.166667 !
+    CONSTITUENT CU5DY_L : CU : DY :  !
+    PAR G(CU5DY_L,CU:DY;0)  300  -16590.5756+0.2*T
+                            +0.833333*GHSERCU+0.166667*GHSERDY;  6000 N! 
+
+ PHASE CU5DY_H % 2 0.833333  0.166667 !
+   CONSTITUENT CU5DY_H : CU : DY : !
+   PARA G(CU5DY_H,CU:DY;0)   300   -16506.3656+0.13*T
+                          +0.833333*GHSERCU+0.166667*GHSERDY;  3200 N! 
+
+ PHASE CU9DY2  %  2 0.8182  0.1818 !
+    CONSTITUENT CU9DY2 : CU : DY :  !
+    PAR G(CU9DY2,CU:DY;0)  300  -17622.8381+0.1*T
+                      +0.8182*GHSERCU+0.1818*GHSERDY;          6000 N! 
+
+ PHASE CU7DY2  %  2 0.7778  0.2222 !
+    CONSTITUENT CU7DY2 : CU : DY :  !
+    PAR G(CU7DY2,CU:DY;0)  300  -12864.9174-5.5219*T
+                      +0.7778*GHSERCU+0.2222*GHSERDY;          6000 N! 
+
+ PHASE CU2DY % 2 0.6667 0.3333 !
+   CONSTITUENT CU2DY : AL,CU : DY : !
+   PARA G(CU2DY,AL:DY;0)      300   -26409.4524+3.9279*T
+                              +0.6667*GHSERAL+0.3333*GHSERDY;  3200 N! 
+   PARA G(CU2DY,CU:DY;0)     300   -24409.4524+0.9279*T
+                              +0.6667*GHSERCU+0.3333*GHSERDY;  3200 N! 
+   PARA G(CU2DY,AL,CU:DY;0)  300  -35009.4524;                 3200 N! 
+
+PHASE CU8GA2_ZETA  %  2  0.778  0.222 !
+    CONSTITUENT CU8GA2_ZETA : CU : GA :  !
+  PAR G(CU8GA2_ZETA,CU:GA;0) 300 
+      -10100.0-4.4596*T+0.778*GHSERCU+0.222*GHSERGA;             6000 N! 
+
+ PHASE CUGA2  %  2  1    2 !
+    CONSTITUENT CUGA2 : CU : GA :  !
+  PAR G(CUGA2,CU:GA;0) 300 -23437.9-13.2663*T+GHSERCU+2*GHSERGA; 6000 N! 
+
+PHASE CU9GA4_GAMMA0    %  3  6   6   1  ! 
+    CONSTITUENT CU9GA4_GAMMA0 : CU : CU,GA : GA :  ! 
+  PAR G(CU9GA4_GAMMA0,CU:CU,GA:GA;0)    300 +A_CUGA;             6000 N! 
+  PAR G(CU9GA4_GAMMA0,CU:CU:GA;0)       300 +CU6CU6GA-1;         6000 N! 
+  PAR G(CU9GA4_GAMMA0,CU:GA:GA;0)       300 +CU6GA6GA-1;         6000 N! 
+
+  PHASE CU9GA4_GAMMA1  %  4  6  3   3     1  ! 
+   CONSTITUENT CU9GA4_GAMMA1 : CU : CU,GA : CU,GA : GA :  ! 
+  PAR G(CU9GA4_GAMMA1,CU:CU:CU:GA;0)    300 +CU6CU6GA;           6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:GA:GA:GA;0)    300 +CU6GA6GA;           6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU:GA:GA;0)    300 +CU9GA4;             6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:GA:CU:GA;0)    300 +CU9GA4;             6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU,GA:CU:GA;0) 300 +CUGACU0;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU,GA:CU:GA;1) 300 +CUGACU1;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU:CU,GA:GA;0) 300 +CUGACU0;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU:CU,GA:GA;1) 300 +CUGACU1;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU,GA:GA:GA;0) 300 +CUGAGA0;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:CU,GA:GA:GA;1) 300 +CUGAGA1;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:GA:CU,GA:GA;0) 300 +CUGAGA0;            6000 N!
+  PAR G(CU9GA4_GAMMA1,CU:GA:CU,GA:GA;1) 300 +CUGAGA1;            6000 N! 
+
+ PHASE CU9GA4_GAMMA2    %  4  3   3   3   4  ! 
+    CONSTITUENT CU9GA4_GAMMA2 : CU :CU,VA : CU,GA : GA :  ! 
+  PAR G(CU9GA4_GAMMA2,CU:CU:CU:GA;0)    300 +CU9GA4;              6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:CU:GA:GA;0)    300 +CU6GA6GA;            6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:VA:CU:GA;0)    300 +6*GHSERCU+4*GHSERGA; 6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:VA:GA:GA;0)    300 +3*GHSERCU+7*GHSERGA; 6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:CU,VA:CU:GA;0) 300 -87862.1-18.4959*T;   6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:CU,VA:GA:GA;0) 300 +0;                   6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:CU:CU,GA:GA;0) 300 +CUGAGA0;             6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:CU:CU,GA:GA;1) 300 +CUGAGA1;             6000 N!
+  PAR G(CU9GA4_GAMMA2,CU:VA:CU,GA:GA;0) 300 -325261.8+205.6819*T;
+                                                                 6000 N! 
+
+ PHASE CU9GA4_GAMMA3    %  3  6   3   4  ! 
+    CONSTITUENT CU9GA4_GAMMA3 : CU,VA : CU,GA : GA :  ! 
+  PAR G(CU9GA4_GAMMA3,CU:CU:GA;0)       300 +CU9GA4;              6000 N!
+  PAR G(CU9GA4_GAMMA3,CU:GA:GA;0)       300 +CU6GA6GA;            6000 N!
+  PAR G(CU9GA4_GAMMA3,VA:CU:GA;0)       300 +3*GHSERCU+4*GHSERGA; 6000 N!
+  PAR G(CU9GA4_GAMMA3,VA:GA:GA;0)       300 +50000+7*GHSERGA;     6000 N!
+  PAR G(CU9GA4_GAMMA3,CU,VA:CU:GA;0)    300 -48276.5+166.7149*T;  6000 N!
+  PAR G(CU9GA4_GAMMA3,CU,VA:GA:GA;0)    300 +0;                   6000 N!
+  PAR G(CU9GA4_GAMMA3,CU:CU,GA:GA;0)    300 +CUGAGA0;             6000 N!
+  PAR G(CU9GA4_GAMMA3,CU:CU,GA:GA;1)    300 +CUGAGA1;             6000 N!
+  PAR G(CU9GA4_GAMMA3,VA:CU,GA:GA;0)    300 -238466.3;           6000 N! 
+
+
+PHASE CU6ND  %  2  0.8571   0.1429 !
+    CONSTITUENT CU6ND  :CU : ND :  !
+   PAR G(CU6ND,CU:ND;0)  300  
+       -13581.0-0.7253*T+0.8571*GHSERCU +0.1429*GHSERND; 6000 N! 
+
+
+ PHASE CU4ND  %  2  0.8   0.2 !
+    CONSTITUENT CU4ND  :CU : ND :  !
+    PAR G(CU4ND,CU:ND;0)  300  
+        -16826.7-0.1695*T+0.8*GHSERCU +0.2*GHSERND;      6000 N! 
+
+ PHASE CU7ND2  %  2  0.7778   0.2222 !
+    CONSTITUENT CU7ND2  :CU : ND :  !
+    PAR G(CU7ND2,CU:ND;0)  300  
+     -10046.4-7.2194*T+0.7778*GHSERCU +0.2222*GHSERND;   6000 N! 
+
+ PHASE CU2ND  %  2  0.6667   0.3333 !
+    CONSTITUENT CU2ND  :CU : ND :  !
+    PAR G(CU2ND,CU:ND;0)  300  
+       -20250.0-1.3786*T+0.6667*GHSERCU +0.3333*GHSERND; 6000 N! 
+
+  PHASE BETA_CUND  %  2  0.5   0.5!
+    CONSTITUENT BETA_CUND  :CU,FE: ND :  !
+    PARA G(BETA_CUND,CU:ND;0)  300 
+         -16592.3-2.4898*T+0.5*GHSERCU +0.5*GHSERND;     6000 N! 
+    PARA G(BETA_CUND,FE:ND;0)  300 
+          +9108-50.85*T+8.71*T*LN(T)+0.5*GHSERFE +0.5*GHSERND; 6000 N! 
+    PARA G(BETA_CUND,CU,FE:ND;0)  300 -13930+9.91*T;           6000 N! 
+
+  PHASE ALPHA_CUND  %  2  0.5   0.5!
+    CONSTITUENT ALPHA_CUND  :CU,FE : ND :  !
+    PARA G(ALPHA_CUND,CU:ND;0)  300  -18280.0-0.2176*T
+                           +0.5*GHSERCU +0.5*GHSERND;    6000 N! 
+    PARA G(ALPHA_CUND,FE:ND;0)  300   +9108-50.85*T+8.71*T*LN(T)
+                                +0.5*GHSERFE +0.5*GHSERND;     6000 N! 
+    PARA G(ALPHA_CUND,CU,FE:ND;0) 300 -13930+9.91*T;           6000 N! 
+
+
+PHASE DYFE3  %   2  0.25  0.75  !
+    CONSTITUENT DYFE3  : DY  : FE  :  !
+  PAR G(DYFE3,DY:FE;0)    800
+                        -9901+0.9*T+0.75*GHSERFE+0.25*GHSERDY; 3000 N! 
+ PHASE DY6FE23  %   2  0.206897  0.793103  !
+    CONSTITUENT DY6FE23  : DY  : FE  :  !
+  PAR G(DY6FE23,DY:FE;0)    800
+                -9961+1.6*T+0.793103*GHSERFE+0.206897*GHSERDY; 3000 N! 
+
+ PHASE DY2FE17  %   2  0.105263  0.894737  !
+    CONSTITUENT DY2FE17  : DY  : FE  :  !
+  PAR G(DY2FE17,DY:FE;0)    800
+              -9399.5+2.8*T+0.894737*GHSERFE+0.105263*GHSERDY; 3000 N! 
+
+PHASE DYGA2  %  2   1   2  !
+    CONSTITUENT DYGA2 : DY : GA :  !
+   PAR G(DYGA2,DY:GA;0) 300 -80000+3*T+GHSERDY +2*GHSERGA; 6000 N! 
+
+
+PHASE FE3GA   % 2  0.75  0.25   !
+   CONSTITUENT FE3GA  :FE:GA:  !
+   PAR G(FE3GA,FE:GA;0)  300 
+                          -28000+6*T+0.25*GHSERGA+0.75*GHSERFE; 6000 N! 
+
+ PHASE FE6GA5   % 2  6  5   !
+   CONSTITUENT FE6GA5  :FE:GA:  !
+   PAR G(FE6GA5,FE:GA;0)  300 
+                          -400000+60*T+5*GHSERGA+6*GHSERFE;     6000 N! 
+
+ PHASE FEGA3   % 2  0.25  0.75     !
+   CONSTITUENT FEGA3  :FE:GA:  !
+   PAR G(FEGA3,FE:GA;0)  300 
+                          -35000+6*T+0.75*GHSERGA+0.25*GHSERFE; 6000 N! 
+
+
+
+ TYPE_DEFINITION & GES A_P_D FE17ND2 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE17ND2  %&  2 0.8947   0.1053 !
+    CONSTITUENT FE17ND2  :FE : ND :  !
+    PAR TC(FE17ND2,FE:ND;0)    300  +327.15;             6000 N! 
+    PAR BMAGN(FE17ND2,FE:ND;0) 300  +2.3;                6000 N! 
+    PAR G(FE17ND2,FE:ND;0)          300  -7385+3.600*T
+                  +0.8947*GHSERFE+0.1053*GHSERND;        6000 N! 
+
+
+ TYPE_DEFINITION + GES A_P_D FE17ND5 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE17ND5  %+  2 0.7727  0.2273 !
+    CONSTITUENT FE17ND5  :FE :ND :  !
+    PAR TC(FE17ND5,FE:ND;0)    300  +503.15;             6000 N! 
+    PAR BMAGN(FE17ND5,FE:ND;0) 300  +2.3;                6000 N! 
+    PAR G(FE17ND5,FE:ND;0)     300  -6175+2.698*T
+              +0.7727*GHSERFE+0.2273*GHSERND;            6000 N! 
+
+PHASE GA2ND  %  2   2   1  !
+    CONSTITUENT GA2ND : GA : ND :  !
+  PAR G(GA2ND,GA:ND;0) 300 -70000 +1*T+2*GHSERGA +1*GHSERND;  6000 N! 
+
+  Function MOLNDDY   300 +0.1176;                  6000 N ! 
+  Function GDYDY     300 -1000+780-4.3*T+0.0018*T**2;   6000 N ! 
+
+
+ TYPE_DEFINITION ) GES A_P_D ND2FE14B MAGNETIC  -3.0    2.80000E-01 !
+ PHASE ND2FE14B  %)  4  0.0588  0.8236  0.0588 0.0588 !
+    CONSTITUENT         ND2FE14B  :B : FE : DY,ND : DY,ND :  !
+    PAR TC(ND2FE14B,B:FE:ND:ND;0)    300 +586.15;               6000 N! 
+    PAR BMAGN(ND2FE14B,B:FE:ND:ND;0) 300  +0.8;                 6000 N! 
+    PAR TC(ND2FE14B,B:FE:DY:DY;0)     300 +586.15;              6000 N! 
+    PAR BMAGN(ND2FE14B,B:FE:DY:DY;0) 300  +0.8;                 6000 N! 
+    PAR TC(ND2FE14B,B:FE:ND:DY;0)    300  +586.15;              6000 N! 
+    PAR BMAGN(ND2FE14B,B:FE:ND:DY;0) 300  +0.8;                 6000 N! 
+    PAR TC(ND2FE14B,B:FE:DY:ND;0)    300 +586.15;               6000 N! 
+    PAR BMAGN(ND2FE14B,B:FE:DY:ND;0) 300 +0.8;                  6000 N! 
+
+    PAR G(ND2FE14B,B:FE:ND:ND;0) 300 -11312+2.813*T
+      +0.0588*GHSERBB+0.8236*GHSERFE+0.1176*GHSERND;           6000 N! 
+    PAR G(ND2FE14B,B:FE:DY:DY;0) 300 +GDYDY-11312+2.813*T
+      +0.0588*GHSERBB+0.8236*GHSERFE+0.1176*GHSERDY;         6000 N! 
+    PAR G(ND2FE14B,B:FE:DY:ND;0) 300 -3446-0.5*GDYDY-11312+2.813*T
+      +0.0588*GHSERBB+0.8236*GHSERFE+0.0588*GHSERDY+0.0588*GHSERND; 6000 N! 
+    PAR G(ND2FE14B,B:FE:ND:DY;0) 300  +3020-0.5*GDYDY-11312+2.813*T
+      +0.0588*GHSERBB+0.8236*GHSERFE+0.0588*GHSERDY+0.0588*GHSERND; 6000 N! 
+    PAR G(ND2FE14B,B:FE:DY,ND:ND;0) 300 +1440*MOLNDDY;          6000 N! 
+    PAR G(ND2FE14B,B:FE:DY,ND:DY;0) 300 +1428*MOLNDDY;          6000 N! 
+    PAR G(ND2FE14B,B:FE:ND:DY,ND;0) 300 +1140*MOLNDDY;          6000 N! 
+    PAR G(ND2FE14B,B:FE:DY:DY,ND;0) 300 +1118*MOLNDDY;          6000 N! 
+
+
+ TYPE_DEFINITION H  GES A_P_D FE4NDB4 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE4NDB4  %H  3 0.4391  0.4391  0.1218 !
+    CONSTITUENT FE4NDB4  :B : FE : ND :  !
+  PAR TC(FE4NDB4,B:FE:ND;0)     300  +10.15;                    6000 N! 
+  PAR BMAGN(FE4NDB4,B:FE:ND;0)  300  +0.2;                      6000 N! 
+  PAR G(FE4NDB4,B:FE:ND;0)      300  -43929+9.106*T
+     +0.4391*GHSERBB+0.4391*GHSERFE+0.1218*GHSERND;             6000 N! 
+
+
+TYPE_DEFINITION ~  GES A_P_D FE2ND5B6 MAGNETIC  -3.0    2.80000E-01 !
+ PHASE FE2ND5B6  %~  3  0.4615  0.1539  0.3846 !
+    CONSTITUENT FE2ND5B6  :B : FE : ND :  !
+  PAR TC(FE2ND5B6,B:FE:ND;0)     300  +64.15;                   6000 N! 
+  PAR BMAGN(FE2ND5B6,B:FE:ND;0)  300  +0.5;                     6000 N! 
+  PAR G(FE2ND5B6,B:FE:ND;0)      300  -42341+7.572*T
+     +0.4615*GHSERBB+0.1539*GHSERFE+0.3846*GHSERND;             6000 N! 
+
+
+
+
+  PHASE FE13ND6CU  %  3  0.05   0.65  0.30 !
+    CONSTITUENT FE13ND6CU  :CU : FE : ND: !
+ PAR G(FE13ND6CU,CU:FE:ND;0)  300 +0.65*GHSERFE+0.30*GHSERND+0.05*GHSERCU
+     +98-101.1*T+13.9765*T*LN(T);                  6000 N!  
+
+
+ PHASE TAU1 % 3 0.615385 0.307692 0.076923 !
+   CONSTITUENT TAU1 : AL : CU : DY : !
+ PAR G(TAU1,AL:CU:DY;0)   300   -34920+3.3*T 
+    +0.615385*GHSERAL+0.307692*GHSERCU+0.076923*GHSERDY;      3200 N! 
+
+
+ PHASE TAU2 %  2  0.894737 0.105263 !
+   CONSTITUENT TAU2 : AL,CU : DY : !
+ PAR G(TAU2,AL:DY;0)   300   -8850+1.7*T
+ +0.894737*GHSERAL+0.105263*GHSERDY;                    3200 N! 
+
+ PAR G(TAU2,CU:DY;0)   300   +3350-1.9*T
+ +0.894737*GHSERCU+0.105263*GHSERDY;                    3200 N! 
+
+ PAR G(TAU2,AL,CU:DY;0)   300   -110100-4*T+2*T;          3200 N! 
+ 
+
+ PHASE TAU3 %   2   0.833333   0.166667 !
+   CONSTITUENT TAU3 : AL,CU : DY : !
+ PAR G(TAU3,AL:DY;0)    300  -20000.3656+3*T
+  +0.833333*GHSERAL+0.166667*GHSERDY;                      3200 N! 
+ PAR G(TAU3,CU:DY;0)    300  -16506.3656+0.13*T 
+  +0.833333*GHSERCU+0.166667*GHSERDY;         3200 N! 
+ PAR G(TAU3,AL,CU:DY;0) 300  -70990.5756;                     3200 N! 
+ PAR G(TAU3,AL,CU:DY;1) 300  -10000;                          3200 N! 
+
+
+ PHASE TAU4 % 3 0.6 0.2 0.2 !
+   CONSTITUENT TAU4 : AL : CU : DY : !
+  PAR G(TAU4,AL:CU:DY;0)   300   -42500+1*T 
+   +0.6*GHSERAL+0.2*GHSERCU+0.2*GHSERDY;                   3200 N! 
+
+
+ PHASE TAU5 %  3  0.578948 0.210526 0.210526 !
+   CONSTITUENT TAU5 : AL : CU : DY : !
+  PAR G(TAU5,AL:CU:DY;0)   300   -43050+1.01*T
+   +0.578948*GHSERAL+0.210526*GHSERCU+0.210526*GHSERDY;       3200 N! 
+
+
+ PHASE TAU6 % 2 0.75 0.25 !
+   CONSTITUENT TAU6 : AL,CU : DY : !
+  PAR G(TAU6,AL:DY;0) 300 
+                      -25850+1.7*T+0.75*GHSERAL+0.25*GHSERDY; 3200 N! 
+  PAR G(TAU6,CU:DY;0) 300 
+                      -11350+1.9*T+0.75*GHSERCU+0.25*GHSERDY; 3200 N! 
+  PAR G(TAU6,AL,CU:DY;0) 300 -75100+2*T;                      3200 N! 
+  PAR G(TAU6,AL,CU:DY;1) 300 -50100+2*T;                      3200 N! 
+ 
+
+ PHASE TAU7 % 3 0.333333 0.333333 0.333334 !
+   CONSTITUENT TAU7 : AL : CU : DY : !
+   PAR G(TAU7,AL:CU:DY;0)   300   -41150+0.05*T
+  +0.333333*GHSERAL+0.333333*GHSERCU+0.333334*GHSERDY;   3200 N! 
+
+
+ PHASE ALCUFE_T  % 3  0.125  0.255   0.620  !
+   CONSTITUENT ALCUFE_T  : FE : AL,CU : AL : !
+   PAR G(ALCUFE_T,FE:AL:AL;0)   300   -8876
+   +0.125*GHSERFE +0.875*GHSERAL;                        3200 N! 
+   PAR G(ALCUFE_T,FE:CU:AL;0)   300   -23849 +0.52727*T
+   +0.125*GHSERFE +0.255*GHSERCU +0.620*GHSERAL;          3200 N! 
+
+ PHASE ALCUFE_W  % 3   1  2  7   !
+   CONSTITUENT ALCUFE_W  : FE : CU : AL : !
+   PAR G(ALCUFE_W,FE:CU:AL;0)   300   -197545 +0.23633*T
+         +1*GHSERFE +2*GHSERCU +7*GHSERAL;                     3200 N! 
+
+ PHASE ALCUFE_P  % 3   1  10  10   !
+   CONSTITUENT ALCUFE_P  : FE : AL,CU : AL : !
+   PAR G(ALCUFE_P,FE:AL:AL;0)   300 +1*GHSERFE +20*GHSERAL;    3200 N! 
+   PAR G(ALCUFE_P,FE:CU:AL;0)   300   
+   -502570+37.016*T+1*GHSERFE +10*GHSERCU +10*GHSERAL;     3200 N! 
+
+
