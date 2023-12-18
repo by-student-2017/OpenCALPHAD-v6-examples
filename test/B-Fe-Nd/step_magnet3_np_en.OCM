@@ -36,11 +36,18 @@ step
 
 @$ ====================================================================
 @$ Plot the results (x is mole fraction, y is Gibbs free energy)
+@$ S(*) = entropy, H(*) = enthalpy, A(*) = Helmholtz energy
+@$ G(*) = Gibbs energy, U(*) = Internal energy for system
 @$ Q(*) = Stability of phase
 @$ BP(*) = Mass of phase
 @$ NP(*) = Moles of phase
 @$ ====================================================================
+@$ plot t S(*)
+@$ plot t H(*)
+@$ plot t A(*)
 @$ plot t Q(*)
+@$ plot t A(*)
+@$ plot t G(*)
 @$ plot t BP(*)
 plot t NP(*)
 axis x Temperature/K
