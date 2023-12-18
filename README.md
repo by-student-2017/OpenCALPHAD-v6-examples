@@ -228,6 +228,8 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 
 
 ## B-Fe-Nd
+- Development of a prototype thermodynamic database for Nd-Fe-B permanent magnets. T.Abe, et al., STAM, 22, (2021), 557-570. doi.org/10.1080/14686996.2021.1936627
+- It is sufficient to create an input file that shows results consistent with the above paper. With my ability, it is difficult to show results beyond what is shown in the test folder. hope readers will consider this.
 - I am preparing this as a test. I think it's worth using demo versions of Pandat and other commercial software if they match up roughly.
 - If the crystal structure is clear from the above calculation, use Akai-KKR to perform element substitution and calculate the formation energy. The formation energy obtained with Akai-KKR should be used as a reference only, as the structure may be retained even if it is somewhat energetically disadvantageous due to effects such as entropy.
 - VASP (QE, OpenMX, Siesta or ...) etc. can take into account the displacement of atomic positions, but because the calculation cost is high, this is done after checking the element substitution situation with Akai-KKR. If you can create an appropriate potential for molecular dynamics, it is best to use it to optimize the structure and finally confirm it using VASP (QE, OpenMX, Siesta or ...), etc.
@@ -235,7 +237,6 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 - If you only need ternary phase diagrams, pycalphad is recommended. It is very unfortunate that in the current state of development, it is not possible to draw a ternary system phase diagram by fixing other elements such as a quaternary system.
 - I'm not particularly confident about "heat capacity". Just tried it.
-- Development of a prototype thermodynamic database for Nd-Fe-B permanent magnets. T.Abe, et al., STAM, 22, (2021), 557-570. doi.org/10.1080/14686996.2021.1936627
 
 
 Acknowledgment
