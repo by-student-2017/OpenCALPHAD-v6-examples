@@ -237,11 +237,11 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 - If you only need ternary phase diagrams, pycalphad is recommended. It is very unfortunate that in the current state of development, it is not possible to draw a ternary system phase diagram by fixing other elements such as a quaternary system.
 - I'm not particularly confident about "heat capacity". Just tried it.
-- As written in the "Note" section below, discussing Coercivity is impossible unless the organization is also considered. The phase field method is used to understand the relationship between tissue and magnetism.
+- As written in the "Note" section below, discussing coercivity is impossible unless the organization is also considered. The phase field method is used to understand the relationship between tissue and magnetism.
 - Note 1: Since most of the region inside the magnet is the T1 phase, the alloy composition is located near the stoichiometric composition of the T1 phase within the (T1+L) region.
 - Note 2: The end of the tie line on the liquid phase side varies greatly depending on the local average composition of Nd around the grain boundary position. This is the reason why the experimental data changed.
 - Note 3: In a metastable phase diagram (for example, at 873 K), only two phases, the T1 phase and the liquid phase, are considered.
-- Note 4: Coercivity cannot be obtained unless Nd is precipitated at a reasonably high concentration at the grain boundaries (2-3 nm width).
+- Note 4: The coercivity cannot be obtained unless Nd is precipitated at a reasonably high concentration at the grain boundaries (2-3 nm width).
 - Note 5: If there is less Nd in the grain boundaries, Fe will mainly exist and will not act as a barrier to domain wall movement, resulting in a decrease in coercive force. 
 - Note 6: steady state：Fe-5at%B-15at%Nd
 
