@@ -1,7 +1,6 @@
 @$ ====================================================================
 @$ Calculating the isothermal section at 1200 K for B-Fe-Nd
 @$ LIQUID, ND2FE14B (873 K, 1373 K)
-@$ LIQUID, FE4NDB4, ND2FE14B
 @$ ====================================================================
 new Y
 set echo
@@ -16,18 +15,19 @@ B Fe Nd
 
 @$ ====================================================================
 @$ uncomment for metastable equilibrium
-set status phase DHCP = dormant
-set status phase BCC-A2 = dormant
-set status phase FCC-A1 = dormant
-set status phase LAV-C16 = dormant
-set status phase NDB4 = dormant
-set status phase NDB6 = dormant
-set status phase ND2B5 = dormant
-set status phase FE2ND5B6 = dormant
-set status phase FE4NDB4 = dormant
-set status phase FE17ND2 = dormant
-set status phase FE17ND5 = dormant
-@$ set status phase SIGMA = suspended
+set status phase DHCP = suspended
+set status phase BCC-A2 = suspended
+set status phase FCC-A1 = suspended
+set status phase LAV-C16 = suspended
+set status phase NDB4 = suspended
+set status phase NDB6 = suspended
+set status phase ND2B5 = suspended
+@$ set status phase ND2FE14B = suspended
+set status phase FE2ND5B6 = suspended
+set status phase FE4NDB4 = suspended
+set status phase FE17ND2 = suspended
+set status phase FE17ND5 = suspended
+@$ set status phase SIGMA = dormant
 @$ ====================================================================
 @$ First the low T miscibility gap and sigma phase
 @$ ====================================================================
