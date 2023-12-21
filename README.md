@@ -168,7 +168,7 @@
 - Important files: map10.OCM and map14.OCM
 - Youtube: https://www.youtube.com/watch?v=mIRvrIzSj7I
 - Youtube (GUI): https://www.youtube.com/watch?v=OsO-DiCGJ00
-- https://app.gitter.im/#/room/#opencalphad_opencalphad:gitter.im
+- Gitter: https://app.gitter.im/#/room/#opencalphad_opencalphad:gitter.im
 
 
 ## TDB files
