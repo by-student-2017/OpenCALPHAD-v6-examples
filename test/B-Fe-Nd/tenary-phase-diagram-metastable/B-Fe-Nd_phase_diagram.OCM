@@ -1,0 +1,96 @@
+@$ ====================================================================
+@$ Calculating the isothermal section at 1200 K for B-Fe-Nd
+@$ LIQUID, ND2FE14B (873 K, 1373 K)
+@$ LIQUID, FE4NDB4, ND2FE14B
+@$ ====================================================================
+new Y
+set echo
+
+@$ ====================================================================
+@$ Read TDB file Nd-mag-STAM
+@$ (TDB-file for the Al-B-Co-Cu-Dy-Fe-Ga-Nd system)
+@$ ====================================================================
+@$ read tdb bfend_hal_en
+read tdb Nd-mag-STAM_en
+B Fe Nd
+
+@$ ====================================================================
+@$ uncomment for metastable equilibrium
+set status phase DHCP = dormant
+set status phase BCC-A2 = dormant
+set status phase FCC-A1 = dormant
+set status phase LAV-C16 = dormant
+set status phase NDB4 = dormant
+set status phase NDB6 = dormant
+set status phase ND2B5 = dormant
+set status phase FE2ND5B6 = dormant
+set status phase FE4NDB4 = dormant
+set status phase FE17ND2 = dormant
+set status phase FE17ND5 = dormant
+@$ set status phase SIGMA = suspended
+@$ ====================================================================
+@$ First the low T miscibility gap and sigma phase
+@$ ====================================================================
+
+@$ ====================================================================
+@$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
+@$ ====================================================================
+set condition  t=1373  p=1e5  n=1  x(Nd)=0.2 ,  x(B)=0.1
+
+@$ ====================================================================
+@$ one point calculation (Fix t, p, n and x)
+@$ ====================================================================
+calculate equilibrium
+
+@$ ====================================================================
+@$ Axis definition (x-axis: mole fraction)
+@$ ====================================================================
+set axis 1 x(Nd) 0 1 ,,,,
+
+@$ ====================================================================
+@$ Axis definition (y-axis: mole fraction)
+@$ ====================================================================
+set axis 2 x(B) 0 1 ,,,,
+
+@$ ====================================================================
+@$ Phase diagram calculation
+@$ ====================================================================
+map
+
+@$ ====================================================================
+@$ Sometimes a part on the some side missing, add a new start point
+@$ ====================================================================
+set condition t=873 p=1e5 n=1 x(Nd)=0.45 x(B)=0.15
+calculate n
+map n
+
+@$ ====================================================================
+@$ The graphics for this kind of diagram is not fully developed
+@$ Usually some parts are missing or have spurious tei-line
+@$ Mapping is still to be improved with experience
+@$ ====================================================================
+@$ plot as Gibbs triangle with tie-lines
+@$ ====================================================================
+plot ,,
+extra gibbs Y
+extra tie_line 3
+@$ Also set the color of the monovariants to red = FF0000
+extra color FF0000
+title map18 fig 1
+@$ Set a text in the lower left corner
+extra lower Fe
+
+@$ ====================================================================
+@$ PDF output settings
+@$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
+@$ ====================================================================
+plot ,,
+@$ Also set the color of green = a0ffa0
+@$ extra color a0ffa0
+title map18 fig 2
+graph 3 ternary-phase-diagram-metastable Y
+
+@$ =================================================================
+@$ If you do not write this, you will get an error
+set interactive
+@$ =================================================================
