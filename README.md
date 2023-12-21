@@ -244,6 +244,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - Note 4: The coercivity cannot be obtained unless Nd is precipitated at a reasonably high concentration at the grain boundaries (2-3 nm width).
 - Note 5: If there is less Nd in the grain boundaries, Fe will mainly exist and will not act as a barrier to domain wall movement, resulting in a decrease in coercive force. 
 - Note 6: steady-state：Fe-5at%B-15at%Nd
+- Note 7: In the TDB file, the % after the element means the main component.
 
 
 Acknowledgment
