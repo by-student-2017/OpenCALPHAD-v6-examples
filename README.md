@@ -237,7 +237,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - It is good to remember that machine learning potentials other than graph neural networks become unstable in systems with four or more elements. Graph neural networks are not easily available, so I don't know how reliable they are.
 - If you only need ternary phase diagrams, pycalphad is recommended. It is very unfortunate that in the current state of development, it is not possible to draw a ternary system phase diagram by fixing other elements such as a quaternary system.
 - I'm not particularly confident about "heat capacity". Just tried it.
-- As written in the "Note" section below, discussing the coercivity is insufficient unless the morphology is also considered. The phase field method is used to understand the relationship between morphology and magnetism.
+- As written in the "Note" section below, discussing the coercivity is insufficient unless the morphology is also considered. The phase field method (e.g., https://github.com/by-student-2017/Phase-field/tree/main/Koyama_lab_nu/programs_ubuntu_version_English/Chapter4_Section7_MPF_v2) is used to understand the relationship between morphology and magnetism.
 - Note 1: Since most of the region inside the magnet is the T1 phase, the alloy composition is located near the stoichiometric composition of the T1 phase within the (T1+L) region.
 - Note 2: The end of the tie line on the liquid phase side varies greatly depending on the local average composition of Nd around the grain boundary position. This is the reason why the experimental data changed.
 - Note 3: In a metastable phase diagram (for example, at 873 K), only two phases, the T1 phase and the liquid phase, are considered.
