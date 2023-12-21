@@ -227,7 +227,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 2. nkf -w bfend_hal.tdb > bfend_hal_en.tdb
 
 
-## B-Fe-Nd
+## B-Fe-Nd => (Al, B%, Ga)-(Co, Cu, Fe%)-(Dy, Nd%) system
 - Development of a prototype thermodynamic database for Nd-Fe-B permanent magnets. T.Abe, et al., STAM, 22, (2021), 557-570. doi.org/10.1080/14686996.2021.1936627
 - It is sufficient to create an input file that shows results consistent with the above paper. With my ability, it is difficult to show results beyond what is shown in the test folder. hope readers will consider this.
 - I am preparing this as a test. I think it's worth using demo versions of Pandat and other commercial software if they match up roughly.
