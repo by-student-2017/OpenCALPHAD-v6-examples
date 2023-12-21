@@ -8,14 +8,39 @@ set echo
 @$ Read TDB file Nd-mag-STAM
 @$ (TDB-file for the Al-B-Co-Cu-Dy-Fe-Ga-Nd system)
 @$ ====================================================================
-@$ read tdb bfend_hal_en
 read tdb Nd-mag-STAM_en
-B Fe Nd 
+B Fe Nd Cu
+
+@$ ====================================================================
+@$ set phase liquid status fixed 0
+@$ set condition t=non
+@$ ====================================================================
+@$ uncomment for metastable equilibrium
+set status phase DHCP = suspended
+set status phase HCP-A3 = suspended
+set status phase BCC-A2 = suspended
+set status phase FCC-A1 = suspended
+set status phase LAV-C16 = suspended
+set status phase NDB4 = suspended
+set status phase NDB6 = suspended
+set status phase ND2B5 = suspended
+set status phase ND2FE14B = suspended
+set status phase FE2ND5B6 = suspended
+set status phase FE4NDB4 = suspended
+set status phase FE17ND2 = suspended
+set status phase FE17ND5 = suspended
+@$ set status phase SIGMA = dormant
+@$ ====================================================================
 
 @$ ====================================================================
 @$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
 @$ ====================================================================
-set condition  t=300  p=1e5  n=1  x(Nd)=0.15 ,  x(B)=0.08
+set condition t=1500  p=1e5  n=1  x(Nd)=0.15 ,  x(B)=0.04 x(Cu)=0.01
+
+@$ ====================================================================
+@$ output list
+@$ ====================================================================
+@$ list conditions
 
 @$ ====================================================================
 @$ one point calculation (Fix t, p, n and x)
@@ -25,25 +50,24 @@ calculate equilibrium
 @$ ====================================================================
 @$ output list
 @$ ====================================================================
-@$ l r 1
+@$ list ,,,,
 
 @$ ==================================================================
 @$ Axis definition (x-axis: mole fraction)
 @$ ==================================================================
-set axis 1 x(Nd) 0 1 ,,
+set axis 1 x(Cu) 0 1 ,,
 
 @$ ====================================================================
 @$ Now we calculate how the system changes with T
 @$ ====================================================================
-set axis 2  t  300  1600  10
-@$ l ax
+set axis 2  t  300  2600  10
 
 @$ ====================================================================
 @$ step calculation
 @$ ====================================================================
 @$ step
-@$ l line
-@$ l eq
+@$ list line
+@$ list equilibria
 
 @$ ====================================================================
 @$ Phase diagram calculation
@@ -53,7 +77,7 @@ map
 @$ ====================================================================
 @$ plot the phase amount
 @$ ====================================================================
-Plot x(Nd) t
+Plot x(Cu) t
 axis y Temperature/K
 @$ Label some areas (x, y, fontscale, angle, recalc, legend)
 @$ text 0.3 1900 0.9 0 y ,
@@ -66,9 +90,11 @@ render
 @$ (graph n; n=1: window, n=2:ps, n=3:pdf, n=4:gif, n=5:png)
 @$ ====================================================================
 plot ,,
-graph 3 phase-diagram Y
+graph 3 phase-diagram-solid Y
 
 @$ ====================================================================
 @$ If you do not write this, you will get an error
+set interactive
+@$ ====================================================================
 set interactive
 @$ ====================================================================

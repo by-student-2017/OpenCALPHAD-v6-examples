@@ -29,8 +29,6 @@ set status phase FE17ND2 = suspended
 set status phase FE17ND5 = suspended
 @$ set status phase SIGMA = dormant
 @$ ====================================================================
-@$ First the low T miscibility gap and sigma phase
-@$ ====================================================================
 
 @$ ====================================================================
 @$ t=Temperature, p=Pressure, n=mol, x(Element)=mol fraction of Element
