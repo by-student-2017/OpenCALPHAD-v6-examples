@@ -241,7 +241,7 @@ awk 'NR>=9635 {$0="$ "$0}1' mc_ni_v2.034.tdb > new_mc_ni_v2.034.tdb
 - Note 1: Since most of the region inside the magnet is the T1 phase, the alloy composition is located near the stoichiometric composition of the T1 phase within the (T1+L) region.
 - Note 2: The end of the tie line on the liquid phase side varies greatly depending on the local average composition of Nd around the grain boundary position. This is the reason why the experimental data changed.
 - Note 3: In a metastable phase diagram (for example, at 873 K), only two phases, the T1 phase and the liquid phase, are considered.
-- Note 4: Coercivity force cannot be obtained unless Nd is precipitated at a reasonably high concentration at the grain boundaries (2-3 nm width).
+- Note 4: Coercivity cannot be obtained unless Nd is precipitated at a reasonably high concentration at the grain boundaries (2-3 nm width).
 - Note 5: If there is less Nd in the grain boundaries, Fe will mainly exist and will not act as a barrier to domain wall movement, resulting in a decrease in coercive force. 
 - Note 6: steady state：Fe-5at%B-15at%Nd
 
