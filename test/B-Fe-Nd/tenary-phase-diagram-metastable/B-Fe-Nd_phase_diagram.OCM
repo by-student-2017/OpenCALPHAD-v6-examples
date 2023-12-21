@@ -1,6 +1,6 @@
 @$ ====================================================================
 @$ Calculating the isothermal section at 1200 K for B-Fe-Nd
-@$ LIQUID, ND2FE14B (873 K, 1373 K)
+@$ LIQUID, ND2FE14B (T1 phase) at 873 K, 1373 K
 @$ ====================================================================
 new Y
 set echo
