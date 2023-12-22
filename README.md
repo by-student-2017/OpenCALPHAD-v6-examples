@@ -202,7 +202,7 @@
 ## 2NN MEAM Interatomc Potential
 - https://cmse.postech.ac.kr/home_2nnmeam
 - Note 1: Since EAM and MEAM consider the effects of the surrounding electron density (and use theoretically supported equations), "hybrid" that use combinations of these potentials have theoretical support. On the other hand, in the potential of a neural network (NN), a theoretical formula does not support the influence of the surrounding electron density, so there is no academic support for using the potential in combination. Many researchers do not know the difference between "EAM or MEAM" and NN, so it is necessary to fully explain this point in conference presentations and various application forms.
-- Note 2: Academic research often requires high accuracy, but when confirming results with actual experiments, it is sufficient to obtain systematic (qualitative or semi-quantitative) results through simulation. There are many. When developing materials, be sure to consider the required accuracy and cost. Is your company's product development expensive, time-consuming, and requires academic-level precision ? In development, obtaining a low relative value is better than an absolute value with a higher cost.
+- Note 2: Academic research often requires high accuracy, but when confirming results with actual experiments, it is sufficient to obtain systematic (qualitative or semi-quantitative) results through simulation. There are many. When developing materials, be sure to consider the required accuracy and cost. Is your company's product development expensive, time-consuming, and requires academic-level precision ? In development, obtaining a relative value at a lower cost is better than getting an absolute value at a higher price.
 
 
 ## MatCalc Open Databases
