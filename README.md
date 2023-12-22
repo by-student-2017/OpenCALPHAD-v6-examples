@@ -201,7 +201,7 @@
 
 ## 2NN MEAM Interatomc Potential
 - https://cmse.postech.ac.kr/home_2nnmeam
-- Note: Since EAM and MEAM consider the influence of the surrounding electron density (and use theoretically supported equations), hybrids that use a combination of these potentials have some theoretical support. It will be done. On the other hand, in the potential of a neural network (NN), the influence of the surrounding electron density cannot be supported by a theoretical formula, so there is no academic support for using a combination of potentials. Many researchers are unaware of the difference between "EAM or MEAM" and NN, so it is necessary to fully explain this point in conference presentations and various application forms.
+- Note: Since EAM and MEAM consider the influence of the surrounding electron density (and use theoretically supported equations), hybrids that use a combination of these potentials have some theoretical support. On the other hand, in the potential of a neural network (NN), the influence of the surrounding electron density cannot be supported by a theoretical formula, so there is no academic support for using a combination of potentials. Many researchers are unaware of the difference between "EAM or MEAM" and NN, so it is necessary to fully explain this point in conference presentations and various application forms.
 
 
 ## MatCalc Open Databases
