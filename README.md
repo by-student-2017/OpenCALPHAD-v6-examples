@@ -255,7 +255,6 @@ Acknowledgment
 - This project (modified version) is/was partially supported by the following :
 - meguREnergy Co., Ltd.
 - ATSUMITEC Co., Ltd.
-- RIKEN
 - Without the support of "meguREnergy Co., Ltd." and "ATSUMITEC Co., Ltd.", I would not have been able to develop the examples to the level shown on this github. I would like to express my sincere gratitude. 
 - Al-Mg-Zn: I received permission from Dr. Abe of NIMS to post the revised version of TDB (11/Dec/2023 12:04). I would like to express my gratitude to you.
 - Al-Mg-Zn: It's working fine with PyCALPHAD, but due to my (By STUDENT) lack of skill, some parts are incorrectly drawn with OpenCALPHAD.
